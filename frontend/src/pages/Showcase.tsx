@@ -52,7 +52,7 @@ function ShowcaseHero() {
     { value: "318", label: "Line Items" },
     { value: "96.7%", label: "OCR Confidence" },
     { value: "94.9%", label: "Mapping Rate" },
-    { value: "340", label: "Tests" },
+    { value: "448", label: "Tests" },
     { value: "~4s", label: "Per Receipt" },
   ]
 

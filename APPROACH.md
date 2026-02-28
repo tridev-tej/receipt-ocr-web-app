@@ -130,9 +130,10 @@ The web app turns the pipeline from a CLI tool into an interactive experience. F
 | OCR Confidence | 96.7% |
 | Mapping Rate | 94.9% |
 | Average Margin | 73.7% |
-| Mapping F1 Score | 1.000 (n=17 hand-verified receipts) |
-| Cost Accuracy | 100% (within 10% tolerance of ground truth) |
-| Pipeline Score | 0.958 (weighted: 0.4*mapping_F1 + 0.3*classification_acc + 0.3*cost_acc) |
+| Mapping F1 Score | 0.964 (precision 1.0, recall 0.930 with OCR noise injection) |
+| Classification Accuracy | 0.979 (fuzzy fallback + multilingual, 6 real errors) |
+| Cost Accuracy | 100% (MAPE 0.7%, tighter ~15% tolerances) |
+| Pipeline Score | 0.981 (weighted: 0.4*mapping_F1 + 0.2*classification + 0.3*cost + 0.1*no_crash) |
 
 ### Results -> Business Decisions
 
@@ -158,7 +159,7 @@ The web app turns the pipeline from a CLI tool into an interactive experience. F
 
 ## Testing
 
-340 tests covering:
+448 tests covering:
 - Normalizer edge cases (EU formats, unit conversions, edge currencies)
 - Full pipeline end-to-end
 - Adversarial prompts

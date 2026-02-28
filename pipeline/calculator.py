@@ -8,8 +8,8 @@ from pathlib import Path
 from typing import Any
 
 import config
-from src.models import IngredientCost, MenuItemCost, NormalizedLineItem
-from src.units import to_base_unit
+from models import IngredientCost, MenuItemCost, NormalizedLineItem
+from units import to_base_unit
 
 logger = logging.getLogger(__name__)
 

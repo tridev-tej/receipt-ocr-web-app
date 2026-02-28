@@ -46,7 +46,18 @@ def get_menu_costs() -> list[dict]:
     results = []
     for r in rows:
         d = dict(r)
-        d["breakdown"] = json.loads(d["breakdown"]) if d["breakdown"] else []
+        raw = json.loads(d["breakdown"]) if d["breakdown"] else []
+        d["breakdown"] = [
+            {
+                "ingredient": b.get("ingredient", ""),
+                "display_name": b.get("display_name", b.get("ingredient", "")),
+                "qty": b.get("qty", 0),
+                "unit": b.get("unit", ""),
+                "cost_per_unit": b.get("cost_per_unit", b.get("unit_cost", 0)),
+                "line_cost": b.get("line_cost", b.get("cost", 0)),
+            }
+            for b in raw
+        ]
         results.append(d)
     return results
 

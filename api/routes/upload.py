@@ -6,7 +6,7 @@ import shutil
 import uuid
 from pathlib import Path
 
-from fastapi import APIRouter, BackgroundTasks, HTTPException, UploadFile
+from fastapi import APIRouter, HTTPException, UploadFile
 
 from api.schemas import UploadStatusResponse
 
@@ -30,24 +30,25 @@ def _update_status(run_id: str, stage: str, current: int = 0, total: int = 0, er
 
 async def _run_pipeline(run_id: str, receipt_dir: Path, total: int):
     import sys
-    sys.path.insert(0, str(ROOT))
+    pipeline_dir = str(ROOT / "pipeline")
+    if pipeline_dir not in sys.path:
+        sys.path.insert(0, pipeline_dir)
 
     try:
-        _update_status(run_id, "ocr", 0, total)
-
-        from pipeline.config import RECEIPTS_DIR as _orig
-        from pipeline import ocr, validator, normalizer, classifier, mapper, calculator, database, report
+        from ocr import extract_all_receipts
+        from validator import validate_receipts
+        from normalizer import normalize_receipts
+        from classifier import classify_items
+        from mapper import map_ingredients, map_ingredients_async
+        from calculator import calculate_ingredient_costs, calculate_menu_costs
+        from database import Database
+        from report import write_reports
+        from models import PipelineMetrics
 
         # Stage 1: OCR
         _update_status(run_id, "ocr", 0, total)
-        receipts = []
-        api_cost = 0.0
-        files = sorted(receipt_dir.glob("*"))
-        for i, img_path in enumerate(files):
-            _update_status(run_id, "ocr", i + 1, total)
-            receipt_data = await ocr.extract_receipt(str(img_path), receipt_id=f"U-{i+1:03d}")
-            if receipt_data:
-                receipts.append(receipt_data)
+        receipts, api_cost, ocr_failed = await extract_all_receipts(receipt_dir)
+        _update_status(run_id, "ocr", total, total)
 
         if not receipts:
             _update_status(run_id, "error", total, total, "No receipts could be processed")
@@ -55,42 +56,41 @@ async def _run_pipeline(run_id: str, receipt_dir: Path, total: int):
 
         # Stage 2: Validate
         _update_status(run_id, "validate", total, total)
-        receipts = validator.validate_receipts(receipts)
+        receipts = validate_receipts(receipts)
 
         # Stage 3: Normalize
         _update_status(run_id, "normalize", total, total)
-        items = normalizer.normalize_receipts(receipts)
+        items = normalize_receipts(receipts)
 
         # Stage 4: Classify
         _update_status(run_id, "classify", total, total)
-        items = classifier.classify_items(items)
+        items = classify_items(items)
 
         # Stage 5: Map
         _update_status(run_id, "map", total, total)
         try:
-            items = await mapper.map_ingredients_async(items)
+            items = await map_ingredients_async(items)
         except Exception:
-            items = mapper.map_ingredients(items)
+            items = map_ingredients(items)
 
         # Stage 6: Calculate
         _update_status(run_id, "calculate", total, total)
-        ingredient_costs = calculator.calculate_ingredient_costs(items)
         menu_path = ROOT / "menu.json"
         with open(menu_path) as f:
             menu = json.load(f)
-        menu_costs = calculator.calculate_menu_costs(ingredient_costs, menu)
+        ingredient_costs = calculate_ingredient_costs(items, menu)
+        menu_costs = calculate_menu_costs(ingredient_costs, menu)
 
         # Stage 7: Database
         _update_status(run_id, "database", total, total)
         run_db = RUNS_DIR / run_id / "cogs.db"
-        from pipeline.models import PipelineMetrics
         metrics = PipelineMetrics(
             run_id=run_id,
             receipts_processed=len(receipts),
             receipts_failed=total - len(receipts),
             total_line_items=len(items),
         )
-        with database.Database(str(run_db)) as db:
+        with Database(str(run_db)) as db:
             db.create_tables()
             db.save_pipeline_run(metrics)
             for r in receipts:
@@ -101,11 +101,8 @@ async def _run_pipeline(run_id: str, receipt_dir: Path, total: int):
 
         # Stage 8: Report
         _update_status(run_id, "report", total, total)
-        report_path = RUNS_DIR / run_id / "cost_report.md"
-        report.write_reports(
-            menu_costs, ingredient_costs, items, metrics,
-            str(report_path), str(RUNS_DIR / run_id / "cost_report.csv"),
-        )
+        run_dir = RUNS_DIR / run_id
+        write_reports(menu_costs, ingredient_costs, items, metrics, str(run_dir))
 
         _update_status(run_id, "complete", total, total)
 
@@ -114,7 +111,7 @@ async def _run_pipeline(run_id: str, receipt_dir: Path, total: int):
 
 
 @router.post("")
-async def upload_receipts(files: list[UploadFile], background_tasks: BackgroundTasks):
+async def upload_receipts(files: list[UploadFile]):
     if not files:
         raise HTTPException(400, "No files provided")
     if len(files) > 20:
@@ -131,7 +128,7 @@ async def upload_receipts(files: list[UploadFile], background_tasks: BackgroundT
 
     _update_status(run_id, "uploading", 0, len(files))
 
-    background_tasks.add_task(asyncio.get_event_loop().create_task, _run_pipeline(run_id, receipt_dir, len(files)))
+    asyncio.ensure_future(_run_pipeline(run_id, receipt_dir, len(files)))
 
     return {"run_id": run_id, "total_receipts": len(files)}
 

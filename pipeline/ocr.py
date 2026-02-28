@@ -16,11 +16,11 @@ from typing import Any
 import anthropic
 
 import config
-from src.cross_validate import cross_validate
-from src.models import RawLineItem, RawReceipt
-from src.preprocess import preprocess_image
-from src.resilience import CircuitBreaker, RateLimiter
-from src.utils import parse_number, strip_markdown_fences
+from cross_validate import cross_validate
+from models import RawLineItem, RawReceipt
+from preprocess import preprocess_image
+from resilience import CircuitBreaker, RateLimiter
+from utils import parse_number, strip_markdown_fences
 
 logger = logging.getLogger(__name__)
 

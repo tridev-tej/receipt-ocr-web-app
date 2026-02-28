@@ -11,8 +11,8 @@ import anthropic
 from thefuzz import fuzz
 
 import config
-from src.models import NormalizedLineItem
-from src.utils import strip_markdown_fences
+from models import NormalizedLineItem
+from utils import strip_markdown_fences
 
 logger = logging.getLogger(__name__)
 

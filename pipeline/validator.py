@@ -4,7 +4,7 @@ import hashlib
 import logging
 from datetime import date, datetime
 
-from src.models import RawLineItem, RawReceipt
+from models import RawLineItem, RawReceipt
 
 logger = logging.getLogger(__name__)
 

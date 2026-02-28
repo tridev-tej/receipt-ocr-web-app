@@ -10,7 +10,7 @@ from datetime import datetime, timezone
 from pathlib import Path
 
 import config
-from src.models import IngredientCost, MenuItemCost, NormalizedLineItem, PipelineMetrics
+from models import IngredientCost, MenuItemCost, NormalizedLineItem, PipelineMetrics
 
 logger = logging.getLogger(__name__)
 

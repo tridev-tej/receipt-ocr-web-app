@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react"
+import { Fragment, useEffect, useState } from "react"
 import { useDemoStore } from "@/stores/useDemoStore"
 import { formatEur, formatPct, confidenceColor } from "@/lib/constants"
 import { ChevronDown, ChevronRight } from "lucide-react"
@@ -63,9 +63,8 @@ export function MenuCostsTab() {
           </thead>
           <tbody>
             {menuCosts.map((m) => (
-              <>
+              <Fragment key={m.menu_item_id}>
                 <tr
-                  key={m.menu_item_id}
                   className="cursor-pointer border-b border-chai/10 transition-colors hover:bg-cream/40"
                   onClick={() => setExpanded(expanded === m.menu_item_id ? null : m.menu_item_id)}
                 >
@@ -92,7 +91,7 @@ export function MenuCostsTab() {
                   </td>
                 </tr>
                 {expanded === m.menu_item_id && m.breakdown.length > 0 && (
-                  <tr key={`${m.menu_item_id}-exp`}>
+                  <tr>
                     <td colSpan={5} className="bg-cream/30 px-8 py-3">
                       <div className="text-xs">
                         <div className="mb-1 font-semibold text-muted-foreground">Ingredient Breakdown</div>
@@ -110,7 +109,7 @@ export function MenuCostsTab() {
                     </td>
                   </tr>
                 )}
-              </>
+              </Fragment>
             ))}
           </tbody>
         </table>

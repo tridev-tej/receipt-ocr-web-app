@@ -4,9 +4,9 @@ import logging
 import re
 
 import config
-from src.models import NormalizedLineItem, RawLineItem, RawReceipt
-from src.units import to_base_unit
-from src.utils import parse_number
+from models import NormalizedLineItem, RawLineItem, RawReceipt
+from units import to_base_unit
+from utils import parse_number
 
 logger = logging.getLogger(__name__)
 

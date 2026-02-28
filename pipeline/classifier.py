@@ -4,7 +4,7 @@ import logging
 import re
 from typing import Literal
 
-from src.models import NormalizedLineItem
+from models import NormalizedLineItem
 
 logger = logging.getLogger(__name__)
 

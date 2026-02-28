@@ -51,7 +51,7 @@ function ShowcaseHero() {
     { value: "100", label: "Receipts" },
     { value: "318", label: "Line Items" },
     { value: "96.7%", label: "OCR Confidence" },
-    { value: "94.9%", label: "Mapping Rate" },
+    { value: "0.964", label: "Mapping F1" },
     { value: "448", label: "Tests" },
     { value: "~4s", label: "Per Receipt" },
   ]
@@ -270,11 +270,11 @@ const METRICS_EXPLAINED = [
     formula: "weighted_avg(field_confidence per line_item)",
   },
   {
-    metric: "Mapping Rate",
-    value: "94.9%",
-    definition: "Percentage of items successfully matched to known ingredients via 3-tier matching.",
-    detail: "Unmapped 5.1% are correctly excluded - discounts, delivery fees, non-ingredient items.",
-    formula: "matched_items / total_items",
+    metric: "Mapping F1",
+    value: "0.964",
+    definition: "Harmonic mean of precision (1.0) and recall (0.930) for ingredient mapping.",
+    detail: "19 items unmapped due to OCR noise perturbation. Non-tautological: noise injection breaks perfect score.",
+    formula: "2 * precision * recall / (precision + recall)",
   },
   {
     metric: "Average Margin",
@@ -456,8 +456,8 @@ const RESILIENCE_FEATURES = [
   },
   {
     icon: FlaskConical,
-    title: "340 Tests",
-    detail: "Normalizer edge cases, full pipeline e2e, adversarial prompts, malformed images. ruff clean, 0 warnings.",
+    title: "448 Tests",
+    detail: "Normalizer edge cases, full pipeline e2e, adversarial prompts, malformed images, fuzzy classification. ruff clean, 0 warnings.",
   },
 ]
 
@@ -681,7 +681,7 @@ function GuidingPrinciple() {
           <TrendingUp className="mx-auto mb-4 h-8 w-8 text-cinnamon" />
           <blockquote className="text-lg font-medium leading-relaxed text-choco md:text-xl">
             "Validation parity: every path a receipt can take must be tested, not just the happy path.
-            340 tests - normalizer edge cases, full pipeline e2e, adversarial prompts, malformed images.
+            448 tests - normalizer edge cases, full pipeline e2e, adversarial prompts, malformed images, fuzzy classification.
             ruff clean, 0 warnings."
           </blockquote>
           <p className="mt-6 text-sm font-medium text-muted-foreground">

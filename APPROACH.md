@@ -128,7 +128,7 @@ The web app turns the pipeline from a CLI tool into an interactive experience. F
 | Receipts Processed | 100 |
 | Line Items Extracted | 318 |
 | OCR Confidence | 96.7% |
-| Mapping Rate | 94.9% |
+| Mapping F1 | 0.964 |
 | Average Margin | 73.7% |
 | Mapping F1 Score | 0.964 (precision 1.0, recall 0.930 with OCR noise injection) |
 | Classification Accuracy | 0.979 (fuzzy fallback + multilingual, 6 real errors) |

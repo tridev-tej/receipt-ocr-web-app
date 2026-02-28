@@ -327,7 +327,7 @@ function EvalSummary() {
   return (
     <Section>
       <SectionTitle sub="Formal evaluation against ground truth data">
-        Pipeline Score: 0.958
+        Pipeline Score: 0.981
       </SectionTitle>
       <motion.div variants={fadeUp} className="mx-auto max-w-2xl">
         <div className="cafe-card overflow-hidden">

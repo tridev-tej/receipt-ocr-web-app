@@ -4,7 +4,7 @@ import {
   Eye, ShieldCheck, Ruler, Tags, Link as LinkIcon,
   Calculator, Database, FileText, ArrowRight,
   Zap, Target, BarChart3, CheckCircle2,
-  Cpu,
+  Cpu, ImageUp, GitCompareArrows,
 } from "lucide-react"
 import { WingsLogo } from "@/components/WingsLogo"
 
@@ -111,7 +111,9 @@ function Hero() {
 
 // ─── Pipeline Visualization ────────────────────────────
 const STAGES = [
+  { icon: ImageUp, label: "Preprocess", desc: "Rotate, enhance, denoise" },
   { icon: Eye, label: "Extract", desc: "Claude Vision OCR" },
+  { icon: GitCompareArrows, label: "Cross-validate", desc: "PaddleOCR verification" },
   { icon: ShieldCheck, label: "Validate", desc: "Math checks, dedup" },
   { icon: Ruler, label: "Normalize", desc: "Units, currency, EUR" },
   { icon: Tags, label: "Classify", desc: "Ingredient/packaging" },
@@ -124,10 +126,10 @@ const STAGES = [
 function PipelineViz() {
   return (
     <Section className="bg-white">
-      <SectionTitle sub="8-stage automated pipeline from receipt scan to cost report">
+      <SectionTitle sub="10-stage automated pipeline from receipt scan to cost report">
         How It Works
       </SectionTitle>
-      <div className="grid grid-cols-2 gap-4 sm:grid-cols-4 lg:grid-cols-8">
+      <div className="grid grid-cols-2 gap-4 sm:grid-cols-5 lg:grid-cols-10">
         {STAGES.map((s, i) => (
           <motion.div
             key={s.label}

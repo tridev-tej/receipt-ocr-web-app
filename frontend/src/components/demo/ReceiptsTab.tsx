@@ -11,22 +11,19 @@ function receiptImageUrl(receiptId: string): string {
 export function ReceiptsTab() {
   const { receiptIds, selectedReceipt, fetchReceiptIds, fetchReceipt, loading } = useDemoStore()
   const [selectedId, setSelectedId] = useState<string>("")
-  const [imgError, setImgError] = useState(false)
+  const [imgErrorId, setImgErrorId] = useState<string | null>(null)
+
+  // Derive effective ID - falls back to first receipt before user picks one
+  const effectiveId = selectedId || receiptIds?.[0] || ""
+  const imgError = imgErrorId === effectiveId
 
   useEffect(() => { fetchReceiptIds() }, [fetchReceiptIds])
 
   useEffect(() => {
-    if (receiptIds && receiptIds.length > 0 && !selectedId) {
-      setSelectedId(receiptIds[0])
+    if (effectiveId) {
+      fetchReceipt(effectiveId)
     }
-  }, [receiptIds, selectedId])
-
-  useEffect(() => {
-    if (selectedId) {
-      fetchReceipt(selectedId)
-      setImgError(false)
-    }
-  }, [selectedId, fetchReceipt])
+  }, [effectiveId, fetchReceipt])
 
   if (!receiptIds) {
     return <div className="animate-pulse py-12 text-center text-muted-foreground">Loading...</div>
@@ -37,7 +34,7 @@ export function ReceiptsTab() {
       <div className="flex items-center gap-3">
         <label className="text-sm font-medium text-choco">Receipt:</label>
         <select
-          value={selectedId}
+          value={effectiveId}
           onChange={(e) => setSelectedId(e.target.value)}
           className="rounded-lg border border-chai bg-white px-3 py-2 text-sm text-choco"
         >
@@ -74,10 +71,10 @@ export function ReceiptsTab() {
                   </div>
                 ) : (
                   <img
-                    src={receiptImageUrl(selectedId)}
-                    alt={`Receipt ${selectedId}`}
+                    src={receiptImageUrl(effectiveId)}
+                    alt={`Receipt ${effectiveId}`}
                     className="max-h-[28rem] w-auto rounded shadow-sm"
-                    onError={() => setImgError(true)}
+                    onError={() => setImgErrorId(effectiveId)}
                   />
                 )}
               </div>

@@ -30,10 +30,14 @@ export function Demo() {
         100 receipts processed, 22 ingredients mapped, 12 menu items costed.
       </p>
 
-      <div className="mb-6 flex flex-wrap gap-1 rounded-xl border border-chai/30 bg-cream/50 p-1">
+      <div role="tablist" aria-label="Pipeline results" className="mb-6 flex flex-wrap gap-1 rounded-xl border border-chai/30 bg-cream/50 p-1">
         {TABS.map((t) => (
           <button
             key={t.key}
+            role="tab"
+            aria-selected={tab === t.key}
+            aria-controls={`tabpanel-${t.key}`}
+            id={`tab-${t.key}`}
             onClick={() => setTab(t.key)}
             className={cn(
               "rounded-lg px-3.5 py-2 text-sm font-medium transition-all",
@@ -47,7 +51,7 @@ export function Demo() {
         ))}
       </div>
 
-      <div>
+      <div role="tabpanel" id={`tabpanel-${tab}`} aria-labelledby={`tab-${tab}`}>
         {tab === "menu" && <MenuCostsTab />}
         {tab === "ingredients" && <IngredientsTab />}
         {tab === "receipts" && <ReceiptsTab />}

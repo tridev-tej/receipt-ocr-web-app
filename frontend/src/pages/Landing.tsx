@@ -3,8 +3,8 @@ import { motion } from "framer-motion"
 import {
   Eye, ShieldCheck, Ruler, Tags, Link as LinkIcon,
   Calculator, Database, FileText, ArrowRight,
-  Zap, Target, BarChart3, CheckCircle2, AlertTriangle,
-  Layers, Cpu, FlaskConical,
+  Zap, Target, BarChart3, CheckCircle2,
+  Cpu,
 } from "lucide-react"
 import { WingsLogo } from "@/components/WingsLogo"
 
@@ -86,14 +86,20 @@ function Hero() {
           className="mt-10 flex flex-wrap items-center justify-center gap-4"
         >
           <Link
-            to="/demo"
+            to="/showcase"
             className="inline-flex items-center gap-2 rounded-[var(--radius)] bg-syrup px-6 py-3 font-semibold text-cream shadow-lg shadow-syrup/20 no-underline transition-all hover:bg-choco hover:shadow-xl"
           >
-            See Demo <ArrowRight className="h-4 w-4" />
+            Full Showcase <ArrowRight className="h-4 w-4" />
+          </Link>
+          <Link
+            to="/demo"
+            className="inline-flex items-center gap-2 rounded-[var(--radius)] border-2 border-cinnamon/40 bg-white px-6 py-3 font-semibold text-syrup no-underline transition-all hover:border-cinnamon hover:bg-cream"
+          >
+            Explore Data
           </Link>
           <Link
             to="/upload"
-            className="inline-flex items-center gap-2 rounded-[var(--radius)] border-2 border-cinnamon/40 bg-white px-6 py-3 font-semibold text-syrup no-underline transition-all hover:border-cinnamon hover:bg-cream"
+            className="inline-flex items-center gap-2 rounded-[var(--radius)] border-2 border-chai/40 bg-white/80 px-6 py-3 font-semibold text-muted-foreground no-underline transition-all hover:border-cinnamon hover:bg-cream hover:text-syrup"
           >
             Upload Receipts
           </Link>
@@ -257,16 +263,14 @@ function ConfidenceModel() {
       </SectionTitle>
       <motion.div variants={fadeUp} className="cafe-card mx-auto max-w-3xl p-8">
         <div className="mb-6 rounded-lg bg-cream p-4 font-mono text-sm text-choco">
-          <p className="mb-2 font-semibold">confidence = min(0.95,</p>
-          <p className="pl-4">sqrt(n) / (n + K)</p>
-          <p className="pl-4">x avg_mapping_confidence</p>
-          <p className="pl-4">x avg_ocr_confidence</p>
-          <p className="pl-4">x cv_penalty</p>
-          <p>)</p>
+          <p className="mb-2 font-semibold">volume = min(1.0, n / 5.0)</p>
+          <p>raw = volume x avg_mapping x avg_ocr</p>
+          <p className="mt-1">if cv &gt; 0.3: raw *= max(0.5, 1.0 - (cv - 0.3))</p>
+          <p className="mt-1 font-semibold">confidence = clamp(raw, 0.0, 0.95)</p>
         </div>
         <div className="grid gap-4 text-sm sm:grid-cols-2">
           {[
-            { label: "Volume Factor", desc: "sqrt(n)/(n+K) - penalizes < 5 data points" },
+            { label: "Volume Factor", desc: "min(1, n/5) - linear ramp penalizes < 5 data points" },
             { label: "0.95 Cap", desc: "System never claims certainty" },
             { label: "CV Penalty", desc: "High price variance lowers confidence" },
             { label: "OCR Weight", desc: "Low OCR confidence propagates through" },

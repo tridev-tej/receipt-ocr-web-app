@@ -36,3 +36,9 @@ export function formatEur(n: number, digits = 2): string {
 export function formatPct(n: number, digits = 1): string {
   return `${n.toFixed(digits)}%`
 }
+
+export function marginColor(pct: number): string {
+  if (pct >= 75) return "#009588"
+  if (pct >= 60) return "#fcbb00"
+  return "#f05100"
+}

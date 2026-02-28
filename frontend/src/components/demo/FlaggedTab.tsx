@@ -1,6 +1,6 @@
 import { useEffect } from "react"
 import { useDemoStore } from "@/stores/useDemoStore"
-import { confidenceColor } from "@/lib/constants"
+
 
 export function FlaggedTab() {
   const { flagged, fetchFlagged, loading } = useDemoStore()

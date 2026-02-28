@@ -5,8 +5,9 @@
 A web frontend wrapping your receipt-ocr-pipeline project. The assessor can now *experience* the pipeline interactively instead of just reading code. Three pages:
 
 1. **Landing** (`/`) - Marketing-style page explaining the pipeline with animations
-2. **Demo** (`/demo`) - 7-tab explorer of pre-computed results (100 receipts, 22 ingredients, 12 menu items)
-3. **Upload** (`/upload`) - Drop real receipt images, watch the pipeline run live via Claude Vision API
+2. **Showcase** (`/showcase`) - Complete technical deep dive: 10-stage architecture, prompt engineering decisions, real-world challenges, production resilience, V1-V3 iteration history, validation gallery, business decisions, honest limitations
+3. **Demo** (`/demo`) - 7-tab explorer of pre-computed results (100 receipts, 22 ingredients, 12 menu items)
+4. **Upload** (`/upload`) - Drop real receipt images, watch the pipeline run live via Claude Vision API
 
 ## Architecture
 
@@ -41,7 +42,7 @@ data/              # Extractions JSONs + receipt images
 output/            # Pre-computed: cogs.db, metrics, evaluation, reports
 frontend/
   src/
-    pages/         # Landing.tsx, Demo.tsx, Upload.tsx
+    pages/         # Landing.tsx, Showcase.tsx, Demo.tsx, Upload.tsx
     components/
       demo/        # 7 tab components (MenuCostsTab, IngredientsTab, etc.)
       layout/      # Header, Footer

@@ -1,5 +1,5 @@
 import { create } from "zustand"
-import type { MenuCostItem, IngredientItem, UploadStatus } from "@/lib/api"
+import type { MenuCostItem, IngredientItem } from "@/lib/api"
 import * as api from "@/lib/api"
 
 type Stage = "idle" | "uploading" | "ocr" | "validate" | "normalize" | "classify" | "map" | "calculate" | "database" | "report" | "complete" | "error"
@@ -49,6 +49,7 @@ export const useUploadStore = create<UploadState>((set, get) => ({
       const poll = async () => {
         while (true) {
           await new Promise((r) => setTimeout(r, 2000))
+          if (get().stage === "idle") return // aborted via reset
           const status = await api.getUploadStatus(run_id)
           set({
             stage: status.stage as Stage,
@@ -68,7 +69,7 @@ export const useUploadStore = create<UploadState>((set, get) => ({
           })
         }
       }
-      poll()
+      await poll()
     } catch (e) {
       set({ stage: "error", error: (e as Error).message })
     }

@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react"
+import { useEffect, useState, useCallback } from "react"
 import { useDemoStore } from "@/stores/useDemoStore"
 import { formatEur, confidenceColor, confidenceLabel } from "@/lib/constants"
 import type { IngredientItem } from "@/lib/api"
@@ -9,7 +9,16 @@ export function IngredientsTab() {
   const { ingredients, fetchIngredients, loading } = useDemoStore()
   const [selected, setSelected] = useState<IngredientItem | null>(null)
 
+  const closeModal = useCallback(() => setSelected(null), [])
+
   useEffect(() => { fetchIngredients() }, [fetchIngredients])
+
+  useEffect(() => {
+    if (!selected) return
+    const handler = (e: KeyboardEvent) => { if (e.key === "Escape") closeModal() }
+    document.addEventListener("keydown", handler)
+    return () => document.removeEventListener("keydown", handler)
+  }, [selected, closeModal])
 
   if (loading.ingredients || !ingredients) {
     return <div className="animate-pulse py-12 text-center text-muted-foreground">Loading ingredients...</div>
@@ -43,14 +52,14 @@ export function IngredientsTab() {
 
       {/* Detail Panel */}
       {selected && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center bg-choco/30 p-4 backdrop-blur-sm" onClick={() => setSelected(null)}>
+        <div role="dialog" aria-modal="true" aria-labelledby="ingredient-modal-title" className="fixed inset-0 z-50 flex items-center justify-center bg-choco/30 p-4 backdrop-blur-sm" onClick={closeModal}>
           <div className="w-full max-w-2xl cafe-card p-6" onClick={(e) => e.stopPropagation()}>
             <div className="mb-4 flex items-start justify-between">
               <div>
-                <h3 className="font-serif text-xl font-bold text-choco">{selected.display_name}</h3>
+                <h3 id="ingredient-modal-title" className="font-serif text-xl font-bold text-choco">{selected.display_name}</h3>
                 <p className="text-sm text-muted-foreground">{selected.ingredient_id}</p>
               </div>
-              <button onClick={() => setSelected(null)} className="rounded-lg p-1 hover:bg-cream">
+              <button onClick={closeModal} aria-label="Close detail panel" className="rounded-lg p-1 hover:bg-cream">
                 <X className="h-5 w-5 text-muted-foreground" />
               </button>
             </div>

@@ -1,14 +1,8 @@
 import { Fragment, useEffect, useState } from "react"
 import { useDemoStore } from "@/stores/useDemoStore"
-import { formatEur, formatPct, confidenceColor } from "@/lib/constants"
+import { formatEur, formatPct, confidenceColor, marginColor } from "@/lib/constants"
 import { ChevronDown, ChevronRight } from "lucide-react"
 import { BarChart, Bar, XAxis, YAxis, Tooltip, ResponsiveContainer, Cell } from "recharts"
-
-function marginColor(pct: number): string {
-  if (pct >= 75) return "#009588"
-  if (pct >= 60) return "#fcbb00"
-  return "#f05100"
-}
 
 export function MenuCostsTab() {
   const { menuCosts, fetchMenuCosts, loading } = useDemoStore()

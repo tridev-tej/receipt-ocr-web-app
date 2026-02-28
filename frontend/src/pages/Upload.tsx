@@ -1,7 +1,7 @@
 import { useCallback } from "react"
 import { useDropzone } from "react-dropzone"
 import { useUploadStore } from "@/stores/useUploadStore"
-import { PIPELINE_STAGES, formatEur, formatPct, confidenceColor } from "@/lib/constants"
+import { PIPELINE_STAGES, formatEur, formatPct, marginColor } from "@/lib/constants"
 import { cn } from "@/lib/utils"
 import {
   Upload as UploadIcon, X, FileImage, Rocket, RotateCcw,
@@ -116,7 +116,7 @@ function ProcessingIndicator() {
 }
 
 function ResultsView() {
-  const { menuCosts, ingredients, reportMd } = useUploadStore()
+  const { menuCosts, reportMd } = useUploadStore()
 
   if (!menuCosts || !menuCosts.length) return null
 
@@ -124,12 +124,6 @@ function ResultsView() {
     name: m.name.length > 16 ? m.name.slice(0, 14) + ".." : m.name,
     margin: m.margin_percent,
   }))
-
-  function marginColor(pct: number): string {
-    if (pct >= 75) return "#009588"
-    if (pct >= 60) return "#fcbb00"
-    return "#f05100"
-  }
 
   return (
     <div className="space-y-6">
@@ -184,7 +178,7 @@ function ResultsView() {
 }
 
 export function Upload() {
-  const { files, stage, error, startUpload, reset, menuCosts } = useUploadStore()
+  const { files, stage, error, startUpload, reset } = useUploadStore()
   const isProcessing = stage !== "idle" && stage !== "complete" && stage !== "error"
 
   return (
@@ -220,8 +214,14 @@ export function Upload() {
       {isProcessing && <ProcessingIndicator />}
 
       {error && (
-        <div className="mt-4 cafe-card border-destructive/30 bg-red-50 p-4 text-sm text-destructive">
-          {error}
+        <div className="mt-4 cafe-card border-destructive/30 bg-red-50 p-4">
+          <p className="text-sm text-destructive">{error}</p>
+          <button
+            onClick={reset}
+            className="mt-3 inline-flex items-center gap-2 rounded-lg border border-chai bg-white px-4 py-2 text-sm font-medium text-choco hover:bg-cream"
+          >
+            <RotateCcw className="h-4 w-4" /> Start Over
+          </button>
         </div>
       )}
 

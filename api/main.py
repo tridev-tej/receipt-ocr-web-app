@@ -19,6 +19,10 @@ app.include_router(config.router)
 app.include_router(demo.router)
 app.include_router(upload.router)
 
+receipts_dir = Path(__file__).resolve().parent.parent / "data" / "receipts"
+if receipts_dir.is_dir():
+    app.mount("/api/receipts", StaticFiles(directory=str(receipts_dir)), name="receipt-images")
+
 dist = Path(__file__).resolve().parent.parent / "frontend" / "dist"
 if dist.is_dir():
     from fastapi.responses import FileResponse

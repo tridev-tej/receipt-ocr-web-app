@@ -1,11 +1,17 @@
 import { useEffect, useState } from "react"
 import { useDemoStore } from "@/stores/useDemoStore"
 import { confidenceColor } from "@/lib/constants"
-import { ArrowRight } from "lucide-react"
+import { ArrowRight, ImageOff } from "lucide-react"
+
+function receiptImageUrl(receiptId: string): string {
+  const num = receiptId.replace("R-", "")
+  return `/api/receipts/receipt_${num}.jpg`
+}
 
 export function ReceiptsTab() {
   const { receiptIds, selectedReceipt, fetchReceiptIds, fetchReceipt, loading } = useDemoStore()
   const [selectedId, setSelectedId] = useState<string>("")
+  const [imgError, setImgError] = useState(false)
 
   useEffect(() => { fetchReceiptIds() }, [fetchReceiptIds])
 
@@ -16,7 +22,10 @@ export function ReceiptsTab() {
   }, [receiptIds, selectedId])
 
   useEffect(() => {
-    if (selectedId) fetchReceipt(selectedId)
+    if (selectedId) {
+      fetchReceipt(selectedId)
+      setImgError(false)
+    }
   }, [selectedId, fetchReceipt])
 
   if (!receiptIds) {
@@ -50,15 +59,37 @@ export function ReceiptsTab() {
             </div>
           </div>
 
-          {/* 2-panel walkthrough */}
-          <div className="grid gap-4 md:grid-cols-2">
+          {/* 3-panel: Receipt Image | Raw Extraction | Normalized */}
+          <div className="grid gap-4 md:grid-cols-3">
+            {/* Receipt Image */}
+            <div className="cafe-card overflow-hidden">
+              <div className="border-b border-chai/30 bg-cream px-4 py-2">
+                <h4 className="text-sm font-bold text-choco">Receipt Scan</h4>
+              </div>
+              <div className="flex items-center justify-center bg-cream/30 p-2">
+                {imgError ? (
+                  <div className="flex flex-col items-center gap-2 py-12 text-muted-foreground">
+                    <ImageOff className="h-8 w-8" />
+                    <span className="text-xs">Image not available</span>
+                  </div>
+                ) : (
+                  <img
+                    src={receiptImageUrl(selectedId)}
+                    alt={`Receipt ${selectedId}`}
+                    className="max-h-[28rem] w-auto rounded shadow-sm"
+                    onError={() => setImgError(true)}
+                  />
+                )}
+              </div>
+            </div>
+
             {/* Raw Extraction */}
             <div className="cafe-card overflow-hidden">
               <div className="flex items-center justify-between border-b border-chai/30 bg-cream px-4 py-2">
-                <h4 className="text-sm font-bold text-choco">1. Raw Extraction</h4>
+                <h4 className="text-sm font-bold text-choco">Raw Extraction</h4>
                 <ArrowRight className="h-4 w-4 text-cinnamon md:hidden" />
               </div>
-              <div className="max-h-96 overflow-auto p-3">
+              <div className="max-h-[28rem] overflow-auto p-3">
                 {(selectedReceipt.raw_extraction.line_items as Array<Record<string, unknown>>)?.map((item, i) => (
                   <div key={i} className="mb-2 rounded-lg bg-cream/40 p-2 text-xs">
                     <p className="font-medium text-choco">{item.description as string}</p>
@@ -73,9 +104,9 @@ export function ReceiptsTab() {
             {/* Processed */}
             <div className="cafe-card overflow-hidden">
               <div className="border-b border-chai/30 bg-cream px-4 py-2">
-                <h4 className="text-sm font-bold text-choco">2. Normalized + Mapped</h4>
+                <h4 className="text-sm font-bold text-choco">Normalized + Mapped</h4>
               </div>
-              <div className="max-h-96 overflow-auto p-3">
+              <div className="max-h-[28rem] overflow-auto p-3">
                 {selectedReceipt.line_items.map((item) => (
                   <div key={item.id} className="mb-2 rounded-lg border border-chai/20 p-2 text-xs">
                     <p className="font-medium text-choco">{item.raw_description}</p>

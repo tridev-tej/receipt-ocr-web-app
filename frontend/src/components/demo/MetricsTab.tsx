@@ -2,7 +2,7 @@ import { useEffect } from "react"
 import { useDemoStore } from "@/stores/useDemoStore"
 import {
   FileText, AlertTriangle, Layers, Gauge,
-  Clock, DollarSign,
+  Clock, DollarSign, Timer,
 } from "lucide-react"
 
 export function MetricsTab() {
@@ -20,6 +20,7 @@ export function MetricsTab() {
     { icon: Layers, label: "Total Line Items", value: metrics.total_line_items },
     { icon: Gauge, label: "Avg OCR Confidence", value: `${(metrics.avg_ocr_confidence * 100).toFixed(1)}%` },
     { icon: Clock, label: "Mapping Rate", value: `${(metrics.mapping_rate * 100).toFixed(1)}%` },
+    { icon: Timer, label: "Duration", value: `${Math.round(metrics.duration_seconds)}s` },
     { icon: DollarSign, label: "API Cost", value: `$${metrics.total_api_cost_usd.toFixed(2)}` },
   ]
 

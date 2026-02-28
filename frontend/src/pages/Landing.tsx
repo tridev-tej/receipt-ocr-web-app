@@ -2,10 +2,11 @@ import { Link } from "react-router-dom"
 import { motion } from "framer-motion"
 import {
   Eye, ShieldCheck, Ruler, Tags, Link as LinkIcon,
-  Calculator, Database, FileText, ArrowRight, Coffee,
+  Calculator, Database, FileText, ArrowRight,
   Zap, Target, BarChart3, CheckCircle2, AlertTriangle,
   Layers, Cpu, FlaskConical,
 } from "lucide-react"
+import { WingsLogo } from "@/components/WingsLogo"
 
 const fadeUp = {
   hidden: { opacity: 0, y: 32 },
@@ -53,7 +54,7 @@ function Hero() {
           transition={{ duration: 0.5 }}
           className="mb-6 inline-flex items-center gap-2 rounded-full border border-cinnamon/30 bg-cream px-4 py-1.5 text-sm font-medium text-syrup"
         >
-          <Coffee className="h-4 w-4" />
+          <WingsLogo className="h-4 w-4" />
           Receipt OCR Pipeline
         </motion.div>
 

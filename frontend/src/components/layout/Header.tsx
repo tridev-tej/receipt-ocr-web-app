@@ -1,6 +1,6 @@
 import { Link, useLocation } from "react-router-dom"
-import { Coffee } from "lucide-react"
 import { cn } from "@/lib/utils"
+import { WingsLogo } from "@/components/WingsLogo"
 
 const NAV = [
   { to: "/", label: "Home" },
@@ -16,7 +16,7 @@ export function Header() {
       <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-4">
         <Link to="/" className="flex items-center gap-2.5 no-underline">
           <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-syrup text-cream">
-            <Coffee className="h-5 w-5" />
+            <WingsLogo className="h-5 w-5" />
           </div>
           <span className="font-serif text-xl font-bold text-choco">
             Cafe Super44

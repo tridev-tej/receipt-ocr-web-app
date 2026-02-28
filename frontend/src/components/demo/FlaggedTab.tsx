@@ -14,9 +14,9 @@ export function FlaggedTab() {
   return (
     <div>
       <p className="mb-4 text-sm text-muted-foreground">{flagged.length} items flagged for manual review</p>
-      <div className="cafe-card overflow-hidden">
+      <div className="cafe-card overflow-x-auto">
         <div className="max-h-[600px] overflow-auto">
-          <table className="w-full text-sm">
+          <table className="w-full min-w-[640px] text-sm">
             <thead className="sticky top-0">
               <tr className="border-b border-chai/30 bg-cream">
                 <th className="px-3 py-2 text-left text-xs font-semibold text-choco">Receipt</th>

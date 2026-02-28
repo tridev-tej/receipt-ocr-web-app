@@ -50,8 +50,8 @@ export function MenuCostsTab() {
       </div>
 
       {/* Cost Table */}
-      <div className="cafe-card overflow-hidden">
-        <table className="w-full text-sm">
+      <div className="cafe-card overflow-x-auto">
+        <table className="w-full min-w-[600px] text-sm">
           <thead>
             <tr className="border-b border-chai/30 bg-cream">
               <th className="px-4 py-3 text-left font-semibold text-choco">Item</th>

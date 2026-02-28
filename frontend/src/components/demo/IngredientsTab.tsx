@@ -55,7 +55,7 @@ export function IngredientsTab() {
               </button>
             </div>
 
-            <div className="mb-4 grid grid-cols-4 gap-3">
+            <div className="mb-4 grid grid-cols-2 gap-3 sm:grid-cols-4">
               {[
                 { label: "Avg Cost", value: `${formatEur(selected.avg_cost_per_unit, 4)}/${selected.unit}` },
                 { label: "Std Dev", value: formatEur(selected.std_dev, 4) },

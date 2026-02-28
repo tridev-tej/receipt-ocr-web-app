@@ -50,12 +50,13 @@ export function ReceiptsTab() {
             </div>
           </div>
 
-          {/* 3-panel walkthrough */}
-          <div className="grid gap-4 lg:grid-cols-3">
+          {/* 2-panel walkthrough */}
+          <div className="grid gap-4 md:grid-cols-2">
             {/* Raw Extraction */}
             <div className="cafe-card overflow-hidden">
-              <div className="border-b border-chai/30 bg-cream px-4 py-2">
+              <div className="flex items-center justify-between border-b border-chai/30 bg-cream px-4 py-2">
                 <h4 className="text-sm font-bold text-choco">1. Raw Extraction</h4>
+                <ArrowRight className="h-4 w-4 text-cinnamon md:hidden" />
               </div>
               <div className="max-h-96 overflow-auto p-3">
                 {(selectedReceipt.raw_extraction.line_items as Array<Record<string, unknown>>)?.map((item, i) => (
@@ -69,13 +70,8 @@ export function ReceiptsTab() {
               </div>
             </div>
 
-            {/* Arrow */}
-            <div className="hidden items-center justify-center lg:flex">
-              <ArrowRight className="h-8 w-8 text-cinnamon" />
-            </div>
-
             {/* Processed */}
-            <div className="cafe-card overflow-hidden lg:col-span-1">
+            <div className="cafe-card overflow-hidden">
               <div className="border-b border-chai/30 bg-cream px-4 py-2">
                 <h4 className="text-sm font-bold text-choco">2. Normalized + Mapped</h4>
               </div>

@@ -1,0 +1,62 @@
+{
+  "supplier": "Panaderia del Sol S.L.",
+  "date": "2024-01-07",
+  "currency": "EUR",
+  "language": "es",
+  "line_items": [
+    {
+      "description": "Granos de Cafe (1kg)",
+      "quantity": 7.0,
+      "unit": "kg",
+      "unit_price": 20.46,
+      "total": 143.22,
+      "is_tax_or_fee": false,
+      "is_discount": false,
+      "confidence": "high"
+    },
+    {
+      "description": "Miel de Flores (500g)",
+      "quantity": 8.0,
+      "unit": "500g",
+      "unit_price": 7.07,
+      "total": 56.56,
+      "is_tax_or_fee": false,
+      "is_discount": false,
+      "confidence": "high"
+    },
+    {
+      "description": "Azucar Blanco (1kg)",
+      "quantity": 1.0,
+      "unit": "kg",
+      "unit_price": 1.14,
+      "total": 1.14,
+      "is_tax_or_fee": false,
+      "is_discount": false,
+      "confidence": "high"
+    },
+    {
+      "description": "Leche Entera (1L)",
+      "quantity": 2.0,
+      "unit": "L",
+      "unit_price": 1.26,
+      "total": 2.52,
+      "is_tax_or_fee": false,
+      "is_discount": false,
+      "confidence": "high"
+    },
+    {
+      "description": "Cruasanes (caja/12)",
+      "quantity": 3.0,
+      "unit": "box/12",
+      "unit_price": 12.04,
+      "total": 36.12,
+      "is_tax_or_fee": false,
+      "is_discount": false,
+      "confidence": "high"
+    }
+  ],
+  "subtotal": 239.56,
+  "tax": 50.31,
+  "total": 289.87,
+  "notes": ""
+}

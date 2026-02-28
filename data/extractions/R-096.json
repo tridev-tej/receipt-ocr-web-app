@@ -1,0 +1,42 @@
+{
+  "supplier": "PackRight Supplies",
+  "date": "2024-01-31",
+  "currency": "EUR",
+  "language": "en",
+  "line_items": [
+    {
+      "description": "Cup Lids Universal (pack/1000)",
+      "quantity": 6.0,
+      "unit": "pk/1000",
+      "unit_price": 47.56,
+      "total": 285.36,
+      "is_tax_or_fee": false,
+      "is_discount": false,
+      "confidence": "high"
+    },
+    {
+      "description": "Discount (10%)",
+      "quantity": 1.0,
+      "unit": "each",
+      "unit_price": -28.54,
+      "total": -28.54,
+      "is_tax_or_fee": false,
+      "is_discount": true,
+      "confidence": "high"
+    },
+    {
+      "description": "Delivery Charge",
+      "quantity": 1.0,
+      "unit": "each",
+      "unit_price": 8.5,
+      "total": 8.5,
+      "is_tax_or_fee": true,
+      "is_discount": false,
+      "confidence": "high"
+    }
+  ],
+  "subtotal": 285.36,
+  "tax": 55.72,
+  "total": 321.04,
+  "notes": ""
+}

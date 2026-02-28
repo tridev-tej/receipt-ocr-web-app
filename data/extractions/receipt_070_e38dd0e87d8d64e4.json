@@ -1,0 +1,32 @@
+{
+  "supplier": "Green Garden Produce",
+  "date": "2024-02-08",
+  "currency": "EUR",
+  "language": "en",
+  "line_items": [
+    {
+      "description": "Lemons (box of 50)",
+      "quantity": 1.0,
+      "unit": "box",
+      "unit_price": 17.66,
+      "total": 17.66,
+      "is_tax_or_fee": false,
+      "is_discount": false,
+      "confidence": "medium"
+    },
+    {
+      "description": "Organic Lemons (per kg)",
+      "quantity": 2.0,
+      "unit": "kg",
+      "unit_price": 3.54,
+      "total": 7.08,
+      "is_tax_or_fee": false,
+      "is_discount": false,
+      "confidence": "medium"
+    }
+  ],
+  "subtotal": 24.74,
+  "tax": 5.2,
+  "total": 29.94,
+  "notes": ""
+}

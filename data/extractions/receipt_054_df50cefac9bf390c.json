@@ -1,0 +1,22 @@
+{
+  "supplier": "PackRight Supplies",
+  "date": "2024-01-28",
+  "currency": "EUR",
+  "language": "en",
+  "line_items": [
+    {
+      "description": "Paper Bags Small (pack/500)",
+      "quantity": 4.0,
+      "unit": "pk/500",
+      "unit_price": 34.01,
+      "total": 136.04,
+      "is_tax_or_fee": false,
+      "is_discount": false,
+      "confidence": "high"
+    }
+  ],
+  "subtotal": 136.04,
+  "tax": 28.57,
+  "total": 164.61,
+  "notes": ""
+}

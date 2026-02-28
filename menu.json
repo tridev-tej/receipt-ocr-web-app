@@ -1,0 +1,192 @@
+{
+  "menu_items": [
+    {
+      "id": "espresso",
+      "name": "Espresso",
+      "category": "hot_drinks",
+      "sell_price": 2.50,
+      "recipe": {
+        "coffee_beans": {"qty": 18, "unit": "g"}
+      },
+      "packaging": {
+        "cup_8oz": {"qty": 1, "unit": "each"}
+      }
+    },
+    {
+      "id": "cappuccino",
+      "name": "Cappuccino",
+      "category": "hot_drinks",
+      "sell_price": 3.80,
+      "recipe": {
+        "coffee_beans": {"qty": 18, "unit": "g"},
+        "whole_milk": {"qty": 180, "unit": "ml"}
+      },
+      "packaging": {
+        "cup_12oz": {"qty": 1, "unit": "each"},
+        "lid": {"qty": 1, "unit": "each"}
+      }
+    },
+    {
+      "id": "latte",
+      "name": "Latte",
+      "category": "hot_drinks",
+      "sell_price": 4.20,
+      "recipe": {
+        "coffee_beans": {"qty": 18, "unit": "g"},
+        "whole_milk": {"qty": 240, "unit": "ml"}
+      },
+      "packaging": {
+        "cup_16oz": {"qty": 1, "unit": "each"},
+        "lid": {"qty": 1, "unit": "each"}
+      }
+    },
+    {
+      "id": "oat_latte",
+      "name": "Oat Milk Latte",
+      "category": "hot_drinks",
+      "sell_price": 4.80,
+      "recipe": {
+        "coffee_beans": {"qty": 18, "unit": "g"},
+        "oat_milk": {"qty": 240, "unit": "ml"}
+      },
+      "packaging": {
+        "cup_16oz": {"qty": 1, "unit": "each"},
+        "lid": {"qty": 1, "unit": "each"}
+      }
+    },
+    {
+      "id": "hot_chocolate",
+      "name": "Hot Chocolate",
+      "category": "hot_drinks",
+      "sell_price": 4.00,
+      "recipe": {
+        "cocoa_powder": {"qty": 25, "unit": "g"},
+        "whole_milk": {"qty": 250, "unit": "ml"},
+        "sugar": {"qty": 15, "unit": "g"}
+      },
+      "packaging": {
+        "cup_12oz": {"qty": 1, "unit": "each"},
+        "lid": {"qty": 1, "unit": "each"}
+      }
+    },
+    {
+      "id": "fresh_lemonade",
+      "name": "Fresh Lemonade",
+      "category": "cold_drinks",
+      "sell_price": 3.50,
+      "recipe": {
+        "lemon": {"qty": 2, "unit": "each"},
+        "sugar": {"qty": 30, "unit": "g"},
+        "fresh_mint": {"qty": 5, "unit": "g"}
+      },
+      "packaging": {
+        "cup_16oz": {"qty": 1, "unit": "each"},
+        "lid": {"qty": 1, "unit": "each"},
+        "straw": {"qty": 1, "unit": "each"}
+      }
+    },
+    {
+      "id": "berry_smoothie",
+      "name": "Berry Smoothie",
+      "category": "cold_drinks",
+      "sell_price": 5.50,
+      "recipe": {
+        "mixed_berries": {"qty": 150, "unit": "g"},
+        "whole_milk": {"qty": 200, "unit": "ml"},
+        "honey": {"qty": 20, "unit": "g"}
+      },
+      "packaging": {
+        "cup_16oz": {"qty": 1, "unit": "each"},
+        "lid": {"qty": 1, "unit": "each"},
+        "straw": {"qty": 1, "unit": "each"}
+      }
+    },
+    {
+      "id": "avocado_toast",
+      "name": "Avocado Toast",
+      "category": "food",
+      "sell_price": 6.50,
+      "recipe": {
+        "avocado": {"qty": 1, "unit": "each"},
+        "bread_loaf": {"qty": 0.1, "unit": "each"},
+        "lemon": {"qty": 0.25, "unit": "each"},
+        "salt": {"qty": 2, "unit": "g"}
+      },
+      "packaging": {
+        "napkin": {"qty": 2, "unit": "each"}
+      }
+    },
+    {
+      "id": "butter_croissant",
+      "name": "Butter Croissant",
+      "category": "food",
+      "sell_price": 3.00,
+      "recipe": {
+        "croissant": {"qty": 1, "unit": "each"}
+      },
+      "packaging": {
+        "napkin": {"qty": 1, "unit": "each"},
+        "paper_bag": {"qty": 1, "unit": "each"}
+      }
+    },
+    {
+      "id": "blueberry_muffin",
+      "name": "Blueberry Muffin",
+      "category": "food",
+      "sell_price": 3.50,
+      "recipe": {
+        "muffin": {"qty": 1, "unit": "each"}
+      },
+      "packaging": {
+        "napkin": {"qty": 1, "unit": "each"},
+        "paper_bag": {"qty": 1, "unit": "each"}
+      }
+    },
+    {
+      "id": "morning_deal",
+      "name": "Morning Deal (Cappuccino + Croissant)",
+      "category": "combo",
+      "sell_price": 5.50,
+      "combo_of": ["cappuccino", "butter_croissant"]
+    },
+    {
+      "id": "honey_latte",
+      "name": "Honey Latte",
+      "category": "hot_drinks",
+      "sell_price": 4.50,
+      "recipe": {
+        "coffee_beans": {"qty": 18, "unit": "g"},
+        "whole_milk": {"qty": 220, "unit": "ml"},
+        "honey": {"qty": 15, "unit": "g"}
+      },
+      "packaging": {
+        "cup_16oz": {"qty": 1, "unit": "each"},
+        "lid": {"qty": 1, "unit": "each"}
+      }
+    }
+  ],
+  "ingredients": {
+    "coffee_beans": {"display_name": "Coffee Beans", "unit": "g"},
+    "cocoa_powder": {"display_name": "Cocoa Powder", "unit": "g"},
+    "whole_milk": {"display_name": "Whole Milk", "unit": "ml"},
+    "oat_milk": {"display_name": "Oat Milk", "unit": "ml"},
+    "sugar": {"display_name": "Sugar", "unit": "g"},
+    "honey": {"display_name": "Honey", "unit": "g"},
+    "lemon": {"display_name": "Lemon", "unit": "each"},
+    "fresh_mint": {"display_name": "Fresh Mint", "unit": "g"},
+    "mixed_berries": {"display_name": "Mixed Berries", "unit": "g"},
+    "avocado": {"display_name": "Avocado", "unit": "each"},
+    "bread_loaf": {"display_name": "Bread (Sourdough)", "unit": "each"},
+    "salt": {"display_name": "Salt", "unit": "g"},
+    "croissant": {"display_name": "Butter Croissant", "unit": "each"},
+    "muffin": {"display_name": "Blueberry Muffin", "unit": "each"},
+    "cup_8oz": {"display_name": "Paper Cup 8oz", "unit": "each"},
+    "cup_12oz": {"display_name": "Paper Cup 12oz", "unit": "each"},
+    "cup_16oz": {"display_name": "Paper Cup 16oz", "unit": "each"},
+    "lid": {"display_name": "Cup Lid", "unit": "each"},
+    "straw": {"display_name": "Paper Straw", "unit": "each"},
+    "napkin": {"display_name": "Napkin", "unit": "each"},
+    "paper_bag": {"display_name": "Paper Bag", "unit": "each"},
+    "cream": {"display_name": "Cream", "unit": "ml"}
+  }
+}

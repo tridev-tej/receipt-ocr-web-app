@@ -1,0 +1,32 @@
+{
+  "supplier": "Artisan Bakehouse",
+  "date": "2024-01-15",
+  "currency": "EUR",
+  "language": "en",
+  "line_items": [
+    {
+      "description": "Sourdough Bread Loaf",
+      "quantity": 6.0,
+      "unit": "each",
+      "unit_price": 2.61,
+      "total": 15.66,
+      "is_tax_or_fee": false,
+      "is_discount": false,
+      "confidence": "high"
+    },
+    {
+      "description": "Chocolate Muffins (box/12)",
+      "quantity": 3.0,
+      "unit": "box/12",
+      "unit_price": 11.74,
+      "total": 35.22,
+      "is_tax_or_fee": false,
+      "is_discount": false,
+      "confidence": "high"
+    }
+  ],
+  "subtotal": 50.88,
+  "tax": 10.68,
+  "total": 61.56,
+  "notes": ""
+}

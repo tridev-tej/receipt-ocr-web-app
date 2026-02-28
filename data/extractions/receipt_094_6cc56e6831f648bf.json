@@ -1,0 +1,42 @@
+{
+  "supplier": "Green Garden Produce",
+  "date": "2024-01-19",
+  "currency": "EUR",
+  "language": "en",
+  "line_items": [
+    {
+      "description": "Lemons (per kg)",
+      "quantity": 8.0,
+      "unit": "kg",
+      "unit_price": 3.37,
+      "total": 26.96,
+      "is_tax_or_fee": false,
+      "is_discount": false,
+      "confidence": "high"
+    },
+    {
+      "description": "Hass Avocados (each)",
+      "quantity": 4.0,
+      "unit": "each",
+      "unit_price": 1.83,
+      "total": 7.32,
+      "is_tax_or_fee": false,
+      "is_discount": false,
+      "confidence": "high"
+    },
+    {
+      "description": "Organic Lemons (per kg)",
+      "quantity": 7.0,
+      "unit": "kg",
+      "unit_price": 4.23,
+      "total": 29.61,
+      "is_tax_or_fee": false,
+      "is_discount": false,
+      "confidence": "high"
+    }
+  ],
+  "subtotal": 63.89,
+  "tax": 5.75,
+  "total": 69.64,
+  "notes": ""
+}

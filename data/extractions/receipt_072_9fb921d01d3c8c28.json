@@ -1,0 +1,52 @@
+{
+  "supplier": "PackRight Supplies",
+  "date": "2024-02-09",
+  "currency": "EUR",
+  "language": "en",
+  "line_items": [
+    {
+      "description": "Paper Cups 12oz (pack/500)",
+      "quantity": 7.0,
+      "unit": "pk/500",
+      "unit_price": 30.72,
+      "total": 215.04,
+      "is_tax_or_fee": false,
+      "is_discount": false,
+      "confidence": "high"
+    },
+    {
+      "description": "Napkins 1-ply (pack/1000)",
+      "quantity": 7.0,
+      "unit": "pk/1000",
+      "unit_price": 10.58,
+      "total": 74.06,
+      "is_tax_or_fee": false,
+      "is_discount": false,
+      "confidence": "high"
+    },
+    {
+      "description": "Paper Bags Large (pack/250)",
+      "quantity": 7.0,
+      "unit": "pk/250",
+      "unit_price": 27.51,
+      "total": 192.57,
+      "is_tax_or_fee": false,
+      "is_discount": false,
+      "confidence": "high"
+    },
+    {
+      "description": "Discount (10%)",
+      "quantity": 1.0,
+      "unit": "each",
+      "unit_price": -48.17,
+      "total": -48.17,
+      "is_tax_or_fee": false,
+      "is_discount": true,
+      "confidence": "high"
+    }
+  ],
+  "subtotal": 481.67,
+  "tax": 91.03,
+  "total": 524.53,
+  "notes": ""
+}

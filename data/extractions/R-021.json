@@ -1,0 +1,72 @@
+{
+  "supplier": "Sweet Harvest Trading",
+  "date": "2024-01-13",
+  "currency": "EUR",
+  "language": "en",
+  "line_items": [
+    {
+      "description": "Wildflower Honey (500g)",
+      "quantity": 5.0,
+      "unit": "500g",
+      "unit_price": 4.74,
+      "total": 23.7,
+      "is_tax_or_fee": false,
+      "is_discount": false,
+      "confidence": "high"
+    },
+    {
+      "description": "Raw Cane Sugar (1kg)",
+      "quantity": 8.0,
+      "unit": "kg",
+      "unit_price": 1.63,
+      "total": 13.04,
+      "is_tax_or_fee": false,
+      "is_discount": false,
+      "confidence": "high"
+    },
+    {
+      "description": "White Sugar (25kg sack)",
+      "quantity": 7.0,
+      "unit": "25kg",
+      "unit_price": 22.22,
+      "total": 155.54,
+      "is_tax_or_fee": false,
+      "is_discount": false,
+      "confidence": "high"
+    },
+    {
+      "description": "Demerara Sugar (1kg)",
+      "quantity": 2.0,
+      "unit": "kg",
+      "unit_price": 1.28,
+      "total": 2.56,
+      "is_tax_or_fee": false,
+      "is_discount": false,
+      "confidence": "high"
+    },
+    {
+      "description": "Sea Salt (1kg)",
+      "quantity": 2.0,
+      "unit": "kg",
+      "unit_price": 0.51,
+      "total": 1.02,
+      "is_tax_or_fee": false,
+      "is_discount": false,
+      "confidence": "high"
+    },
+    {
+      "description": "Organic Honey (1kg)",
+      "quantity": 4.0,
+      "unit": "kg",
+      "unit_price": 12.97,
+      "total": 51.88,
+      "is_tax_or_fee": false,
+      "is_discount": false,
+      "confidence": "high"
+    }
+  ],
+  "subtotal": 247.74,
+  "tax": 52.03,
+  "total": 299.77,
+  "notes": ""
+}

@@ -1,0 +1,52 @@
+{
+  "supplier": "Green Garden Produce",
+  "date": "2024-01-10",
+  "currency": "EUR",
+  "language": "en",
+  "line_items": [
+    {
+      "description": "Hass Avocados (each)",
+      "quantity": 7.0,
+      "unit": "each",
+      "unit_price": 1.6,
+      "total": 11.2,
+      "is_tax_or_fee": false,
+      "is_discount": false,
+      "confidence": "high"
+    },
+    {
+      "description": "Lemons (box of 50)",
+      "quantity": 3.0,
+      "unit": "box",
+      "unit_price": 13.56,
+      "total": 40.68,
+      "is_tax_or_fee": false,
+      "is_discount": false,
+      "confidence": "high"
+    },
+    {
+      "description": "Mixed Berries Frozen (1kg)",
+      "quantity": 4.0,
+      "unit": "kg",
+      "unit_price": 6.19,
+      "total": 24.76,
+      "is_tax_or_fee": false,
+      "is_discount": false,
+      "confidence": "high"
+    },
+    {
+      "description": "Lemons (per kg)",
+      "quantity": 5.0,
+      "unit": "kg",
+      "unit_price": 3.57,
+      "total": 17.85,
+      "is_tax_or_fee": false,
+      "is_discount": false,
+      "confidence": "high"
+    }
+  ],
+  "subtotal": 94.49,
+  "tax": 19.84,
+  "total": 114.33,
+  "notes": ""
+}

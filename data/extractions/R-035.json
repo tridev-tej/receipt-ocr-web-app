@@ -1,0 +1,42 @@
+{
+  "supplier": "Artisan Bakehouse",
+  "date": "2024-02-26",
+  "currency": "EUR",
+  "language": "en",
+  "line_items": [
+    {
+      "description": "Chocolate Muffins (box/12)",
+      "quantity": 2.0,
+      "unit": "box/12",
+      "unit_price": 12.25,
+      "total": 24.5,
+      "is_tax_or_fee": false,
+      "is_discount": false,
+      "confidence": "high"
+    },
+    {
+      "description": "Almond Croissants (each)",
+      "quantity": 8.0,
+      "unit": "each",
+      "unit_price": 1.49,
+      "total": 11.92,
+      "is_tax_or_fee": false,
+      "is_discount": false,
+      "confidence": "high"
+    },
+    {
+      "description": "Whole Wheat Loaf",
+      "quantity": 6.0,
+      "unit": "each",
+      "unit_price": 2.9,
+      "total": 17.4,
+      "is_tax_or_fee": false,
+      "is_discount": false,
+      "confidence": "high"
+    }
+  ],
+  "subtotal": 53.82,
+  "tax": 11.3,
+  "total": 65.12,
+  "notes": ""
+}

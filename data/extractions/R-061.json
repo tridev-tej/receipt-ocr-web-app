@@ -1,0 +1,22 @@
+{
+  "supplier": "Kaffee Kontor GmbH",
+  "date": "2024-02-24",
+  "currency": "EUR",
+  "language": "de",
+  "line_items": [
+    {
+      "description": "Vanillezucker (250g)",
+      "quantity": 2.0,
+      "unit": "250g",
+      "unit_price": 4.82,
+      "total": 9.64,
+      "is_tax_or_fee": false,
+      "is_discount": false,
+      "confidence": "high"
+    }
+  ],
+  "subtotal": 9.64,
+  "tax": 2.02,
+  "total": 11.66,
+  "notes": ""
+}

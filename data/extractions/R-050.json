@@ -1,0 +1,22 @@
+{
+  "supplier": "Fresh Fields Dairy",
+  "date": "2024-01-07",
+  "currency": "EUR",
+  "language": "en",
+  "line_items": [
+    {
+      "description": "Oat Milk Barista (6-pack)",
+      "quantity": 1.0,
+      "unit": "6pk",
+      "unit_price": 14.62,
+      "total": 14.62,
+      "is_tax_or_fee": false,
+      "is_discount": false,
+      "confidence": "high"
+    }
+  ],
+  "subtotal": 14.62,
+  "tax": 3.07,
+  "total": 17.69,
+  "notes": ""
+}

@@ -1,0 +1,62 @@
+{
+  "supplier": "Bean & Leaf Co.",
+  "date": "2024-01-22",
+  "currency": "EUR",
+  "language": "en",
+  "line_items": [
+    {
+      "description": "Robusta Coffee Beans (1kg)",
+      "quantity": 3.0,
+      "unit": "kg",
+      "unit_price": 16.15,
+      "total": 48.45,
+      "is_tax_or_fee": false,
+      "is_discount": false,
+      "confidence": "medium"
+    },
+    {
+      "description": "Cocoa Powder (1kg)",
+      "quantity": 4.0,
+      "unit": "kg",
+      "unit_price": 13.83,
+      "total": 55.32,
+      "is_tax_or_fee": false,
+      "is_discount": false,
+      "confidence": "medium"
+    },
+    {
+      "description": "Espresso Roast Beans (1kg)",
+      "quantity": 5.0,
+      "unit": "kg",
+      "unit_price": 20.69,
+      "total": 103.45,
+      "is_tax_or_fee": false,
+      "is_discount": false,
+      "confidence": "medium"
+    },
+    {
+      "description": "Arabica Coffee Beans (1kg)",
+      "quantity": 5.0,
+      "unit": "kg",
+      "unit_price": 22.54,
+      "total": 112.7,
+      "is_tax_or_fee": false,
+      "is_discount": false,
+      "confidence": "medium"
+    },
+    {
+      "description": "Decaf Coffee Beans (1kg)",
+      "quantity": 6.0,
+      "unit": "kg",
+      "unit_price": 24.12,
+      "total": 144.72,
+      "is_tax_or_fee": false,
+      "is_discount": false,
+      "confidence": "medium"
+    }
+  ],
+  "subtotal": 464.64,
+  "tax": 97.57,
+  "total": 562.21,
+  "notes": ""
+}

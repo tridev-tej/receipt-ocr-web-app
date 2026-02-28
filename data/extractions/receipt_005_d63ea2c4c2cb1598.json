@@ -1,0 +1,62 @@
+{
+  "supplier": "Artisan Bakehouse",
+  "date": "2024-01-06",
+  "currency": "EUR",
+  "language": "en",
+  "line_items": [
+    {
+      "description": "Whole Wheat Loaf",
+      "quantity": 8.0,
+      "unit": "each",
+      "unit_price": 2.99,
+      "total": 23.92,
+      "is_tax_or_fee": false,
+      "is_discount": false,
+      "confidence": "high"
+    },
+    {
+      "description": "Pain au Chocolat (box/24)",
+      "quantity": 2.0,
+      "unit": "box/24",
+      "unit_price": 22.95,
+      "total": 45.9,
+      "is_tax_or_fee": false,
+      "is_discount": false,
+      "confidence": "high"
+    },
+    {
+      "description": "Butter Croissants (box/24)",
+      "quantity": 2.0,
+      "unit": "box/24",
+      "unit_price": 23.64,
+      "total": 47.28,
+      "is_tax_or_fee": false,
+      "is_discount": false,
+      "confidence": "high"
+    },
+    {
+      "description": "Butter Croissants (each)",
+      "quantity": 2.0,
+      "unit": "each",
+      "unit_price": 1.12,
+      "total": 2.24,
+      "is_tax_or_fee": false,
+      "is_discount": false,
+      "confidence": "high"
+    },
+    {
+      "description": "Discount (5%)",
+      "quantity": 1.0,
+      "unit": "each",
+      "unit_price": -5.97,
+      "total": -5.97,
+      "is_tax_or_fee": false,
+      "is_discount": true,
+      "confidence": "high"
+    }
+  ],
+  "subtotal": 119.34,
+  "tax": 10.2,
+  "total": 123.57,
+  "notes": ""
+}

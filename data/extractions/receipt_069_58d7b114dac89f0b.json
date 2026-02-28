@@ -1,0 +1,52 @@
+{
+  "supplier": "Sweet Harvest Trading",
+  "date": "2024-02-20",
+  "currency": "EUR",
+  "language": "en",
+  "line_items": [
+    {
+      "description": "Acacia Honey (1kg)",
+      "quantity": 2.0,
+      "unit": "kg",
+      "unit_price": 8.14,
+      "total": 16.28,
+      "is_tax_or_fee": false,
+      "is_discount": false,
+      "confidence": "high"
+    },
+    {
+      "description": "Raw Cane Sugar (1kg)",
+      "quantity": 7.0,
+      "unit": "kg",
+      "unit_price": 1.72,
+      "total": 12.04,
+      "is_tax_or_fee": false,
+      "is_discount": false,
+      "confidence": "high"
+    },
+    {
+      "description": "White Granulated Sugar (1kg)",
+      "quantity": 1.0,
+      "unit": "kg",
+      "unit_price": 1.19,
+      "total": 1.19,
+      "is_tax_or_fee": false,
+      "is_discount": false,
+      "confidence": "high"
+    },
+    {
+      "description": "Staff Aprons (pack/5)",
+      "quantity": 1.0,
+      "unit": "pack",
+      "unit_price": 35.0,
+      "total": 35.0,
+      "is_tax_or_fee": false,
+      "is_discount": false,
+      "confidence": "high"
+    }
+  ],
+  "subtotal": 64.51,
+  "tax": 13.55,
+  "total": 78.06,
+  "notes": ""
+}

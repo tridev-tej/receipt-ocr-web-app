@@ -1,0 +1,22 @@
+{
+  "supplier": "UK Cafe Supply Ltd",
+  "date": "2024-01-23",
+  "currency": "GBP",
+  "language": "en",
+  "line_items": [
+    {
+      "description": "Full Fat Milk (1L)",
+      "quantity": 7.0,
+      "unit": "L",
+      "unit_price": 1.0,
+      "total": 7.0,
+      "is_tax_or_fee": false,
+      "is_discount": false,
+      "confidence": "high"
+    }
+  ],
+  "subtotal": 7.0,
+  "tax": 1.47,
+  "total": 8.47,
+  "notes": ""
+}

@@ -1,0 +1,436 @@
+{
+  "run_id": "ba40919f",
+  "pipeline_score": 0.9576,
+  "threshold": 0.85,
+  "pass": true,
+  "mapping": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1": 1.0,
+    "correct_mappings": 296,
+    "incorrect_mappings": 0,
+    "total_mapped": 296,
+    "total_mappable": 296,
+    "unmapped_should_be": 0,
+    "per_ingredient": {
+      "avocado": {
+        "correct": 8,
+        "incorrect": 0,
+        "accuracy": 1.0
+      },
+      "bread_loaf": {
+        "correct": 15,
+        "incorrect": 0,
+        "accuracy": 1.0
+      },
+      "cocoa_powder": {
+        "correct": 7,
+        "incorrect": 0,
+        "accuracy": 1.0
+      },
+      "coffee_beans": {
+        "correct": 41,
+        "incorrect": 0,
+        "accuracy": 1.0
+      },
+      "cream": {
+        "correct": 7,
+        "incorrect": 0,
+        "accuracy": 1.0
+      },
+      "croissant": {
+        "correct": 26,
+        "incorrect": 0,
+        "accuracy": 1.0
+      },
+      "cup_12oz": {
+        "correct": 8,
+        "incorrect": 0,
+        "accuracy": 1.0
+      },
+      "cup_16oz": {
+        "correct": 5,
+        "incorrect": 0,
+        "accuracy": 1.0
+      },
+      "cup_8oz": {
+        "correct": 3,
+        "incorrect": 0,
+        "accuracy": 1.0
+      },
+      "fresh_mint": {
+        "correct": 11,
+        "incorrect": 0,
+        "accuracy": 1.0
+      },
+      "honey": {
+        "correct": 19,
+        "incorrect": 0,
+        "accuracy": 1.0
+      },
+      "lemon": {
+        "correct": 18,
+        "incorrect": 0,
+        "accuracy": 1.0
+      },
+      "lid": {
+        "correct": 3,
+        "incorrect": 0,
+        "accuracy": 1.0
+      },
+      "mixed_berries": {
+        "correct": 8,
+        "incorrect": 0,
+        "accuracy": 1.0
+      },
+      "muffin": {
+        "correct": 12,
+        "incorrect": 0,
+        "accuracy": 1.0
+      },
+      "napkin": {
+        "correct": 6,
+        "incorrect": 0,
+        "accuracy": 1.0
+      },
+      "oat_milk": {
+        "correct": 17,
+        "incorrect": 0,
+        "accuracy": 1.0
+      },
+      "paper_bag": {
+        "correct": 12,
+        "incorrect": 0,
+        "accuracy": 1.0
+      },
+      "salt": {
+        "correct": 8,
+        "incorrect": 0,
+        "accuracy": 1.0
+      },
+      "straw": {
+        "correct": 3,
+        "incorrect": 0,
+        "accuracy": 1.0
+      },
+      "sugar": {
+        "correct": 29,
+        "incorrect": 0,
+        "accuracy": 1.0
+      },
+      "whole_milk": {
+        "correct": 30,
+        "incorrect": 0,
+        "accuracy": 1.0
+      }
+    },
+    "sample_errors": []
+  },
+  "classification": {
+    "accuracy": 0.7881,
+    "correct": 238,
+    "incorrect": 64,
+    "total": 302,
+    "confusion_matrix": {
+      "ingredient": {
+        "ingredient": 197,
+        "unknown": 59
+      },
+      "packaging": {
+        "packaging": 40
+      },
+      "exclude": {
+        "unknown": 5,
+        "exclude": 1
+      }
+    },
+    "sample_errors": [
+      {
+        "description": "Fresh Blueberries (250g)",
+        "expected": "ingredient",
+        "got": "unknown"
+      },
+      {
+        "description": "Pain au Chocolat (box/24)",
+        "expected": "ingredient",
+        "got": "unknown"
+      },
+      {
+        "description": "Avocados (box of 20)",
+        "expected": "ingredient",
+        "got": "unknown"
+      },
+      {
+        "description": "Pain au Chocolat (box/24)",
+        "expected": "ingredient",
+        "got": "unknown"
+      },
+      {
+        "description": "Almond Croissants (each)",
+        "expected": "ingredient",
+        "got": "unknown"
+      },
+      {
+        "description": "Avocados (box of 20)",
+        "expected": "ingredient",
+        "got": "unknown"
+      },
+      {
+        "description": "Hass Avocados (each)",
+        "expected": "ingredient",
+        "got": "unknown"
+      },
+      {
+        "description": "Fresh Blueberries (250g)",
+        "expected": "ingredient",
+        "got": "unknown"
+      },
+      {
+        "description": "Pain au Chocolat (box/24)",
+        "expected": "ingredient",
+        "got": "unknown"
+      },
+      {
+        "description": "Almond Croissants (each)",
+        "expected": "ingredient",
+        "got": "unknown"
+      },
+      {
+        "description": "Single Origin Ethiopian (1kg)",
+        "expected": "ingredient",
+        "got": "unknown"
+      },
+      {
+        "description": "Lemons (per kg)",
+        "expected": "ingredient",
+        "got": "unknown"
+      },
+      {
+        "description": "Almond Croissants (each)",
+        "expected": "ingredient",
+        "got": "unknown"
+      },
+      {
+        "description": "Organic Lemons (per kg)",
+        "expected": "ingredient",
+        "got": "unknown"
+      },
+      {
+        "description": "Fresh Blueberries (250g)",
+        "expected": "ingredient",
+        "got": "unknown"
+      },
+      {
+        "description": "Almond Croissants (each)",
+        "expected": "ingredient",
+        "got": "unknown"
+      },
+      {
+        "description": "Single Origin Ethiopian (1kg)",
+        "expected": "ingredient",
+        "got": "unknown"
+      },
+      {
+        "description": "Dishwashing Liquid (2L)",
+        "expected": "exclude",
+        "got": "unknown"
+      },
+      {
+        "description": "Lemons (box of 50)",
+        "expected": "ingredient",
+        "got": "unknown"
+      },
+      {
+        "description": "Organic Lemons (per kg)",
+        "expected": "ingredient",
+        "got": "unknown"
+      }
+    ]
+  },
+  "cost": {
+    "accuracy": 1.0,
+    "within_range": 22,
+    "out_of_range": 0,
+    "total_checked": 22,
+    "mean_absolute_deviation": 0.000303,
+    "details": [
+      {
+        "ingredient": "avocado",
+        "expected": 1.35,
+        "actual": 1.35076,
+        "deviation": 0.00076,
+        "tolerance": 0.3,
+        "status": "ok"
+      },
+      {
+        "ingredient": "bread_loaf",
+        "expected": 2.89,
+        "actual": 2.89374,
+        "deviation": 0.00374,
+        "tolerance": 0.5,
+        "status": "ok"
+      },
+      {
+        "ingredient": "cocoa_powder",
+        "expected": 0.014,
+        "actual": 0.014246,
+        "deviation": 0.000246,
+        "tolerance": 0.005,
+        "status": "ok"
+      },
+      {
+        "ingredient": "coffee_beans",
+        "expected": 0.0197,
+        "actual": 0.01972,
+        "deviation": 2e-05,
+        "tolerance": 0.005,
+        "status": "ok"
+      },
+      {
+        "ingredient": "cream",
+        "expected": 0.00542,
+        "actual": 0.00542,
+        "deviation": 0.0,
+        "tolerance": 0.002,
+        "status": "ok"
+      },
+      {
+        "ingredient": "croissant",
+        "expected": 1.117,
+        "actual": 1.116934,
+        "deviation": 6.6e-05,
+        "tolerance": 0.3,
+        "status": "ok"
+      },
+      {
+        "ingredient": "cup_12oz",
+        "expected": 0.065,
+        "actual": 0.065167,
+        "deviation": 0.000167,
+        "tolerance": 0.02,
+        "status": "ok"
+      },
+      {
+        "ingredient": "cup_16oz",
+        "expected": 0.081,
+        "actual": 0.080914,
+        "deviation": 8.6e-05,
+        "tolerance": 0.02,
+        "status": "ok"
+      },
+      {
+        "ingredient": "cup_8oz",
+        "expected": 0.054,
+        "actual": 0.054367,
+        "deviation": 0.000367,
+        "tolerance": 0.02,
+        "status": "ok"
+      },
+      {
+        "ingredient": "fresh_mint",
+        "expected": 0.048,
+        "actual": 0.047907,
+        "deviation": 9.3e-05,
+        "tolerance": 0.02,
+        "status": "ok"
+      },
+      {
+        "ingredient": "honey",
+        "expected": 0.0113,
+        "actual": 0.011333,
+        "deviation": 3.3e-05,
+        "tolerance": 0.005,
+        "status": "ok"
+      },
+      {
+        "ingredient": "lemon",
+        "expected": 0.302,
+        "actual": 0.302323,
+        "deviation": 0.000323,
+        "tolerance": 0.1,
+        "status": "ok"
+      },
+      {
+        "ingredient": "lid",
+        "expected": 0.038,
+        "actual": 0.037877,
+        "deviation": 0.000123,
+        "tolerance": 0.015,
+        "status": "ok"
+      },
+      {
+        "ingredient": "mixed_berries",
+        "expected": 0.0102,
+        "actual": 0.010207,
+        "deviation": 7e-06,
+        "tolerance": 0.005,
+        "status": "ok"
+      },
+      {
+        "ingredient": "muffin",
+        "expected": 1.074,
+        "actual": 1.074252,
+        "deviation": 0.000252,
+        "tolerance": 0.3,
+        "status": "ok"
+      },
+      {
+        "ingredient": "napkin",
+        "expected": 0.0135,
+        "actual": 0.013544,
+        "deviation": 4.4e-05,
+        "tolerance": 0.005,
+        "status": "ok"
+      },
+      {
+        "ingredient": "oat_milk",
+        "expected": 0.00235,
+        "actual": 0.002349,
+        "deviation": 1e-06,
+        "tolerance": 0.001,
+        "status": "ok"
+      },
+      {
+        "ingredient": "paper_bag",
+        "expected": 0.083,
+        "actual": 0.082669,
+        "deviation": 0.000331,
+        "tolerance": 0.03,
+        "status": "ok"
+      },
+      {
+        "ingredient": "salt",
+        "expected": 0.000623,
+        "actual": 0.000623,
+        "deviation": 0.0,
+        "tolerance": 0.0003,
+        "status": "ok"
+      },
+      {
+        "ingredient": "straw",
+        "expected": 0.0249,
+        "actual": 0.024913,
+        "deviation": 1.3e-05,
+        "tolerance": 0.01,
+        "status": "ok"
+      },
+      {
+        "ingredient": "sugar",
+        "expected": 0.00125,
+        "actual": 0.001247,
+        "deviation": 3e-06,
+        "tolerance": 0.0005,
+        "status": "ok"
+      },
+      {
+        "ingredient": "whole_milk",
+        "expected": 0.00115,
+        "actual": 0.00115,
+        "deviation": 0.0,
+        "tolerance": 0.0005,
+        "status": "ok"
+      }
+    ]
+  },
+  "crash_rate": 0.0
+}

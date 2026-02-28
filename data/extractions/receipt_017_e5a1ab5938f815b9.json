@@ -1,0 +1,42 @@
+{
+  "supplier": "Artisan Bakehouse",
+  "date": "2024-01-31",
+  "currency": "EUR",
+  "language": "en",
+  "line_items": [
+    {
+      "description": "Pain au Chocolat (box/24)",
+      "quantity": 2.0,
+      "unit": "box/24",
+      "unit_price": 30.67,
+      "total": 61.34,
+      "is_tax_or_fee": false,
+      "is_discount": false,
+      "confidence": "high"
+    },
+    {
+      "description": "Butter Croissants (each)",
+      "quantity": 8.0,
+      "unit": "each",
+      "unit_price": 1.05,
+      "total": 8.4,
+      "is_tax_or_fee": false,
+      "is_discount": false,
+      "confidence": "high"
+    },
+    {
+      "description": "Almond Croissants (each)",
+      "quantity": 6.0,
+      "unit": "each",
+      "unit_price": 1.39,
+      "total": 8.34,
+      "is_tax_or_fee": false,
+      "is_discount": false,
+      "confidence": "high"
+    }
+  ],
+  "subtotal": 78.08,
+  "tax": null,
+  "total": 78.08,
+  "notes": ""
+}

@@ -1,0 +1,22 @@
+{
+  "supplier": "Green Garden Produce",
+  "date": "2024-01-09",
+  "currency": "EUR",
+  "language": "en",
+  "line_items": [
+    {
+      "description": "Organic Lemons (per kg)",
+      "quantity": 5.0,
+      "unit": "kg",
+      "unit_price": 4.25,
+      "total": 21.25,
+      "is_tax_or_fee": false,
+      "is_discount": false,
+      "confidence": "high"
+    }
+  ],
+  "subtotal": 21.25,
+  "tax": null,
+  "total": 21.25,
+  "notes": ""
+}

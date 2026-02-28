@@ -1,0 +1,52 @@
+{
+  "supplier": "Green Garden Produce",
+  "date": "2024-01-20",
+  "currency": "EUR",
+  "language": "en",
+  "line_items": [
+    {
+      "description": "Fresh Mint (200g pack)",
+      "quantity": 7.0,
+      "unit": "200g",
+      "unit_price": 7.24,
+      "total": 50.68,
+      "is_tax_or_fee": false,
+      "is_discount": false,
+      "confidence": "high"
+    },
+    {
+      "description": "Avocados (box of 20)",
+      "quantity": 1.0,
+      "unit": "box",
+      "unit_price": 22.74,
+      "total": 22.74,
+      "is_tax_or_fee": false,
+      "is_discount": false,
+      "confidence": "high"
+    },
+    {
+      "description": "Lemons (box of 50)",
+      "quantity": 3.0,
+      "unit": "box",
+      "unit_price": 12.87,
+      "total": 38.61,
+      "is_tax_or_fee": false,
+      "is_discount": false,
+      "confidence": "high"
+    },
+    {
+      "description": "Lemons (per kg)",
+      "quantity": 1.0,
+      "unit": "kg",
+      "unit_price": 2.59,
+      "total": 2.59,
+      "is_tax_or_fee": false,
+      "is_discount": false,
+      "confidence": "high"
+    }
+  ],
+  "subtotal": 114.62,
+  "tax": 24.07,
+  "total": 138.69,
+  "notes": ""
+}

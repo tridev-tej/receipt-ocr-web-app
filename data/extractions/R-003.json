@@ -1,0 +1,62 @@
+{
+  "supplier": "Sweet Harvest Trading",
+  "date": "2024-02-28",
+  "currency": "EUR",
+  "language": "en",
+  "line_items": [
+    {
+      "description": "Wildflower Honey (500g)",
+      "quantity": 3.0,
+      "unit": "500g",
+      "unit_price": 5.09,
+      "total": 15.27,
+      "is_tax_or_fee": false,
+      "is_discount": false,
+      "confidence": "high"
+    },
+    {
+      "description": "Demerara Sugar (1kg)",
+      "quantity": 5.0,
+      "unit": "kg",
+      "unit_price": 1.38,
+      "total": 6.9,
+      "is_tax_or_fee": false,
+      "is_discount": false,
+      "confidence": "high"
+    },
+    {
+      "description": "Organic Honey (1kg)",
+      "quantity": 3.0,
+      "unit": "kg",
+      "unit_price": 13.89,
+      "total": 41.67,
+      "is_tax_or_fee": false,
+      "is_discount": false,
+      "confidence": "high"
+    },
+    {
+      "description": "Raw Cane Sugar (1kg)",
+      "quantity": 2.0,
+      "unit": "kg",
+      "unit_price": 1.65,
+      "total": 3.3,
+      "is_tax_or_fee": false,
+      "is_discount": false,
+      "confidence": "high"
+    },
+    {
+      "description": "White Granulated Sugar (1kg)",
+      "quantity": 5.0,
+      "unit": "kg",
+      "unit_price": 1.16,
+      "total": 5.8,
+      "is_tax_or_fee": false,
+      "is_discount": false,
+      "confidence": "high"
+    }
+  ],
+  "subtotal": 72.94,
+  "tax": 15.32,
+  "total": 88.26,
+  "notes": ""
+}

@@ -1,0 +1,52 @@
+{
+  "supplier": "Bean & Leaf Co.",
+  "date": "2024-02-14",
+  "currency": "EUR",
+  "language": "en",
+  "line_items": [
+    {
+      "description": "House Blend Beans (1kg)",
+      "quantity": 4.0,
+      "unit": "kg",
+      "unit_price": 19.32,
+      "total": 77.28,
+      "is_tax_or_fee": false,
+      "is_discount": false,
+      "confidence": "high"
+    },
+    {
+      "description": "Single Origin Ethiopian (1kg)",
+      "quantity": 1.0,
+      "unit": "kg",
+      "unit_price": 22.22,
+      "total": 22.22,
+      "is_tax_or_fee": false,
+      "is_discount": false,
+      "confidence": "high"
+    },
+    {
+      "description": "Robusta Coffee Beans (1kg)",
+      "quantity": 2.0,
+      "unit": "kg",
+      "unit_price": 15.84,
+      "total": 31.68,
+      "is_tax_or_fee": false,
+      "is_discount": false,
+      "confidence": "high"
+    },
+    {
+      "description": "Espresso Roast Beans (1kg)",
+      "quantity": 2.0,
+      "unit": "kg",
+      "unit_price": 22.67,
+      "total": 45.34,
+      "is_tax_or_fee": false,
+      "is_discount": false,
+      "confidence": "high"
+    }
+  ],
+  "subtotal": 176.52,
+  "tax": 37.07,
+  "total": 213.59,
+  "notes": ""
+}

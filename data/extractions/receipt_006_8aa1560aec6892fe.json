@@ -1,0 +1,22 @@
+{
+  "supplier": "PackRight Supplies",
+  "date": "2024-01-14",
+  "currency": "EUR",
+  "language": "en",
+  "line_items": [
+    {
+      "description": "Paper Cups 12oz (pack/500)",
+      "quantity": 4.0,
+      "unit": "pk/500",
+      "unit_price": 35.13,
+      "total": 140.52,
+      "is_tax_or_fee": false,
+      "is_discount": false,
+      "confidence": "medium"
+    }
+  ],
+  "subtotal": 140.52,
+  "tax": 29.51,
+  "total": 170.03,
+  "notes": ""
+}

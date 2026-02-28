@@ -1,0 +1,62 @@
+{
+  "supplier": "Fresh Fields Dairy",
+  "date": "2024-02-02",
+  "currency": "EUR",
+  "language": "en",
+  "line_items": [
+    {
+      "description": "Oat Milk Barista (1L)",
+      "quantity": 4.0,
+      "unit": "L",
+      "unit_price": 2.22,
+      "total": 8.88,
+      "is_tax_or_fee": false,
+      "is_discount": false,
+      "confidence": "high"
+    },
+    {
+      "description": "Whole Milk (1L)",
+      "quantity": 8.0,
+      "unit": "L",
+      "unit_price": 1.36,
+      "total": 10.88,
+      "is_tax_or_fee": false,
+      "is_discount": false,
+      "confidence": "high"
+    },
+    {
+      "description": "Oat Milk Barista (6-pack)",
+      "quantity": 1.0,
+      "unit": "6pk",
+      "unit_price": 12.96,
+      "total": 12.96,
+      "is_tax_or_fee": false,
+      "is_discount": false,
+      "confidence": "high"
+    },
+    {
+      "description": "Heavy Cream (500ml)",
+      "quantity": 4.0,
+      "unit": "500ml",
+      "unit_price": 2.88,
+      "total": 11.52,
+      "is_tax_or_fee": false,
+      "is_discount": false,
+      "confidence": "high"
+    },
+    {
+      "description": "Whole Milk (10L)",
+      "quantity": 3.0,
+      "unit": "10L",
+      "unit_price": 10.24,
+      "total": 30.72,
+      "is_tax_or_fee": false,
+      "is_discount": false,
+      "confidence": "high"
+    }
+  ],
+  "subtotal": 74.96,
+  "tax": 15.74,
+  "total": 90.7,
+  "notes": ""
+}

@@ -1,0 +1,94 @@
+@import "tailwindcss";
+
+@theme {
+  --color-choco: #311e10;
+  --color-syrup: #5d2609;
+  --color-cinnamon: #a56124;
+  --color-chai: #dbbda0;
+  --color-cream: #f5ebe0;
+  --color-bg: #fff9f3;
+
+  --color-background: #fff9f3;
+  --color-foreground: #311e10;
+  --color-card: #ffffff;
+  --color-card-foreground: #311e10;
+  --color-primary: #5d2609;
+  --color-primary-foreground: #f5ebe0;
+  --color-secondary: #f5ebe0;
+  --color-secondary-foreground: #5d2609;
+  --color-accent: #a56124;
+  --color-accent-foreground: #fff9f3;
+  --color-muted: #f0e4d8;
+  --color-muted-foreground: #8b6d54;
+  --color-destructive: #dc2626;
+  --color-border: #dbbda0;
+  --color-input: #dbbda0;
+  --color-ring: #a56124;
+
+  --color-chart-1: #f05100;
+  --color-chart-2: #009588;
+  --color-chart-3: #104e64;
+  --color-chart-4: #fcbb00;
+  --color-chart-5: #f99c00;
+
+  --radius: 0.625rem;
+  --font-sans: "Raleway", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "Bitter", ui-serif, Georgia, serif;
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    margin: 0;
+    min-height: 100vh;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-serif);
+  }
+}
+
+@utility cafe-card {
+  border-radius: var(--radius);
+  border: 1px solid oklch(from #dbbda0 l c h / 0.4);
+  background-color: #ffffff;
+  box-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+}
+
+@utility cafe-card-hover {
+  border-radius: var(--radius);
+  border: 1px solid oklch(from #dbbda0 l c h / 0.4);
+  background-color: #ffffff;
+  box-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+  transition: all 0.3s;
+  &:hover {
+    box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+    border-color: oklch(from #a56124 l c h / 0.4);
+  }
+}
+
+@utility gradient-warm {
+  background: linear-gradient(135deg, #fff9f3 0%, #f5ebe0 50%, #f0e4d8 100%);
+}
+
+@utility gradient-hero {
+  background: linear-gradient(160deg, #fff9f3 0%, #f5ebe0 40%, #dbbda0 100%);
+}
+
+@utility text-gradient {
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  background-image: linear-gradient(135deg, #5d2609, #a56124, #f05100);
+}
+
+@keyframes fade-up {
+  from { opacity: 0; transform: translateY(24px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-up {
+  animation: fade-up 0.6s ease-out both;
+}

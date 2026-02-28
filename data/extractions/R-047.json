@@ -1,0 +1,32 @@
+{
+  "supplier": "Panaderia del Sol S.L.",
+  "date": "2024-02-09",
+  "currency": "EUR",
+  "language": "es",
+  "line_items": [
+    {
+      "description": "Leche Entera (1L)",
+      "quantity": 2.0,
+      "unit": "L",
+      "unit_price": 1.22,
+      "total": 2.44,
+      "is_tax_or_fee": false,
+      "is_discount": false,
+      "confidence": "high"
+    },
+    {
+      "description": "Granos de Cafe (1kg)",
+      "quantity": 6.0,
+      "unit": "kg",
+      "unit_price": 18.44,
+      "total": 110.64,
+      "is_tax_or_fee": false,
+      "is_discount": false,
+      "confidence": "high"
+    }
+  ],
+  "subtotal": 113.08,
+  "tax": 10.18,
+  "total": 123.26,
+  "notes": ""
+}

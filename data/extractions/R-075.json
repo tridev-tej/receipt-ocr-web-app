@@ -1,0 +1,42 @@
+{
+  "supplier": "Sweet Harvest Trading",
+  "date": "2024-02-03",
+  "currency": "EUR",
+  "language": "en",
+  "line_items": [
+    {
+      "description": "Demerara Sugar (1kg)",
+      "quantity": 8.0,
+      "unit": "kg",
+      "unit_price": 1.55,
+      "total": 12.4,
+      "is_tax_or_fee": false,
+      "is_discount": false,
+      "confidence": "medium"
+    },
+    {
+      "description": "Acacia Honey (1kg)",
+      "quantity": 4.0,
+      "unit": "kg",
+      "unit_price": 11.81,
+      "total": 47.24,
+      "is_tax_or_fee": false,
+      "is_discount": false,
+      "confidence": "medium"
+    },
+    {
+      "description": "Raw Cane Sugar (1kg)",
+      "quantity": 6.0,
+      "unit": "kg",
+      "unit_price": 1.79,
+      "total": 10.74,
+      "is_tax_or_fee": false,
+      "is_discount": false,
+      "confidence": "medium"
+    }
+  ],
+  "subtotal": 70.38,
+  "tax": 14.78,
+  "total": 85.16,
+  "notes": ""
+}

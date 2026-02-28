@@ -1,0 +1,10 @@
+{
+  "run_id": "ba40919f",
+  "receipts_processed": 100,
+  "receipts_failed": 0,
+  "total_line_items": 318,
+  "total_api_cost_usd": 0.0,
+  "avg_ocr_confidence": 0.967,
+  "mapping_rate": 0.949,
+  "duration_seconds": 0.04
+}

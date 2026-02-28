@@ -1,0 +1,32 @@
+{
+  "supplier": "PackRight Supplies",
+  "date": "2024-02-22",
+  "currency": "EUR",
+  "language": "en",
+  "line_items": [
+    {
+      "description": "Paper Cups 12oz (pack/500)",
+      "quantity": 5.0,
+      "unit": "pk/500",
+      "unit_price": 26.92,
+      "total": 134.6,
+      "is_tax_or_fee": false,
+      "is_discount": false,
+      "confidence": "high"
+    },
+    {
+      "description": "Paper Bags Large (pack/250)",
+      "quantity": 8.0,
+      "unit": "pk/250",
+      "unit_price": 18.32,
+      "total": 146.56,
+      "is_tax_or_fee": false,
+      "is_discount": false,
+      "confidence": "high"
+    }
+  ],
+  "subtotal": 281.16,
+  "tax": 59.04,
+  "total": 340.2,
+  "notes": ""
+}

@@ -1,0 +1,32 @@
+{
+  "supplier": "Le Moulin Patisserie",
+  "date": "2024-01-22",
+  "currency": "EUR",
+  "language": "fr",
+  "line_items": [
+    {
+      "description": "Baguette Tradition",
+      "quantity": 1.0,
+      "unit": "each",
+      "unit_price": 2.02,
+      "total": 2.02,
+      "is_tax_or_fee": false,
+      "is_discount": false,
+      "confidence": "high"
+    },
+    {
+      "description": "Pain au Chocolat (boite/12)",
+      "quantity": 2.0,
+      "unit": "box/12",
+      "unit_price": 15.42,
+      "total": 30.84,
+      "is_tax_or_fee": false,
+      "is_discount": false,
+      "confidence": "high"
+    }
+  ],
+  "subtotal": 32.86,
+  "tax": 6.9,
+  "total": 39.76,
+  "notes": ""
+}

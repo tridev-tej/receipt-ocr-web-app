@@ -1,0 +1,22 @@
+{
+  "supplier": "Artisan Bakehouse",
+  "date": "2024-01-17",
+  "currency": "EUR",
+  "language": "en",
+  "line_items": [
+    {
+      "description": "Chocolate Muffins (box/12)",
+      "quantity": 3.0,
+      "unit": "box/12",
+      "unit_price": 11.55,
+      "total": 34.65,
+      "is_tax_or_fee": false,
+      "is_discount": false,
+      "confidence": "high"
+    }
+  ],
+  "subtotal": 34.65,
+  "tax": 7.28,
+  "total": 41.93,
+  "notes": ""
+}

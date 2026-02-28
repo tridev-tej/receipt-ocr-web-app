@@ -1,0 +1,32 @@
+{
+  "supplier": "Green Garden Produce",
+  "date": "2024-02-09",
+  "currency": "EUR",
+  "language": "en",
+  "line_items": [
+    {
+      "description": "Fresh Mint (bunch 30g)",
+      "quantity": 7.0,
+      "unit": "bunch",
+      "unit_price": 1.77,
+      "total": 12.39,
+      "is_tax_or_fee": false,
+      "is_discount": false,
+      "confidence": "high"
+    },
+    {
+      "description": "Organic Lemons (per kg)",
+      "quantity": 8.0,
+      "unit": "kg",
+      "unit_price": 4.22,
+      "total": 33.76,
+      "is_tax_or_fee": false,
+      "is_discount": false,
+      "confidence": "high"
+    }
+  ],
+  "subtotal": 46.15,
+  "tax": 4.15,
+  "total": 50.3,
+  "notes": ""
+}

@@ -1,0 +1,32 @@
+{
+  "supplier": "Bean & Leaf Co.",
+  "date": "2024-01-30",
+  "currency": "USD",
+  "language": "en",
+  "line_items": [
+    {
+      "description": "Robusta Coffee Beans (1kg)",
+      "quantity": 2.0,
+      "unit": "kg",
+      "unit_price": 14.2,
+      "total": 28.4,
+      "is_tax_or_fee": false,
+      "is_discount": false,
+      "confidence": "high"
+    },
+    {
+      "description": "Single Origin Ethiopian (1kg)",
+      "quantity": 6.0,
+      "unit": "kg",
+      "unit_price": 24.64,
+      "total": 147.84,
+      "is_tax_or_fee": false,
+      "is_discount": false,
+      "confidence": "high"
+    }
+  ],
+  "subtotal": 176.24,
+  "tax": 37.01,
+  "total": 213.25,
+  "notes": ""
+}

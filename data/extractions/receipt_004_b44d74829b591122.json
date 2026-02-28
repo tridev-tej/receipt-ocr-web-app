@@ -1,0 +1,22 @@
+{
+  "supplier": "Green Garden Produce",
+  "date": "2024-01-28",
+  "currency": "EUR",
+  "language": "en",
+  "line_items": [
+    {
+      "description": "Fresh Blueberries (250g)",
+      "quantity": 8.0,
+      "unit": "250g",
+      "unit_price": 3.66,
+      "total": 29.28,
+      "is_tax_or_fee": false,
+      "is_discount": false,
+      "confidence": "high"
+    }
+  ],
+  "subtotal": 29.28,
+  "tax": 2.64,
+  "total": 31.92,
+  "notes": ""
+}

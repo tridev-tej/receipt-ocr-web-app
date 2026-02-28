@@ -1,0 +1,62 @@
+{
+  "supplier": "UK Cafe Supply Ltd",
+  "date": "2024-02-21",
+  "currency": "GBP",
+  "language": "en",
+  "line_items": [
+    {
+      "description": "Paper Cups 12oz (pack/500)",
+      "quantity": 2.0,
+      "unit": "pk/500",
+      "unit_price": 24.77,
+      "total": 49.54,
+      "is_tax_or_fee": false,
+      "is_discount": false,
+      "confidence": "high"
+    },
+    {
+      "description": "Full Fat Milk (1L)",
+      "quantity": 7.0,
+      "unit": "L",
+      "unit_price": 1.06,
+      "total": 7.42,
+      "is_tax_or_fee": false,
+      "is_discount": false,
+      "confidence": "high"
+    },
+    {
+      "description": "Arabica Coffee Beans (1kg)",
+      "quantity": 2.0,
+      "unit": "kg",
+      "unit_price": 19.11,
+      "total": 38.22,
+      "is_tax_or_fee": false,
+      "is_discount": false,
+      "confidence": "high"
+    },
+    {
+      "description": "Oat Milk Barista (1L)",
+      "quantity": 2.0,
+      "unit": "L",
+      "unit_price": 2.14,
+      "total": 4.28,
+      "is_tax_or_fee": false,
+      "is_discount": false,
+      "confidence": "high"
+    },
+    {
+      "description": "Granulated Sugar (1kg)",
+      "quantity": 4.0,
+      "unit": "kg",
+      "unit_price": 0.89,
+      "total": 3.56,
+      "is_tax_or_fee": false,
+      "is_discount": false,
+      "confidence": "high"
+    }
+  ],
+  "subtotal": 103.02,
+  "tax": 21.63,
+  "total": 124.65,
+  "notes": ""
+}

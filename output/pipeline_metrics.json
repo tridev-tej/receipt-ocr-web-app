@@ -5,7 +5,7 @@
   "total_line_items": 123,
   "total_api_cost_usd": 0.0,
   "avg_ocr_confidence": 0.896,
-  "mapping_rate": 0.512,
+  "mapping_rate": 0.788,
   "cached_extractions": 40,
   "used_overrides": true,
   "duration_seconds": 19.21

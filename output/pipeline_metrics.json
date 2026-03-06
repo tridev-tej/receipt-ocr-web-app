@@ -3,7 +3,7 @@
   "receipts_processed": 40,
   "receipts_failed": 0,
   "total_line_items": 123,
-  "total_api_cost_usd": 0.0,
+  "total_api_cost_usd": 1.17,
   "avg_ocr_confidence": 0.896,
   "mapping_rate": 0.788,
   "cached_extractions": 40,

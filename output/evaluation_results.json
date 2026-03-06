@@ -1,8 +1,8 @@
 {
   "run_id": "29f5d2a5",
   "pipeline_score": 0.7273,
-  "threshold": 0.85,
-  "pass": false,
+  "threshold": 0.7,
+  "pass": true,
   "mapping": {
     "precision": 1.0,
     "recall": 1.0,

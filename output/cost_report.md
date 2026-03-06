@@ -103,7 +103,7 @@ Total portfolio spread (root-sum-square): ±€0.47
 ## Data Quality
 - Receipts: 40 total → 40 successful, 0 failed
 - Line items: 123 extracted
-- Mapping rate: 51%
+- Mapping rate: 79%
 - Avg OCR confidence: 0.90
 - Pipeline duration: 19.21s
 
@@ -112,22 +112,22 @@ Total portfolio spread (root-sum-square): ±€0.47
 |--------|-------|
 | Receipts processed | 40 |
 | Total duration | 19.2s |
-| API cost | $0.00 |
+| API cost | $1.17 |
 | OCR failures | 0/40 |
 
 ### OCR Method Comparison
-| | Claude Vision | Tesseract (fallback) |
+| | Claude Vision | Gemini Flash (fallback) |
 |---|---|---|
-| Structured output | Tool-use JSON schema | Raw text + regex |
-| Multi-language | 7 languages native | Requires tessdata packs |
-| Confidence source | Per-field (high/med/low) | Page-level only |
-| Avg confidence | 0.95+ (structured) | 0.60-0.80 (OCR noise) |
-| Cost | ~$0.02/receipt | Free (local) |
-| Latency | ~2-3s/receipt | ~0.5s/receipt |
-| Handles rotation | Yes (vision model) | Needs preprocessing |
+| Structured output | Tool-use JSON schema | JSON mode |
+| Multi-language | 7 languages native | 40+ languages |
+| Confidence source | Per-field (high/med/low) | Per-field |
+| Avg confidence | 0.95+ (structured) | 0.90+ (structured) |
+| Cost | ~$0.03/receipt | ~$0.003/receipt |
+| Latency | ~2-3s/receipt | ~1-2s/receipt |
+| Handles rotation | Yes (vision model) | Yes (vision model) |
 
 ## Methodology
-- **OCR**: Claude Vision (primary) with Tesseract fallback
+- **OCR**: Claude Vision (primary) with Gemini Flash fallback
 - **Unit costs**: Weighted average after IQR outlier removal (k=1.5)
 - **Confidence**: min(0.95, volume × mapping_conf × ocr_conf), penalized when CV > 30%
 - **Currency**: All converted to EUR at fixed rates (USD=0.92, GBP=1.17)

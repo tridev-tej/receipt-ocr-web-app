@@ -27,7 +27,7 @@ export function Demo() {
     <div className="mx-auto max-w-6xl px-4 py-8">
       <h1 className="mb-2 text-3xl font-bold text-choco">Pipeline Results</h1>
       <p className="mb-8 text-muted-foreground">
-        100 receipts processed, 22 ingredients mapped, 12 menu items costed.
+        40 receipts processed, 21 ingredients mapped, 12 menu items costed.
       </p>
 
       <div role="tablist" aria-label="Pipeline results" className="mb-6 flex flex-wrap gap-1 rounded-xl border border-chai/30 bg-cream/50 p-1">

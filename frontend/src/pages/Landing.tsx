@@ -75,7 +75,7 @@ function Hero() {
           className="mx-auto mt-6 max-w-2xl text-lg text-muted-foreground md:text-xl"
         >
           Automate cafe COGS from supplier receipts. Claude Vision extracts, validates,
-          normalizes, and maps 100 receipts into per-item cost breakdowns with
+          normalizes, and maps 40 real supplier receipts into per-item cost breakdowns with
           statistical confidence.
         </motion.p>
 

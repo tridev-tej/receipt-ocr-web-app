@@ -106,6 +106,40 @@ def _compute_ingredient_cost(
     if not unit_costs:
         return None
 
+    # Sanity: filter out data points with unreasonable unit costs
+    # Catches OCR misreads like "2g" instead of "2kg" (1000x error)
+    _UNIT_COST_CEILING = {"g": 0.10, "ml": 0.05, "each": 10.0}
+    ceiling = _UNIT_COST_CEILING.get(unit)
+    if ceiling:
+        sane = [(uc, w, it) for uc, w, it in unit_costs if uc <= ceiling]
+        if sane:
+            if len(sane) < len(unit_costs):
+                logger.warning(
+                    "unit_cost_ceiling_filtered",
+                    extra={"ingredient": ingredient_id, "removed": len(unit_costs) - len(sane), "ceiling": ceiling},
+                )
+            unit_costs = sane
+        elif unit in ("g", "ml"):
+            # All points above ceiling - likely consistent kg/g or L/ml misread
+            logger.warning(
+                "unit_cost_1000x_correction",
+                extra={"ingredient": ingredient_id, "unit": unit, "avg_before": sum(c for c, _, _ in unit_costs) / len(unit_costs)},
+            )
+            unit_costs = [(uc / 1000, w, it) for uc, w, it in unit_costs]
+
+    # Small-sample outlier removal: if max/min > 10x and few data points, drop extremes
+    if len(unit_costs) >= 2:
+        min_uc = min(c for c, _, _ in unit_costs)
+        max_uc = max(c for c, _, _ in unit_costs)
+        if min_uc > 0 and max_uc / min_uc > 10:
+            filtered = [(uc, w, it) for uc, w, it in unit_costs if uc <= min_uc * 10]
+            if filtered:
+                logger.warning(
+                    "extreme_outlier_filtered",
+                    extra={"ingredient": ingredient_id, "removed": len(unit_costs) - len(filtered), "ratio": round(max_uc / min_uc, 1)},
+                )
+                unit_costs = filtered
+
     # IQR outlier removal — filter by bounds, not value identity
     costs_only = [c for c, _, _ in unit_costs]
     lower, upper = _iqr_bounds(costs_only)

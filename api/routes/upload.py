@@ -114,8 +114,8 @@ async def _run_pipeline(run_id: str, receipt_dir: Path, total: int):
 async def upload_receipts(files: list[UploadFile]):
     if not files:
         raise HTTPException(400, "No files provided")
-    if len(files) > 20:
-        raise HTTPException(400, "Maximum 20 files per upload")
+    if len(files) > 40:
+        raise HTTPException(400, "Maximum 40 files per upload")
 
     run_id = uuid.uuid4().hex[:8]
     receipt_dir = RUNS_DIR / run_id / "receipts"

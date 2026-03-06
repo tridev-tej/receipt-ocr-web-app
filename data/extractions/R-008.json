@@ -1,42 +1,28 @@
 {
-  "supplier": "Fresh Fields Dairy",
-  "date": "2024-02-18",
-  "currency": "USD",
+  "supplier": "Brennan Son",
+  "date": "2020-05-30",
+  "currency": "EUR",
   "language": "en",
   "line_items": [
     {
-      "description": "Whole Milk (1L)",
-      "quantity": 4.0,
-      "unit": "L",
-      "unit_price": 1.11,
-      "total": 4.44,
-      "is_tax_or_fee": false,
-      "is_discount": false,
-      "confidence": "high"
-    },
-    {
-      "description": "Whole Milk (10L)",
+      "description": "House Blend 1kg",
       "quantity": 1.0,
-      "unit": "10L",
-      "unit_price": 11.57,
-      "total": 11.57,
+      "unit": "kg",
+      "unit_price": 0.0,
+      "total": 0.0,
       "is_tax_or_fee": false,
       "is_discount": false,
       "confidence": "high"
     },
     {
-      "description": "Oat Milk Barista (6-pack)",
-      "quantity": 2.0,
-      "unit": "6pk",
-      "unit_price": 14.29,
-      "total": 28.58,
+      "description": "Decaf 500g",
+      "quantity": 1.0,
+      "unit": "g",
+      "unit_price": 0.0,
+      "total": 0.0,
       "is_tax_or_fee": false,
       "is_discount": false,
       "confidence": "high"
     }
-  ],
-  "subtotal": 44.59,
-  "tax": 9.36,
-  "total": 53.95,
-  "notes": ""
+  ]
 }

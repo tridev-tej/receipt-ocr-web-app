@@ -48,12 +48,12 @@ function SectionTitle({ children, sub }: { children: React.ReactNode; sub?: stri
 // ─── Hero ──────────────────────────────────────────────
 function ShowcaseHero() {
   const stats = [
-    { value: "100", label: "Receipts" },
-    { value: "318", label: "Line Items" },
-    { value: "96.7%", label: "OCR Confidence" },
-    { value: "0.964", label: "Mapping F1" },
-    { value: "448", label: "Tests" },
-    { value: "~4s", label: "Per Receipt" },
+    { value: "40", label: "Real Receipts" },
+    { value: "123", label: "Line Items" },
+    { value: "89.6%", label: "OCR Confidence" },
+    { value: "1.000", label: "Mapping F1" },
+    { value: "72.7%", label: "Pipeline Score" },
+    { value: "~0.5s", label: "Per Receipt" },
   ]
 
   return (
@@ -264,44 +264,44 @@ function PromptEngineering() {
 const METRICS_EXPLAINED = [
   {
     metric: "OCR Confidence",
-    value: "96.7%",
-    definition: "Weighted average certainty across 318 line items. Confidence levels: high (0.95), medium (0.80), low (0.60).",
-    detail: "Low-confidence items flagged for manual review.",
+    value: "89.6%",
+    definition: "Weighted average certainty across 123 line items from 40 real supplier receipts.",
+    detail: "Low-confidence items flagged for manual review. Real-world OCR noise reduces confidence vs synthetic data.",
     formula: "weighted_avg(field_confidence per line_item)",
   },
   {
     metric: "Mapping F1",
-    value: "0.964",
-    definition: "Harmonic mean of precision (1.0) and recall (0.930) for ingredient mapping.",
-    detail: "19 items unmapped due to OCR noise perturbation. Non-tautological: noise injection breaks perfect score.",
+    value: "1.000",
+    definition: "Perfect precision (1.0) and recall (1.0) on 30 ground-truth-matched items.",
+    detail: "66 OCR descriptions unmatched in ground truth (real-world variety exceeds synthetic coverage).",
     formula: "2 * precision * recall / (precision + recall)",
   },
   {
-    metric: "Average Margin",
-    value: "73.7%",
-    definition: "Profit after COGS. Target range for cafes: 65-75%. Items below 60% flagged.",
-    detail: "EUR 0.10 increase on Cappuccino = EUR 150/month loss.",
-    formula: "(sell_price - total_COGS) / sell_price x 100",
+    metric: "Pipeline Score",
+    value: "72.7%",
+    definition: "Composite: 25% mapping F1 + 15% classification + 50% cost accuracy + 10% crash rate.",
+    detail: "Cost accuracy (45.5%) dominates the score - real supplier prices diverge from synthetic expectations.",
+    formula: "0.25*F1 + 0.15*classification + 0.50*cost_acc + 0.10*no_crash",
   },
   {
-    metric: "Item Confidence",
-    value: "0.86 - 0.95",
-    definition: "Combines OCR, mapping, and data volume signals. Capped at 0.95.",
-    detail: "Berry Smoothie shows lowest confidence due to cost volatility.",
-    formula: "clamp(min(1, n/5) x avg_mapping x avg_ocr x cv_penalty, 0, 0.95)",
+    metric: "Cost Accuracy",
+    value: "10/22",
+    definition: "Ingredients within tolerance of expected cost. 45.5% accuracy on real-world pricing.",
+    detail: "Cups, salt, and muffins show largest deviations. 3 ingredients missing from real data entirely.",
+    formula: "count(|actual - expected| <= tolerance) / total_ingredients",
   },
   {
-    metric: "COGS Range",
-    value: "EUR 0.41 - 2.13",
-    definition: "Total ingredient + packaging cost per item using weighted averages.",
-    detail: "IQR outlier removal (k=1.5) eliminates price anomalies from supplier errors.",
-    formula: "sum(ingredient_cost x qty) after IQR filtering",
+    metric: "Classification",
+    value: "100%",
+    definition: "34/34 items correctly classified as ingredient, packaging, or exclude.",
+    detail: "Keyword-based classifier with fuzzy fallback handles multilingual and OCR-noisy descriptions.",
+    formula: "correct / total evaluated items",
   },
   {
     metric: "Sensitivity (95% CI)",
     value: "+/- 1.96 SD",
     definition: "Margin swing potential using standard deviation analysis across receipt history.",
-    detail: "Berry Smoothie worst-case: 50.2% margin. Espresso shows stability due to consistent pricing.",
+    detail: "Real-world price variance is higher than synthetic - wider confidence intervals expected.",
     formula: "margin +/- 1.96 x std_dev(unit_costs)",
   },
 ]
@@ -486,31 +486,31 @@ function ProductionResilience() {
 const ITERATIONS = [
   {
     version: "V1",
-    title: "Raw OCR",
-    color: "bg-chart-1",
-    problem: 'Tesseract priced a latte at EUR 28k. Claude hallucinated "Bananas" when the image showed Lemons.',
-    insight: "OCR is an LLM problem, not regex. LLMs must be told it's OK to say 'I don't know.'",
+    title: "Synthetic Data (98.1%)",
+    color: "bg-chart-2",
+    problem: "Pipeline scored 98.1% on 100 synthetic receipts. Perfect mapping, near-perfect classification.",
+    insight: "Synthetic scores are misleading - the pipeline hadn't seen real-world supplier invoice formats.",
   },
   {
     version: "V2",
-    title: "Structured Extraction",
-    color: "bg-chart-4",
-    problem: "Free-text JSON was ~15% malformed. Fuzzy matching created false positive ingredient mappings.",
-    insight: "tool_use guarantees structure, not semantics. Every path needs validation.",
+    title: "Real Data Crash",
+    color: "bg-chart-1",
+    problem: "Pack sizes not normalized (\"box/24\" vs \"boxes/24\"). Embedded units ignored when OCR returned weight units.",
+    insight: "Fixed plural regex patterns and extended embedded unit extraction for mass/volume OCR units.",
   },
   {
     version: "V3",
-    title: "Production Hardening",
-    color: "bg-chart-2",
-    problem: 'EU number parsing broke everything - "3,50" vs "1,500" vs "0,750". Race conditions in cost tracking.',
-    insight: "Number parsing is never done. 5 formats, regex disambiguation. TOCTOU bugs hide in async code.",
+    title: "Real Data Tuned (72.7%)",
+    color: "bg-chart-4",
+    problem: "Mapping perfect but cost accuracy only 45.5% - real supplier prices diverge from synthetic expectations.",
+    insight: "Rebalanced scoring to weight cost accuracy at 50%. Honest score reflects real-world complexity.",
   },
 ]
 
 function KeyIterations() {
   return (
     <Section>
-      <SectionTitle sub="How the pipeline evolved through real failures">
+      <SectionTitle sub="From synthetic perfection to real-world honesty">
         3 Key Iterations
       </SectionTitle>
       <div className="mx-auto max-w-3xl space-y-0">
@@ -546,15 +546,15 @@ function KeyIterations() {
 // ─── Validation Gallery ────────────────────────────────
 function ValidationGallery() {
   const validationStats = [
-    { value: "17/17", label: "Supplier Names Correct", icon: CheckCircle2, color: "text-chart-2" },
-    { value: "17/17", label: "Receipt Totals Match", icon: CheckCircle2, color: "text-chart-2" },
-    { value: "100%", label: "Tax/Discount Flags", icon: CheckCircle2, color: "text-chart-2" },
-    { value: "2", label: "Items Flagged for Review", icon: AlertTriangle, color: "text-chart-4" },
+    { value: "30/30", label: "Mappings Correct", icon: CheckCircle2, color: "text-chart-2" },
+    { value: "34/34", label: "Classifications Correct", icon: CheckCircle2, color: "text-chart-2" },
+    { value: "10/22", label: "Costs Within Tolerance", icon: AlertTriangle, color: "text-chart-4" },
+    { value: "0%", label: "Crash Rate", icon: CheckCircle2, color: "text-chart-2" },
   ]
 
   return (
     <Section className="bg-white">
-      <SectionTitle sub="17 receipts hand-verified with image-vs-extraction side-by-side">
+      <SectionTitle sub="40 real supplier receipts evaluated against ground truth">
         Ground Truth Validation
       </SectionTitle>
       <div className="grid grid-cols-2 gap-4 md:grid-cols-4">
@@ -571,15 +571,15 @@ function ValidationGallery() {
         <div className="space-y-3 text-sm text-muted-foreground">
           <div className="flex items-start gap-3">
             <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-cream text-xs font-bold text-cinnamon">1</span>
-            <p>Each receipt image opened side-by-side with extracted JSON output</p>
+            <p>40 real supplier receipt images processed through the full 10-stage pipeline</p>
           </div>
           <div className="flex items-start gap-3">
             <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-cream text-xs font-bold text-cinnamon">2</span>
-            <p>Supplier name, date, line items, totals, and tax verified field-by-field</p>
+            <p>123 line items extracted, 63 mapped to 21 distinct ingredients via fuzzy + LLM matching</p>
           </div>
           <div className="flex items-start gap-3">
             <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-cream text-xs font-bold text-cinnamon">3</span>
-            <p>Discrepancies logged - 2 items flagged due to OCR confidence below threshold (correctly caught by pipeline)</p>
+            <p>Cost accuracy limited by real-world price variance vs synthetic expectations - 10/22 ingredients within tolerance</p>
           </div>
         </div>
       </motion.div>
@@ -590,28 +590,28 @@ function ValidationGallery() {
 // ─── Results & Decisions ───────────────────────────────
 const DECISIONS = [
   {
-    item: "Espresso",
-    margin: "83.6%",
+    item: "Coffee Beans",
+    margin: "within tolerance",
     status: "stable",
     action: "No action needed",
     badge: "bg-chart-2/10 text-chart-2",
-    detail: "High confidence, consistent pricing across suppliers. Narrow CI band.",
+    detail: "Real cost EUR 0.021/g vs expected EUR 0.020/g. 6 data points across multiple suppliers.",
   },
   {
-    item: "Butter Croissant",
-    margin: "59.6%",
+    item: "Paper Cups",
+    margin: "2x expected",
     status: "flagged",
-    action: "Price review",
+    action: "Supplier negotiation",
     badge: "bg-chart-1/10 text-chart-1",
-    detail: "Below 65% target. Butter cost volatility compressing margins.",
+    detail: "All cup sizes (8/12/16oz) show real prices ~2x synthetic expectations. Pack size normalization issue.",
   },
   {
-    item: "Berry Smoothie",
-    margin: "~65%",
+    item: "Muffins",
+    margin: "65% over",
     status: "monitor",
-    action: "Watch costs",
+    action: "Verify pricing",
     badge: "bg-chart-4/10 text-chart-4",
-    detail: "Widest confidence interval. Worst-case: 50.2% margin. Berry costs are seasonal.",
+    detail: "Real cost EUR 1.77/each vs expected EUR 1.07. Only a few data points - may be supplier-specific.",
   },
 ]
 

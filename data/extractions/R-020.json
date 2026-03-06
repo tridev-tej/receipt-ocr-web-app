@@ -1,52 +1,28 @@
 {
-  "supplier": "Fresh Fields Dairy",
-  "date": "2024-02-13",
+  "supplier": "Mediterranean Dry Goods Co",
+  "date": "2024-11-28",
   "currency": "EUR",
   "language": "en",
   "line_items": [
     {
-      "description": "Heavy Cream (500ml)",
-      "quantity": 2.0,
-      "unit": "500ml",
-      "unit_price": 2.76,
-      "total": 5.52,
+      "description": "Vanilla Extract",
+      "quantity": null,
+      "unit": "each",
+      "unit_price": 8.5,
+      "total": 8.5,
       "is_tax_or_fee": false,
       "is_discount": false,
-      "confidence": "high"
+      "confidence": "low"
     },
     {
-      "description": "Whole Milk (10L)",
-      "quantity": 1.0,
-      "unit": "10L",
-      "unit_price": 11.79,
-      "total": 11.79,
+      "description": "Subtotal",
+      "quantity": null,
+      "unit": "each",
+      "unit_price": 8.5,
+      "total": 8.5,
       "is_tax_or_fee": false,
       "is_discount": false,
-      "confidence": "high"
-    },
-    {
-      "description": "Whole Milk (1L)",
-      "quantity": 1.0,
-      "unit": "L",
-      "unit_price": 1.17,
-      "total": 1.17,
-      "is_tax_or_fee": false,
-      "is_discount": false,
-      "confidence": "high"
-    },
-    {
-      "description": "Oat Milk Barista (6-pack)",
-      "quantity": 2.0,
-      "unit": "6pk",
-      "unit_price": 12.19,
-      "total": 24.38,
-      "is_tax_or_fee": false,
-      "is_discount": false,
-      "confidence": "high"
+      "confidence": "low"
     }
-  ],
-  "subtotal": 42.86,
-  "tax": 3.86,
-  "total": 46.72,
-  "notes": ""
+  ]
 }

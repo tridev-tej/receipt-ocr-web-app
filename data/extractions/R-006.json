@@ -1,22 +1,18 @@
 {
-  "supplier": "PackRight Supplies",
-  "date": "2024-01-14",
+  "supplier": "Brennan Sons Coffee Roasters",
+  "date": "2024-12-10",
   "currency": "EUR",
   "language": "en",
   "line_items": [
     {
-      "description": "Paper Cups 12oz (pack/500)",
-      "quantity": 4.0,
-      "unit": "pk/500",
-      "unit_price": 35.13,
-      "total": 140.52,
+      "description": "House Blend 1kg",
+      "quantity": 2.0,
+      "unit": "kg",
+      "unit_price": 0.0185,
+      "total": 37.0,
       "is_tax_or_fee": false,
       "is_discount": false,
-      "confidence": "medium"
+      "confidence": "high"
     }
-  ],
-  "subtotal": 140.52,
-  "tax": 29.51,
-  "total": 170.03,
-  "notes": ""
+  ]
 }

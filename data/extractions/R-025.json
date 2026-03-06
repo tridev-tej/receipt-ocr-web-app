@@ -1,42 +1,38 @@
 {
-  "supplier": "Bean & Leaf Co.",
-  "date": "2024-02-22",
+  "supplier": "Packright Supplies",
+  "date": "2024-10-30",
   "currency": "EUR",
   "language": "en",
   "line_items": [
     {
-      "description": "Espresso Roast Beans (1kg)",
-      "quantity": 6.0,
-      "unit": "kg",
-      "unit_price": 22.66,
-      "total": 135.96,
+      "description": "Napkins (pack of 1000)",
+      "quantity": 1.0,
+      "unit": "pack",
+      "unit_price": 0.015,
+      "total": 15.0,
       "is_tax_or_fee": false,
       "is_discount": false,
       "confidence": "high"
     },
     {
-      "description": "Arabica Coffee Beans (1kg)",
-      "quantity": 7.0,
-      "unit": "kg",
-      "unit_price": 21.29,
-      "total": 149.03,
+      "description": "Paper Bags (pack of 200)",
+      "quantity": 1.0,
+      "unit": "pack",
+      "unit_price": 0.09,
+      "total": 18.0,
       "is_tax_or_fee": false,
       "is_discount": false,
       "confidence": "high"
     },
     {
-      "description": "House Blend Beans (1kg)",
-      "quantity": 7.0,
-      "unit": "kg",
-      "unit_price": 18.85,
-      "total": 131.95,
+      "description": "Wooden Stirrers (500)",
+      "quantity": 1.0,
+      "unit": "pack",
+      "unit_price": 6.0,
+      "total": 6.0,
       "is_tax_or_fee": false,
       "is_discount": false,
       "confidence": "high"
     }
-  ],
-  "subtotal": 416.94,
-  "tax": 87.56,
-  "total": 504.5,
-  "notes": ""
+  ]
 }

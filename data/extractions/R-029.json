@@ -1,22 +1,38 @@
 {
-  "supplier": "Artisan Bakehouse",
-  "date": "2024-02-25",
+  "supplier": "Unknown",
+  "date": null,
   "currency": "EUR",
   "language": "en",
   "line_items": [
     {
-      "description": "Almond Croissants (each)",
-      "quantity": 5.0,
+      "description": "Baking Supplies [unclear]",
+      "quantity": null,
       "unit": "each",
-      "unit_price": 1.04,
-      "total": 5.2,
+      "unit_price": 23.0,
+      "total": 23.0,
       "is_tax_or_fee": false,
       "is_discount": false,
-      "confidence": "high"
+      "confidence": "low"
+    },
+    {
+      "description": "Paper Cups 200 x EUR 0.115",
+      "quantity": 200.0,
+      "unit": "each",
+      "unit_price": 0.115,
+      "total": 23.0,
+      "is_tax_or_fee": false,
+      "is_discount": false,
+      "confidence": "low"
+    },
+    {
+      "description": "Paper Cups 200 x EUR 0.135",
+      "quantity": 200.0,
+      "unit": "each",
+      "unit_price": 0.135,
+      "total": 27.0,
+      "is_tax_or_fee": false,
+      "is_discount": false,
+      "confidence": "low"
     }
-  ],
-  "subtotal": 5.2,
-  "tax": 0.47,
-  "total": 5.67,
-  "notes": ""
+  ]
 }

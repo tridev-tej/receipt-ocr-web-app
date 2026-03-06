@@ -1,504 +1,321 @@
 {
-  "run_id": "ce4e3e9d",
-  "pipeline_score": 0.9813,
+  "run_id": "29f5d2a5",
+  "pipeline_score": 0.7273,
   "threshold": 0.85,
-  "pass": true,
+  "pass": false,
   "mapping": {
     "precision": 1.0,
-    "recall": 0.9304,
-    "f1": 0.9639,
+    "recall": 1.0,
+    "f1": 1.0,
     "precision_ci_95": [
-      0.9851,
+      0.8865,
       1.0
     ],
     "recall_ci_95": [
-      0.8939,
-      0.955
+      0.8865,
+      1.0
     ],
-    "correct_mappings": 254,
+    "correct_mappings": 30,
     "incorrect_mappings": 0,
-    "total_mapped": 254,
-    "total_mappable": 273,
-    "unmapped_should_be": 19,
-    "unmatched_descriptions": 23,
-    "exact_gt_matches": 227,
-    "fuzzy_gt_matches": 52,
+    "total_mapped": 30,
+    "total_mappable": 30,
+    "unmapped_should_be": 0,
+    "unmatched_descriptions": 66,
+    "exact_gt_matches": 33,
+    "fuzzy_gt_matches": 1,
     "per_ingredient": {
       "avocado": {
-        "correct": 8,
-        "incorrect": 0,
-        "accuracy": 1.0
-      },
-      "bread_loaf": {
-        "correct": 15,
+        "correct": 2,
         "incorrect": 0,
         "accuracy": 1.0
       },
       "cocoa_powder": {
-        "correct": 7,
+        "correct": 2,
         "incorrect": 0,
         "accuracy": 1.0
       },
       "coffee_beans": {
-        "correct": 30,
+        "correct": 6,
         "incorrect": 0,
         "accuracy": 1.0
       },
-      "croissant": {
-        "correct": 24,
-        "incorrect": 0,
-        "accuracy": 1.0
-      },
-      "cup_12oz": {
-        "correct": 8,
-        "incorrect": 0,
-        "accuracy": 1.0
-      },
-      "cup_16oz": {
-        "correct": 5,
-        "incorrect": 0,
-        "accuracy": 1.0
-      },
-      "cup_8oz": {
-        "correct": 3,
+      "cream": {
+        "correct": 1,
         "incorrect": 0,
         "accuracy": 1.0
       },
       "fresh_mint": {
-        "correct": 11,
+        "correct": 1,
         "incorrect": 0,
         "accuracy": 1.0
       },
       "honey": {
-        "correct": 19,
+        "correct": 1,
         "incorrect": 0,
         "accuracy": 1.0
       },
       "lemon": {
-        "correct": 6,
+        "correct": 2,
         "incorrect": 0,
         "accuracy": 1.0
       },
       "lid": {
-        "correct": 3,
-        "incorrect": 0,
-        "accuracy": 1.0
-      },
-      "mixed_berries": {
-        "correct": 8,
-        "incorrect": 0,
-        "accuracy": 1.0
-      },
-      "muffin": {
-        "correct": 12,
+        "correct": 2,
         "incorrect": 0,
         "accuracy": 1.0
       },
       "napkin": {
-        "correct": 6,
+        "correct": 1,
         "incorrect": 0,
         "accuracy": 1.0
       },
       "oat_milk": {
-        "correct": 17,
-        "incorrect": 0,
-        "accuracy": 1.0
-      },
-      "paper_bag": {
-        "correct": 12,
-        "incorrect": 0,
-        "accuracy": 1.0
-      },
-      "salt": {
-        "correct": 8,
-        "incorrect": 0,
-        "accuracy": 1.0
-      },
-      "straw": {
         "correct": 3,
         "incorrect": 0,
         "accuracy": 1.0
       },
+      "paper_bag": {
+        "correct": 1,
+        "incorrect": 0,
+        "accuracy": 1.0
+      },
+      "salt": {
+        "correct": 1,
+        "incorrect": 0,
+        "accuracy": 1.0
+      },
+      "straw": {
+        "correct": 1,
+        "incorrect": 0,
+        "accuracy": 1.0
+      },
       "sugar": {
-        "correct": 28,
+        "correct": 2,
         "incorrect": 0,
         "accuracy": 1.0
       },
       "whole_milk": {
-        "correct": 21,
+        "correct": 4,
         "incorrect": 0,
         "accuracy": 1.0
       }
     },
-    "sample_errors": [
-      {
-        "description": "Lemons (per kg)",
-        "expected": "lemon",
-        "got": null,
-        "type": "missing_mapping"
-      },
-      {
-        "description": "Organic Lemons (per kg)",
-        "expected": "lemon",
-        "got": null,
-        "type": "missing_mapping"
-      },
-      {
-        "description": "Organic Lemons (per kg)",
-        "expected": "lemon",
-        "got": null,
-        "type": "missing_mapping"
-      },
-      {
-        "description": "Organic Lemons (per kg)",
-        "expected": "lemon",
-        "got": null,
-        "type": "missing_mapping"
-      },
-      {
-        "description": "Pain au Chocolat (boite/12)",
-        "expected": "croissant",
-        "got": null,
-        "type": "missing_mapping"
-      },
-      {
-        "description": "Lemons (per kg)",
-        "expected": "lemon",
-        "got": null,
-        "type": "missing_mapping"
-      },
-      {
-        "description": "Leche Entera (1L)",
-        "expected": "whole_milk",
-        "got": null,
-        "type": "missing_mapping"
-      },
-      {
-        "description": "Granos de Cafe (1kg)",
-        "expected": "coffee_beans",
-        "got": null,
-        "type": "missing_mapping"
-      },
-      {
-        "description": "Organic Lemons (per kg)",
-        "expected": "lemon",
-        "got": null,
-        "type": "missing_mapping"
-      },
-      {
-        "description": "Vanillezucker (250g)",
-        "expected": "sugar",
-        "got": null,
-        "type": "missing_mapping"
-      },
-      {
-        "description": "Organic Lemons (per kg)",
-        "expected": "lemon",
-        "got": null,
-        "type": "missing_mapping"
-      },
-      {
-        "description": "Organic Lemons (per kg)",
-        "expected": "lemon",
-        "got": null,
-        "type": "missing_mapping"
-      },
-      {
-        "description": "Pain au Chocolat (boite/12)",
-        "expected": "croissant",
-        "got": null,
-        "type": "missing_mapping"
-      },
-      {
-        "description": "Lemons (per kg)",
-        "expected": "lemon",
-        "got": null,
-        "type": "missing_mapping"
-      },
-      {
-        "description": "Granos de Cafe (1kg)",
-        "expected": "coffee_beans",
-        "got": null,
-        "type": "missing_mapping"
-      },
-      {
-        "description": "Leche Entera (1L)",
-        "expected": "whole_milk",
-        "got": null,
-        "type": "missing_mapping"
-      },
-      {
-        "description": "Organic Lemons (per kg)",
-        "expected": "lemon",
-        "got": null,
-        "type": "missing_mapping"
-      },
-      {
-        "description": "Lemons (per kg)",
-        "expected": "lemon",
-        "got": null,
-        "type": "missing_mapping"
-      },
-      {
-        "description": "Organic Lemons (per kg)",
-        "expected": "lemon",
-        "got": null,
-        "type": "missing_mapping"
-      }
-    ]
+    "sample_errors": []
   },
   "classification": {
-    "accuracy": 0.9785,
-    "accuracy_ci_95": [
-      0.9539,
-      0.9901
-    ],
-    "correct": 273,
-    "incorrect": 6,
-    "total": 279,
-    "confusion_matrix": {
-      "ingredient": {
-        "ingredient": 227,
-        "unknown": 6
-      },
-      "packaging": {
-        "packaging": 40
-      },
-      "exclude": {
-        "exclude": 6
-      }
-    },
-    "sample_errors": [
-      {
-        "description": "Fresh Mint (200g pack)",
-        "expected": "ingredient",
-        "got": "unknown"
-      },
-      {
-        "description": "Fresh Mint (200g pack)",
-        "expected": "ingredient",
-        "got": "unknown"
-      },
-      {
-        "description": "Fresh Mint (200g pack)",
-        "expected": "ingredient",
-        "got": "unknown"
-      },
-      {
-        "description": "Fresh Mint (200g pack)",
-        "expected": "ingredient",
-        "got": "unknown"
-      },
-      {
-        "description": "Fresh Mint (200g pack)",
-        "expected": "ingredient",
-        "got": "unknown"
-      },
-      {
-        "description": "Fresh Mint (200g pack)",
-        "expected": "ingredient",
-        "got": "unknown"
-      }
-    ]
-  },
-  "cost": {
     "accuracy": 1.0,
     "accuracy_ci_95": [
-      0.8513,
+      0.8985,
       1.0
     ],
-    "within_range": 22,
-    "out_of_range": 0,
+    "correct": 34,
+    "incorrect": 0,
+    "total": 34,
+    "confusion_matrix": {
+      "ingredient": {
+        "ingredient": 25
+      },
+      "exclude": {
+        "exclude": 4
+      },
+      "packaging": {
+        "packaging": 5
+      }
+    },
+    "sample_errors": []
+  },
+  "cost": {
+    "accuracy": 0.4545,
+    "accuracy_ci_95": [
+      0.2692,
+      0.6534
+    ],
+    "within_range": 10,
+    "out_of_range": 12,
     "total_checked": 22,
-    "mean_absolute_deviation": 0.000747,
-    "mape": 0.0066,
+    "mean_absolute_deviation": 0.077582,
+    "mape": 0.8133,
     "details": [
       {
         "ingredient": "avocado",
         "expected": 1.35,
-        "actual": 1.35076,
-        "deviation": 0.00076,
+        "actual": 1.675,
+        "deviation": 0.325,
         "tolerance": 0.2,
-        "status": "ok"
+        "status": "out_of_range"
       },
       {
         "ingredient": "bread_loaf",
         "expected": 2.89,
-        "actual": 2.89374,
-        "deviation": 0.00374,
-        "tolerance": 0.4,
-        "status": "ok"
+        "actual": null,
+        "status": "missing"
       },
       {
         "ingredient": "cocoa_powder",
         "expected": 0.014,
-        "actual": 0.014246,
-        "deviation": 0.000246,
+        "actual": 0.0133,
+        "deviation": 0.0007,
         "tolerance": 0.003,
         "status": "ok"
       },
       {
         "ingredient": "coffee_beans",
         "expected": 0.0197,
-        "actual": 0.019734,
-        "deviation": 3.4e-05,
+        "actual": 0.021357,
+        "deviation": 0.001657,
         "tolerance": 0.003,
         "status": "ok"
       },
       {
         "ingredient": "cream",
         "expected": 0.00542,
-        "actual": 0.00542,
-        "deviation": 0.0,
+        "actual": 0.0082,
+        "deviation": 0.00278,
         "tolerance": 0.001,
-        "status": "ok"
+        "status": "out_of_range"
       },
       {
         "ingredient": "croissant",
         "expected": 1.117,
-        "actual": 1.109722,
-        "deviation": 0.007278,
+        "actual": 1.281687,
+        "deviation": 0.164687,
         "tolerance": 0.2,
         "status": "ok"
       },
       {
         "ingredient": "cup_12oz",
         "expected": 0.065,
-        "actual": 0.065167,
-        "deviation": 0.000167,
+        "actual": 0.14,
+        "deviation": 0.075,
         "tolerance": 0.015,
-        "status": "ok"
+        "status": "out_of_range"
       },
       {
         "ingredient": "cup_16oz",
         "expected": 0.081,
-        "actual": 0.080914,
-        "deviation": 8.6e-05,
+        "actual": 0.1624,
+        "deviation": 0.0814,
         "tolerance": 0.015,
-        "status": "ok"
+        "status": "out_of_range"
       },
       {
         "ingredient": "cup_8oz",
         "expected": 0.054,
-        "actual": 0.054367,
-        "deviation": 0.000367,
+        "actual": 0.12,
+        "deviation": 0.066,
         "tolerance": 0.012,
-        "status": "ok"
+        "status": "out_of_range"
       },
       {
         "ingredient": "fresh_mint",
         "expected": 0.048,
-        "actual": 0.050517,
-        "deviation": 0.002517,
-        "tolerance": 0.01,
-        "status": "ok"
+        "actual": null,
+        "status": "missing"
       },
       {
         "ingredient": "honey",
         "expected": 0.0113,
-        "actual": 0.011399,
-        "deviation": 9.9e-05,
+        "actual": 0.009733,
+        "deviation": 0.001567,
         "tolerance": 0.003,
         "status": "ok"
       },
       {
         "ingredient": "lemon",
         "expected": 0.302,
-        "actual": 0.302323,
-        "deviation": 0.000323,
+        "actual": 0.332143,
+        "deviation": 0.030143,
         "tolerance": 0.05,
         "status": "ok"
       },
       {
         "ingredient": "lid",
         "expected": 0.038,
-        "actual": 0.037877,
-        "deviation": 0.000123,
+        "actual": 0.04,
+        "deviation": 0.002,
         "tolerance": 0.008,
         "status": "ok"
       },
       {
         "ingredient": "mixed_berries",
         "expected": 0.0102,
-        "actual": 0.010207,
-        "deviation": 7e-06,
-        "tolerance": 0.003,
-        "status": "ok"
+        "actual": null,
+        "status": "missing"
       },
       {
         "ingredient": "muffin",
         "expected": 1.074,
-        "actual": 1.074252,
-        "deviation": 0.000252,
+        "actual": 1.773669,
+        "deviation": 0.699669,
         "tolerance": 0.2,
-        "status": "ok"
+        "status": "out_of_range"
       },
       {
         "ingredient": "napkin",
         "expected": 0.0135,
-        "actual": 0.013544,
-        "deviation": 4.4e-05,
+        "actual": 0.0155,
+        "deviation": 0.002,
         "tolerance": 0.003,
         "status": "ok"
       },
       {
         "ingredient": "oat_milk",
         "expected": 0.00235,
-        "actual": 0.002349,
-        "deviation": 1e-06,
+        "actual": 0.003376,
+        "deviation": 0.001026,
         "tolerance": 0.0005,
-        "status": "ok"
+        "status": "out_of_range"
       },
       {
         "ingredient": "paper_bag",
         "expected": 0.083,
-        "actual": 0.082669,
-        "deviation": 0.000331,
+        "actual": 0.0925,
+        "deviation": 0.0095,
         "tolerance": 0.015,
         "status": "ok"
       },
       {
         "ingredient": "salt",
         "expected": 0.000623,
-        "actual": 0.000623,
-        "deviation": 0.0,
+        "actual": 0.006,
+        "deviation": 0.005377,
         "tolerance": 0.0002,
-        "status": "ok"
+        "status": "out_of_range"
       },
       {
         "ingredient": "straw",
         "expected": 0.0249,
-        "actual": 0.024913,
-        "deviation": 1.3e-05,
+        "actual": 0.02,
+        "deviation": 0.0049,
         "tolerance": 0.005,
         "status": "ok"
       },
       {
         "ingredient": "sugar",
         "expected": 0.00125,
-        "actual": 0.001219,
-        "deviation": 3.1e-05,
+        "actual": 0.001249,
+        "deviation": 1e-06,
         "tolerance": 0.0003,
         "status": "ok"
       },
       {
         "ingredient": "whole_milk",
         "expected": 0.00115,
-        "actual": 0.001142,
-        "deviation": 8e-06,
+        "actual": 0.001802,
+        "deviation": 0.000652,
         "tolerance": 0.0003,
-        "status": "ok"
+        "status": "out_of_range"
       }
     ]
   },
   "crash_rate": 0.0,
   "transparency": {
-    "mapped_total": 277,
+    "mapped_total": 63,
     "by_method": {
-      "override": 239,
-      "fuzzy": 38
+      "llm": 42,
+      "fuzzy": 21
     },
-    "cache_hits": 200
+    "cache_hits": 40
   },
   "note": "Ground truth is synthetic - scores are regression metrics, not real-world accuracy."
 }

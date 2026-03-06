@@ -1,62 +1,28 @@
 {
-  "supplier": "Bean & Leaf Co.",
-  "date": "2024-01-31",
+  "supplier": "Mediterranean Dry Goods Co",
+  "date": "2024-11-10",
   "currency": "EUR",
   "language": "en",
   "line_items": [
     {
-      "description": "Cocoa Powder (1kg)",
-      "quantity": 2.0,
+      "description": "Sugar 1kg",
+      "quantity": 5.0,
       "unit": "kg",
-      "unit_price": 15.03,
-      "total": 30.06,
+      "unit_price": 0.00125,
+      "total": 6.25,
       "is_tax_or_fee": false,
       "is_discount": false,
       "confidence": "high"
     },
     {
-      "description": "Robusta Coffee Beans (1kg)",
-      "quantity": 8.0,
-      "unit": "kg",
-      "unit_price": 17.75,
-      "total": 142.0,
-      "is_tax_or_fee": false,
-      "is_discount": false,
-      "confidence": "high"
-    },
-    {
-      "description": "Single Origin Ethiopian (1kg)",
-      "quantity": 8.0,
-      "unit": "kg",
-      "unit_price": 23.66,
-      "total": 189.28,
-      "is_tax_or_fee": false,
-      "is_discount": false,
-      "confidence": "high"
-    },
-    {
-      "description": "Espresso Roast Beans (1kg)",
-      "quantity": 3.0,
-      "unit": "kg",
-      "unit_price": 20.42,
-      "total": 61.26,
-      "is_tax_or_fee": false,
-      "is_discount": false,
-      "confidence": "high"
-    },
-    {
-      "description": "Delivery Charge",
+      "description": "Chocolate Chips 1kg",
       "quantity": 1.0,
-      "unit": "each",
-      "unit_price": 5.0,
-      "total": 5.0,
-      "is_tax_or_fee": true,
+      "unit": "kg",
+      "unit_price": 0.0128,
+      "total": 12.8,
+      "is_tax_or_fee": false,
       "is_discount": false,
-      "confidence": "high"
+      "confidence": "low"
     }
-  ],
-  "subtotal": 422.6,
-  "tax": 89.8,
-  "total": 517.4,
-  "notes": ""
+  ]
 }

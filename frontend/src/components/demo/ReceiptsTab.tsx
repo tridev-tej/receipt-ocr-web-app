@@ -5,7 +5,7 @@ import { ArrowRight, ImageOff } from "lucide-react"
 
 function receiptImageUrl(receiptId: string): string {
   const num = receiptId.replace("R-", "")
-  return `/api/receipts/receipt_${num}.jpg`
+  return `/api/receipts/R${num}.jpg`
 }
 
 export function ReceiptsTab() {

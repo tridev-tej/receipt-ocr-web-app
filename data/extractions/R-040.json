@@ -1,52 +1,28 @@
 {
-  "supplier": "Green Garden Produce",
-  "date": "2024-01-31",
-  "currency": "EUR",
+  "supplier": "London Coffee Traders Ltd",
+  "date": "2024-11-25",
+  "currency": "GBP",
   "language": "en",
   "line_items": [
     {
-      "description": "Fresh Mint (200g pack)",
-      "quantity": 5.0,
-      "unit": "200g",
-      "unit_price": 8.0,
-      "total": 40.0,
+      "description": "Premium Arabica 2lb",
+      "quantity": 1.0,
+      "unit": "lb",
+      "unit_price": 0.023859547787438932,
+      "total": 21.645,
       "is_tax_or_fee": false,
       "is_discount": false,
       "confidence": "high"
     },
     {
-      "description": "Organic Lemons (per kg)",
-      "quantity": 7.0,
-      "unit": "kg",
-      "unit_price": 4.5,
-      "total": 31.5,
-      "is_tax_or_fee": false,
-      "is_discount": false,
-      "confidence": "high"
-    },
-    {
-      "description": "Lemons (box of 50)",
-      "quantity": 2.0,
-      "unit": "box",
-      "unit_price": 17.91,
-      "total": 35.82,
-      "is_tax_or_fee": false,
-      "is_discount": false,
-      "confidence": "high"
-    },
-    {
-      "description": "Delivery Charge",
+      "description": "Coffee Grinder Repair",
       "quantity": 1.0,
       "unit": "each",
-      "unit_price": 5.0,
-      "total": 5.0,
-      "is_tax_or_fee": true,
+      "unit_price": 52.65,
+      "total": 52.65,
+      "is_tax_or_fee": false,
       "is_discount": false,
       "confidence": "high"
     }
-  ],
-  "subtotal": 107.32,
-  "tax": 23.59,
-  "total": 135.91,
-  "notes": ""
+  ]
 }

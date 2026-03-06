@@ -1,42 +1,68 @@
 {
-  "supplier": "Sweet Harvest Trading",
-  "date": "2024-02-08",
+  "supplier": "Unknown",
+  "date": null,
   "currency": "EUR",
-  "language": "en",
+  "language": "fr",
   "line_items": [
     {
-      "description": "Sea Salt (1kg)",
-      "quantity": 6.0,
-      "unit": "kg",
-      "unit_price": 0.52,
-      "total": 3.12,
+      "description": "Boulangerie Patisserie",
+      "quantity": null,
+      "unit": "each",
+      "unit_price": 0.0,
+      "total": 0.0,
       "is_tax_or_fee": false,
       "is_discount": false,
       "confidence": "high"
     },
     {
-      "description": "Raw Cane Sugar (1kg)",
+      "description": "2 Decaf [unclear]",
       "quantity": 2.0,
-      "unit": "kg",
-      "unit_price": 1.72,
-      "total": 3.44,
+      "unit": "each",
+      "unit_price": 0.0,
+      "total": 0.0,
+      "is_tax_or_fee": false,
+      "is_discount": false,
+      "confidence": "low"
+    },
+    {
+      "description": "Pain de campagne",
+      "quantity": null,
+      "unit": "each",
+      "unit_price": 0.0,
+      "total": 0.0,
       "is_tax_or_fee": false,
       "is_discount": false,
       "confidence": "high"
     },
     {
-      "description": "White Sugar (25kg sack)",
-      "quantity": 6.0,
-      "unit": "25kg",
-      "unit_price": 24.56,
-      "total": 147.36,
+      "description": "[unclear] EUR 3.50",
+      "quantity": null,
+      "unit": "each",
+      "unit_price": 3.5,
+      "total": 3.5,
       "is_tax_or_fee": false,
       "is_discount": false,
-      "confidence": "high"
+      "confidence": "low"
+    },
+    {
+      "description": "[unclear] EUR 4.50",
+      "quantity": null,
+      "unit": "each",
+      "unit_price": 4.5,
+      "total": 4.5,
+      "is_tax_or_fee": false,
+      "is_discount": false,
+      "confidence": "low"
+    },
+    {
+      "description": "Total EUR 8.00",
+      "quantity": null,
+      "unit": "each",
+      "unit_price": 8.0,
+      "total": 8.0,
+      "is_tax_or_fee": false,
+      "is_discount": false,
+      "confidence": "low"
     }
-  ],
-  "subtotal": 153.92,
-  "tax": 32.32,
-  "total": 186.24,
-  "notes": ""
+  ]
 }

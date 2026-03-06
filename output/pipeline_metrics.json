@@ -1,10 +1,12 @@
 {
-  "run_id": "ba40919f",
-  "receipts_processed": 100,
+  "run_id": "29f5d2a5",
+  "receipts_processed": 40,
   "receipts_failed": 0,
-  "total_line_items": 318,
-  "total_api_cost_usd": 2.14,
-  "avg_ocr_confidence": 0.967,
-  "mapping_rate": 0.949,
-  "duration_seconds": 247.3
+  "total_line_items": 123,
+  "total_api_cost_usd": 0.0,
+  "avg_ocr_confidence": 0.896,
+  "mapping_rate": 0.512,
+  "cached_extractions": 40,
+  "used_overrides": true,
+  "duration_seconds": 19.21
 }

@@ -1,42 +1,48 @@
 {
-  "supplier": "PackRight Supplies",
-  "date": "2024-01-25",
-  "currency": "USD",
+  "supplier": "Pickright Supplies",
+  "date": "2024-10-10",
+  "currency": "EUR",
   "language": "en",
   "line_items": [
     {
-      "description": "Paper Cups 16oz (pack/500)",
-      "quantity": 8.0,
-      "unit": "pk/500",
-      "unit_price": 41.27,
-      "total": 330.16,
+      "description": "30z Paper Cups",
+      "quantity": 100.0,
+      "unit": "each",
+      "unit_price": 0.12,
+      "total": 12.0,
+      "is_tax_or_fee": false,
+      "is_discount": false,
+      "confidence": "low"
+    },
+    {
+      "description": "12oz Paper Cups",
+      "quantity": 100.0,
+      "unit": "each",
+      "unit_price": 0.14,
+      "total": 14.0,
       "is_tax_or_fee": false,
       "is_discount": false,
       "confidence": "high"
     },
     {
-      "description": "Paper Bags Small (pack/500)",
-      "quantity": 7.0,
-      "unit": "pk/500",
-      "unit_price": 35.14,
-      "total": 245.98,
+      "description": "Cup Lids (fits all)",
+      "quantity": 200.0,
+      "unit": "each",
+      "unit_price": 0.04,
+      "total": 8.0,
       "is_tax_or_fee": false,
       "is_discount": false,
       "confidence": "high"
     },
     {
-      "description": "Napkins 1-ply (pack/1000)",
-      "quantity": 7.0,
-      "unit": "pk/1000",
-      "unit_price": 13.6,
-      "total": 95.2,
+      "description": "Paper Straws",
+      "quantity": 500.0,
+      "unit": "each",
+      "unit_price": 0.02,
+      "total": 10.0,
       "is_tax_or_fee": false,
       "is_discount": false,
       "confidence": "high"
     }
-  ],
-  "subtotal": 671.34,
-  "tax": 60.42,
-  "total": 731.76,
-  "notes": ""
+  ]
 }

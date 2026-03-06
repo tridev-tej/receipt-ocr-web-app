@@ -1,52 +1,108 @@
 {
-  "supplier": "Artisan Bakehouse",
-  "date": "2024-01-09",
+  "supplier": "Unknown",
+  "date": null,
   "currency": "EUR",
   "language": "en",
   "line_items": [
     {
-      "description": "Pain au Chocolat (box/24)",
+      "description": "MILK POWDER 4",
+      "quantity": null,
+      "unit": "each",
+      "unit_price": 0.0,
+      "total": 0.0,
+      "is_tax_or_fee": false,
+      "is_discount": false,
+      "confidence": "low"
+    },
+    {
+      "description": "08.3 EUR x 6",
+      "quantity": 6.0,
+      "unit": "each",
+      "unit_price": 8.3,
+      "total": 49.800000000000004,
+      "is_tax_or_fee": false,
+      "is_discount": false,
+      "confidence": "low"
+    },
+    {
+      "description": "TL x NLN a PO",
+      "quantity": null,
+      "unit": "each",
+      "unit_price": 0.0,
+      "total": 0.0,
+      "is_tax_or_fee": false,
+      "is_discount": false,
+      "confidence": "low"
+    },
+    {
+      "description": "62.3 EUR x 1",
       "quantity": 1.0,
-      "unit": "box/24",
-      "unit_price": 25.45,
-      "total": 25.45,
-      "is_tax_or_fee": false,
-      "is_discount": false,
-      "confidence": "medium"
-    },
-    {
-      "description": "Almond Croissants (each)",
-      "quantity": 5.0,
       "unit": "each",
-      "unit_price": 1.26,
-      "total": 6.3,
+      "unit_price": 62.3,
+      "total": 62.3,
       "is_tax_or_fee": false,
       "is_discount": false,
-      "confidence": "medium"
+      "confidence": "low"
     },
     {
-      "description": "Blueberry Muffins (box/12)",
-      "quantity": 3.0,
-      "unit": "box/12",
-      "unit_price": 16.12,
-      "total": 48.36,
-      "is_tax_or_fee": false,
-      "is_discount": false,
-      "confidence": "medium"
-    },
-    {
-      "description": "Sourdough Bread Loaf",
-      "quantity": 3.0,
+      "description": "72.0 NLN a PO",
+      "quantity": null,
       "unit": "each",
-      "unit_price": 3.25,
-      "total": 9.75,
+      "unit_price": 72.0,
+      "total": 72.0,
       "is_tax_or_fee": false,
       "is_discount": false,
-      "confidence": "medium"
+      "confidence": "low"
+    },
+    {
+      "description": "EUR",
+      "quantity": null,
+      "unit": "each",
+      "unit_price": 0.0,
+      "total": 0.0,
+      "is_tax_or_fee": false,
+      "is_discount": false,
+      "confidence": "high"
+    },
+    {
+      "description": "02.51 EUR",
+      "quantity": null,
+      "unit": "each",
+      "unit_price": 2.51,
+      "total": 2.51,
+      "is_tax_or_fee": false,
+      "is_discount": false,
+      "confidence": "low"
+    },
+    {
+      "description": "00.3 EUR",
+      "quantity": null,
+      "unit": "each",
+      "unit_price": 0.3,
+      "total": 0.3,
+      "is_tax_or_fee": false,
+      "is_discount": false,
+      "confidence": "low"
+    },
+    {
+      "description": "07.59 EUR",
+      "quantity": null,
+      "unit": "each",
+      "unit_price": 7.59,
+      "total": 7.59,
+      "is_tax_or_fee": false,
+      "is_discount": false,
+      "confidence": "low"
+    },
+    {
+      "description": "04.55 EUR",
+      "quantity": null,
+      "unit": "each",
+      "unit_price": 4.55,
+      "total": 4.55,
+      "is_tax_or_fee": false,
+      "is_discount": false,
+      "confidence": "low"
     }
-  ],
-  "subtotal": 89.86,
-  "tax": 18.87,
-  "total": 108.73,
-  "notes": ""
+  ]
 }

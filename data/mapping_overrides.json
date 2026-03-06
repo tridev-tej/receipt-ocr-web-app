@@ -1,7 +1,7 @@
 {
-  "_comment": "Manual mapping overrides for items that fuzzy matching misses. Add entries as receipt_description → ingredient_id.",
+  "_comment": "Manual mapping overrides for items that fuzzy matching misses. Add entries as receipt_description -> ingredient_id.",
   "_notes": {
-    "pain_au_chocolat": "Mapped to 'croissant' as approximation — no dedicated pain-au-chocolat ingredient exists. Cost difference is minor for COGS estimates but may need a separate ingredient if precision matters."
+    "pain_au_chocolat": "Mapped to 'croissant' as approximation - no dedicated pain-au-chocolat ingredient exists. Cost difference is minor for COGS estimates but may need a separate ingredient if precision matters."
   },
   "overrides": {
     "Arabica Coffee Beans (1kg)": "coffee_beans",

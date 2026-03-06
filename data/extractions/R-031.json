@@ -1,62 +1,38 @@
 {
-  "supplier": "Bean & Leaf Co.",
-  "date": "2024-01-12",
+  "supplier": "Boulangerie Petit Pierre",
+  "date": "2024-10-12",
   "currency": "EUR",
-  "language": "en",
+  "language": "fr",
   "line_items": [
     {
-      "description": "Cocoa Powder (1kg)",
-      "quantity": 5.0,
-      "unit": "kg",
-      "unit_price": 13.74,
-      "total": 68.7,
-      "is_tax_or_fee": false,
-      "is_discount": false,
-      "confidence": "high"
-    },
-    {
-      "description": "House Blend Beans (1kg)",
-      "quantity": 7.0,
-      "unit": "kg",
-      "unit_price": 16.92,
-      "total": 118.44,
-      "is_tax_or_fee": false,
-      "is_discount": false,
-      "confidence": "high"
-    },
-    {
-      "description": "Single Origin Ethiopian (1kg)",
-      "quantity": 6.0,
-      "unit": "kg",
-      "unit_price": 25.44,
-      "total": 152.64,
-      "is_tax_or_fee": false,
-      "is_discount": false,
-      "confidence": "high"
-    },
-    {
-      "description": "Robusta Coffee Beans (1kg)",
-      "quantity": 2.0,
-      "unit": "kg",
-      "unit_price": 15.63,
-      "total": 31.26,
-      "is_tax_or_fee": false,
-      "is_discount": false,
-      "confidence": "high"
-    },
-    {
-      "description": "Dishwashing Liquid (2L)",
-      "quantity": 2.0,
+      "description": "Croissants x24 @ EUR 1.20 ea = EUR 28.80",
+      "quantity": 24.0,
       "unit": "each",
-      "unit_price": 3.75,
-      "total": 7.5,
+      "unit_price": 1.2,
+      "total": 28.8,
       "is_tax_or_fee": false,
       "is_discount": false,
       "confidence": "high"
+    },
+    {
+      "description": "Blueberry Muffins x12 @ EUR 1.80 ea = EUR 21.60",
+      "quantity": 12.0,
+      "unit": "each",
+      "unit_price": 1.8,
+      "total": 21.6,
+      "is_tax_or_fee": false,
+      "is_discount": false,
+      "confidence": "high"
+    },
+    {
+      "description": "Scones x12 @ EUR 1.50 ea = EUR 18.00",
+      "quantity": 12.0,
+      "unit": "each",
+      "unit_price": 1.5,
+      "total": 18.0,
+      "is_tax_or_fee": false,
+      "is_discount": false,
+      "confidence": "low"
     }
-  ],
-  "subtotal": 378.54,
-  "tax": 79.49,
-  "total": 458.03,
-  "notes": ""
+  ]
 }

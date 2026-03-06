@@ -166,10 +166,10 @@ function AnimatedNumber({ value, suffix = "" }: { value: number; suffix?: string
 }
 
 const STATS = [
-  { value: 100, suffix: "", label: "Receipts Processed", icon: FileText },
-  { value: 0.964, suffix: "", label: "Mapping F1 Score", icon: Target },
-  { value: 97.9, suffix: "%", label: "Classification Accuracy", icon: CheckCircle2 },
-  { value: 22, suffix: "", label: "Ingredients Tracked", icon: BarChart3 },
+  { value: 40, suffix: "", label: "Real Receipts Processed", icon: FileText },
+  { value: 1.0, suffix: "", label: "Mapping F1 Score", icon: Target },
+  { value: 72.7, suffix: "%", label: "Pipeline Score", icon: CheckCircle2 },
+  { value: 21, suffix: "", label: "Ingredients Tracked", icon: BarChart3 },
 ]
 
 function StatsCards() {
@@ -341,11 +341,11 @@ function EvalSummary() {
             <tbody>
               {[
                 ["Mapping Precision", "1.000"],
-                ["Mapping Recall", "0.930"],
-                ["Mapping F1", "0.964"],
-                ["Classification Accuracy", "0.979"],
-                ["Cost Accuracy (MAPE)", "0.7%"],
-                ["Composite Score", "0.981"],
+                ["Mapping Recall", "1.000"],
+                ["Mapping F1", "1.000"],
+                ["Classification Accuracy", "1.000"],
+                ["Cost Accuracy", "45.5%"],
+                ["Pipeline Score", "0.727"],
               ].map(([metric, score]) => (
                 <tr key={metric} className="border-b border-chai/10 last:border-0">
                   <td className="px-4 py-2.5 text-choco">{metric}</td>

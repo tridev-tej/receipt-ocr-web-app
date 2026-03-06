@@ -1,32 +1,48 @@
 {
-  "supplier": "Sweet Harvest Trading",
-  "date": "2024-01-17",
+  "supplier": "De Melkboer Dairy",
+  "date": "2024-10-05",
   "currency": "EUR",
-  "language": "en",
+  "language": "nl",
   "line_items": [
     {
-      "description": "Wildflower Honey (500g)",
-      "quantity": 5.0,
-      "unit": "500g",
-      "unit_price": 4.85,
-      "total": 24.25,
+      "description": "Whole Milk 2L",
+      "quantity": 6.0,
+      "unit": "L",
+      "unit_price": 0.0014,
+      "total": 16.8,
       "is_tax_or_fee": false,
       "is_discount": false,
       "confidence": "high"
     },
     {
-      "description": "White Sugar (25kg sack)",
-      "quantity": 8.0,
-      "unit": "25kg",
-      "unit_price": 19.82,
-      "total": 158.56,
+      "description": "Oat Milk 1L",
+      "quantity": 4.0,
+      "unit": "L",
+      "unit_price": 0.0032,
+      "total": 12.8,
       "is_tax_or_fee": false,
       "is_discount": false,
       "confidence": "high"
+    },
+    {
+      "description": "Subtotal",
+      "quantity": null,
+      "unit": "each",
+      "unit_price": 29.6,
+      "total": 29.6,
+      "is_tax_or_fee": false,
+      "is_discount": false,
+      "confidence": "low"
+    },
+    {
+      "description": "TOTAAL",
+      "quantity": null,
+      "unit": "each",
+      "unit_price": 29.6,
+      "total": 29.6,
+      "is_tax_or_fee": false,
+      "is_discount": false,
+      "confidence": "low"
     }
-  ],
-  "subtotal": 182.81,
-  "tax": 38.39,
-  "total": 221.2,
-  "notes": ""
+  ]
 }

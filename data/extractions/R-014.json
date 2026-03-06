@@ -1,42 +1,48 @@
 {
-  "supplier": "Fresh Fields Dairy",
-  "date": "2024-02-06",
+  "supplier": "Unknown",
+  "date": null,
   "currency": "EUR",
   "language": "en",
   "line_items": [
     {
-      "description": "Whole Milk (10L)",
-      "quantity": 2.0,
-      "unit": "10L",
-      "unit_price": 10.75,
-      "total": 21.5,
+      "description": "EUR [unclear]",
+      "quantity": null,
+      "unit": "each",
+      "unit_price": 0.0,
+      "total": 0.0,
       "is_tax_or_fee": false,
       "is_discount": false,
-      "confidence": "high"
+      "confidence": "low"
     },
     {
-      "description": "Oat Milk Barista (1L)",
-      "quantity": 1.0,
-      "unit": "L",
-      "unit_price": 2.38,
-      "total": 2.38,
+      "description": "EUR [unclear]",
+      "quantity": null,
+      "unit": "each",
+      "unit_price": 0.0,
+      "total": 0.0,
       "is_tax_or_fee": false,
       "is_discount": false,
-      "confidence": "high"
+      "confidence": "low"
     },
     {
-      "description": "Semi-Skimmed Milk (1L)",
-      "quantity": 6.0,
-      "unit": "L",
-      "unit_price": 1.18,
-      "total": 7.08,
+      "description": "EUR [unclear]",
+      "quantity": null,
+      "unit": "each",
+      "unit_price": 0.0,
+      "total": 0.0,
       "is_tax_or_fee": false,
       "is_discount": false,
-      "confidence": "high"
+      "confidence": "low"
+    },
+    {
+      "description": "EUR [unclear]",
+      "quantity": null,
+      "unit": "each",
+      "unit_price": 0.0,
+      "total": 0.0,
+      "is_tax_or_fee": false,
+      "is_discount": false,
+      "confidence": "low"
     }
-  ],
-  "subtotal": 30.96,
-  "tax": 6.5,
-  "total": 37.46,
-  "notes": ""
+  ]
 }

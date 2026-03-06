@@ -1,22 +1,38 @@
 {
-  "supplier": "Sweet Harvest Trading",
-  "date": "2024-02-16",
+  "supplier": "Packright Supplies",
+  "date": "2024-12-01",
   "currency": "EUR",
   "language": "en",
   "line_items": [
     {
-      "description": "White Sugar (25kg sack)",
-      "quantity": 7.0,
-      "unit": "25kg",
-      "unit_price": 23.22,
-      "total": 162.54,
+      "description": "8oz Paper Cups",
+      "quantity": 200.0,
+      "unit": "each",
+      "unit_price": 0.12,
+      "total": 24.0,
+      "is_tax_or_fee": false,
+      "is_discount": false,
+      "confidence": "high"
+    },
+    {
+      "description": "12oz Paper Cups",
+      "quantity": 200.0,
+      "unit": "each",
+      "unit_price": 0.14,
+      "total": 28.0,
+      "is_tax_or_fee": false,
+      "is_discount": false,
+      "confidence": "high"
+    },
+    {
+      "description": "Cup Lids",
+      "quantity": 400.0,
+      "unit": "each",
+      "unit_price": 0.04,
+      "total": 16.0,
       "is_tax_or_fee": false,
       "is_discount": false,
       "confidence": "high"
     }
-  ],
-  "subtotal": 162.54,
-  "tax": 34.13,
-  "total": 196.67,
-  "notes": ""
+  ]
 }

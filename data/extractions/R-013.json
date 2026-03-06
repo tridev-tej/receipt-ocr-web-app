@@ -1,32 +1,28 @@
 {
-  "supplier": "Bean & Leaf Co.",
-  "date": "2024-01-19",
+  "supplier": "De Melkboer Dairy",
+  "date": "2024-12-05",
   "currency": "EUR",
-  "language": "en",
+  "language": "nl",
   "line_items": [
     {
-      "description": "Cocoa Powder (1kg)",
-      "quantity": 8.0,
-      "unit": "kg",
-      "unit_price": 15.23,
-      "total": 121.84,
+      "description": "Whole Milk 2L",
+      "quantity": 12.0,
+      "unit": "L",
+      "unit_price": 0.0017,
+      "total": 40.8,
       "is_tax_or_fee": false,
       "is_discount": false,
       "confidence": "high"
     },
     {
-      "description": "Discount",
-      "quantity": 1.0,
-      "unit": "each",
-      "unit_price": -5.0,
-      "total": -5.0,
+      "description": "Butter 250g",
+      "quantity": 4.0,
+      "unit": "g",
+      "unit_price": 0.01,
+      "total": 10.0,
       "is_tax_or_fee": false,
-      "is_discount": true,
-      "confidence": "high"
+      "is_discount": false,
+      "confidence": "low"
     }
-  ],
-  "subtotal": 121.84,
-  "tax": 24.54,
-  "total": 141.38,
-  "notes": ""
+  ]
 }

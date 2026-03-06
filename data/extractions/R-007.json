@@ -1,22 +1,18 @@
 {
-  "supplier": "Bean & Leaf Co.",
-  "date": "2024-02-06",
+  "supplier": "Brennan Sons Coffee Roasters",
+  "date": "2025-01-05",
   "currency": "EUR",
   "language": "en",
   "line_items": [
     {
-      "description": "Arabica Coffee Beans (1kg)",
+      "description": "Arabica Blend 1kg",
       "quantity": 3.0,
       "unit": "kg",
-      "unit_price": 20.22,
-      "total": 60.66,
+      "unit_price": 0.023,
+      "total": 69.0,
       "is_tax_or_fee": false,
       "is_discount": false,
       "confidence": "high"
     }
-  ],
-  "subtotal": 60.66,
-  "tax": 12.74,
-  "total": 73.4,
-  "notes": ""
+  ]
 }

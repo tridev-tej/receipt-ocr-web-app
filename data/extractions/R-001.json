@@ -1,62 +1,38 @@
 {
-  "supplier": "Bean & Leaf Co.",
-  "date": "2024-01-31",
+  "supplier": "Brennan Sons Coffee Roasters",
+  "date": "2024-01-07",
   "currency": "EUR",
   "language": "en",
   "line_items": [
     {
-      "description": "House Blend Beans (1kg)",
-      "quantity": 4.0,
+      "description": "Artisan blend Coffee Beans 1kg",
+      "quantity": 2.0,
       "unit": "kg",
-      "unit_price": 17.75,
-      "total": 71.0,
+      "unit_price": 0.022,
+      "total": 44.0,
       "is_tax_or_fee": false,
       "is_discount": false,
       "confidence": "high"
     },
     {
-      "description": "Arabica Coffee Beans (1kg)",
-      "quantity": 6.0,
-      "unit": "kg",
-      "unit_price": 23.74,
-      "total": 142.44,
-      "is_tax_or_fee": false,
-      "is_discount": false,
-      "confidence": "high"
-    },
-    {
-      "description": "Robusta Coffee Beans (1kg)",
-      "quantity": 7.0,
-      "unit": "kg",
-      "unit_price": 14.41,
-      "total": 100.87,
-      "is_tax_or_fee": false,
-      "is_discount": false,
-      "confidence": "high"
-    },
-    {
-      "description": "Espresso Roast Beans (1kg)",
-      "quantity": 6.0,
-      "unit": "kg",
-      "unit_price": 19.48,
-      "total": 116.88,
-      "is_tax_or_fee": false,
-      "is_discount": false,
-      "confidence": "high"
-    },
-    {
-      "description": "Cocoa Powder (1kg)",
+      "description": "Latte Milk 1kg",
       "quantity": 1.0,
       "unit": "kg",
-      "unit_price": 14.41,
-      "total": 14.41,
+      "unit_price": 0.014,
+      "total": 14.0,
+      "is_tax_or_fee": false,
+      "is_discount": false,
+      "confidence": "low"
+    },
+    {
+      "description": "House Blend Beans 1kg",
+      "quantity": 3.0,
+      "unit": "kg",
+      "unit_price": 0.018,
+      "total": 54.0,
       "is_tax_or_fee": false,
       "is_discount": false,
       "confidence": "high"
     }
-  ],
-  "subtotal": 445.6,
-  "tax": 93.58,
-  "total": 539.18,
-  "notes": ""
+  ]
 }

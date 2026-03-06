@@ -1,22 +1,58 @@
 {
-  "supplier": "Kaffee Kontor GmbH",
-  "date": "2024-02-19",
+  "supplier": "Mercato Fresco",
+  "date": "2024-10-15",
   "currency": "EUR",
-  "language": "de",
+  "language": "en",
   "line_items": [
     {
-      "description": "Espresso Mischung (1kg)",
-      "quantity": 6.0,
-      "unit": "kg",
-      "unit_price": 21.91,
-      "total": 131.46,
+      "description": "Lemons",
+      "quantity": 20.0,
+      "unit": "each",
+      "unit_price": 0.3,
+      "total": 6.0,
       "is_tax_or_fee": false,
       "is_discount": false,
       "confidence": "high"
+    },
+    {
+      "description": "Fresh Mint (bunch)",
+      "quantity": 5.0,
+      "unit": "bunch",
+      "unit_price": 1.2,
+      "total": 6.0,
+      "is_tax_or_fee": false,
+      "is_discount": false,
+      "confidence": "high"
+    },
+    {
+      "description": "Oranges",
+      "quantity": 10.0,
+      "unit": "each",
+      "unit_price": 0.5,
+      "total": 5.0,
+      "is_tax_or_fee": false,
+      "is_discount": false,
+      "confidence": "low"
+    },
+    {
+      "description": "Subtotal",
+      "quantity": null,
+      "unit": "each",
+      "unit_price": 17.0,
+      "total": 17.0,
+      "is_tax_or_fee": false,
+      "is_discount": false,
+      "confidence": "low"
+    },
+    {
+      "description": "TOTAL",
+      "quantity": null,
+      "unit": "each",
+      "unit_price": 17.0,
+      "total": 17.0,
+      "is_tax_or_fee": false,
+      "is_discount": false,
+      "confidence": "low"
     }
-  ],
-  "subtotal": 131.46,
-  "tax": 27.61,
-  "total": 159.07,
-  "notes": ""
+  ]
 }

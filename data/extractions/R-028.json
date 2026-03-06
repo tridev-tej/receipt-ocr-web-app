@@ -1,62 +1,38 @@
 {
-  "supplier": "Green Garden Produce",
-  "date": "2024-02-20",
+  "supplier": "Packright Supplies",
+  "date": "2024-12-20",
   "currency": "EUR",
   "language": "en",
   "line_items": [
     {
-      "description": "Fresh Mint (bunch 30g)",
-      "quantity": 1.0,
-      "unit": "bunch",
-      "unit_price": 2.25,
-      "total": 2.25,
+      "description": "8oz Cups 150 x 0.12",
+      "quantity": 150.0,
+      "unit": "each",
+      "unit_price": 0.12,
+      "total": 18.0,
       "is_tax_or_fee": false,
       "is_discount": false,
-      "confidence": "medium"
+      "confidence": "high"
     },
     {
-      "description": "Fresh Mint (200g pack)",
-      "quantity": 5.0,
-      "unit": "200g",
-      "unit_price": 6.35,
-      "total": 31.75,
+      "description": "16oz Cups 150 x 0.16",
+      "quantity": 150.0,
+      "unit": "each",
+      "unit_price": 0.16,
+      "total": 24.0,
       "is_tax_or_fee": false,
       "is_discount": false,
-      "confidence": "medium"
+      "confidence": "high"
     },
     {
-      "description": "Mixed Berries Frozen (1kg)",
-      "quantity": 1.0,
-      "unit": "kg",
-      "unit_price": 9.59,
-      "total": 9.59,
+      "description": "Straws 300 x 0.02.16",
+      "quantity": 300.0,
+      "unit": "each",
+      "unit_price": 0.02,
+      "total": 6.0,
       "is_tax_or_fee": false,
       "is_discount": false,
-      "confidence": "medium"
-    },
-    {
-      "description": "Organic Lemons (per kg)",
-      "quantity": 8.0,
-      "unit": "kg",
-      "unit_price": 4.69,
-      "total": 37.52,
-      "is_tax_or_fee": false,
-      "is_discount": false,
-      "confidence": "medium"
-    },
-    {
-      "description": "Fresh Blueberries (250g)",
-      "quantity": 6.0,
-      "unit": "250g",
-      "unit_price": 4.17,
-      "total": 25.02,
-      "is_tax_or_fee": false,
-      "is_discount": false,
-      "confidence": "medium"
+      "confidence": "high"
     }
-  ],
-  "subtotal": 106.13,
-  "tax": 22.29,
-  "total": 128.42,
-  "notes": ""
+  ]
 }

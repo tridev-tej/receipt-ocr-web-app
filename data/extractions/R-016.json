@@ -1,72 +1,38 @@
 {
-  "supplier": "Green Garden Produce",
-  "date": "2024-02-18",
+  "supplier": "De Melkboer Dairy",
+  "date": "2025-01-25",
   "currency": "EUR",
   "language": "en",
   "line_items": [
     {
-      "description": "Avocados (box of 20)",
-      "quantity": 3.0,
-      "unit": "box",
-      "unit_price": 24.5,
-      "total": 73.5,
+      "description": "Whole Milk 2L",
+      "quantity": 10.0,
+      "unit": "L",
+      "unit_price": 0.0017,
+      "total": 34.0,
       "is_tax_or_fee": false,
       "is_discount": false,
       "confidence": "high"
     },
     {
-      "description": "Hass Avocados (each)",
-      "quantity": 6.0,
-      "unit": "each",
-      "unit_price": 1.21,
-      "total": 7.26,
+      "description": "Oat Milk 1L",
+      "quantity": 4.0,
+      "unit": "L",
+      "unit_price": 0.0035,
+      "total": 14.0,
       "is_tax_or_fee": false,
       "is_discount": false,
       "confidence": "high"
     },
     {
-      "description": "Fresh Blueberries (250g)",
-      "quantity": 8.0,
-      "unit": "250g",
-      "unit_price": 3.48,
-      "total": 27.84,
+      "description": "Butter 250g",
+      "quantity": 2.0,
+      "unit": "g",
+      "unit_price": 0.0104,
+      "total": 5.2,
       "is_tax_or_fee": false,
       "is_discount": false,
-      "confidence": "high"
-    },
-    {
-      "description": "Mixed Berries Frozen (1kg)",
-      "quantity": 8.0,
-      "unit": "kg",
-      "unit_price": 6.61,
-      "total": 52.88,
-      "is_tax_or_fee": false,
-      "is_discount": false,
-      "confidence": "high"
-    },
-    {
-      "description": "Fresh Mint (bunch 30g)",
-      "quantity": 3.0,
-      "unit": "bunch",
-      "unit_price": 1.71,
-      "total": 5.13,
-      "is_tax_or_fee": false,
-      "is_discount": false,
-      "confidence": "high"
-    },
-    {
-      "description": "Delivery Charge",
-      "quantity": 1.0,
-      "unit": "each",
-      "unit_price": 12.5,
-      "total": 12.5,
-      "is_tax_or_fee": true,
-      "is_discount": false,
-      "confidence": "high"
+      "confidence": "low"
     }
-  ],
-  "subtotal": 166.61,
-  "tax": 37.61,
-  "total": 216.72,
-  "notes": ""
+  ]
 }

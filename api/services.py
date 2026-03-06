@@ -13,7 +13,7 @@ REPORT_MD_PATH = ROOT / "output" / "cost_report.md"
 REPORT_CSV_PATH = ROOT / "output" / "cost_report.csv"
 MENU_PATH = ROOT / "menu.json"
 
-RUN_ID = "ba40919f"
+RUN_ID = "29f5d2a5"
 
 
 def _db() -> sqlite3.Connection:

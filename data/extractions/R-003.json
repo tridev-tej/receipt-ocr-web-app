@@ -1,62 +1,68 @@
 {
-  "supplier": "Sweet Harvest Trading",
-  "date": "2024-02-28",
+  "supplier": "Brennan Sons Coffee Roasters",
+  "date": "2024-11-26",
   "currency": "EUR",
   "language": "en",
   "line_items": [
     {
-      "description": "Wildflower Honey (500g)",
-      "quantity": 3.0,
-      "unit": "500g",
-      "unit_price": 5.09,
-      "total": 15.27,
+      "description": "Special Blend 1kg",
+      "quantity": 1.0,
+      "unit": "kg",
+      "unit_price": 0.0,
+      "total": 0.0,
       "is_tax_or_fee": false,
       "is_discount": false,
       "confidence": "high"
     },
     {
-      "description": "Demerara Sugar (1kg)",
-      "quantity": 5.0,
-      "unit": "kg",
-      "unit_price": 1.38,
-      "total": 6.9,
+      "description": "Ground Espresso 250g",
+      "quantity": 1.0,
+      "unit": "g",
+      "unit_price": 0.0,
+      "total": 0.0,
       "is_tax_or_fee": false,
       "is_discount": false,
       "confidence": "high"
     },
     {
-      "description": "Organic Honey (1kg)",
-      "quantity": 3.0,
-      "unit": "kg",
-      "unit_price": 13.89,
-      "total": 41.67,
+      "description": "Total",
+      "quantity": null,
+      "unit": "each",
+      "unit_price": 56.0,
+      "total": 56.0,
       "is_tax_or_fee": false,
       "is_discount": false,
-      "confidence": "high"
+      "confidence": "low"
     },
     {
-      "description": "Raw Cane Sugar (1kg)",
-      "quantity": 2.0,
-      "unit": "kg",
-      "unit_price": 1.65,
-      "total": 3.3,
+      "description": "EUR 18.00",
+      "quantity": null,
+      "unit": "each",
+      "unit_price": 18.0,
+      "total": 18.0,
       "is_tax_or_fee": false,
       "is_discount": false,
-      "confidence": "high"
+      "confidence": "low"
     },
     {
-      "description": "White Granulated Sugar (1kg)",
-      "quantity": 5.0,
-      "unit": "kg",
-      "unit_price": 1.16,
-      "total": 5.8,
+      "description": "Subtotal EUR 94.00",
+      "quantity": null,
+      "unit": "each",
+      "unit_price": 94.0,
+      "total": 94.0,
       "is_tax_or_fee": false,
       "is_discount": false,
-      "confidence": "high"
+      "confidence": "low"
+    },
+    {
+      "description": "Total EUR 94.00",
+      "quantity": null,
+      "unit": "each",
+      "unit_price": 94.0,
+      "total": 94.0,
+      "is_tax_or_fee": false,
+      "is_discount": false,
+      "confidence": "low"
     }
-  ],
-  "subtotal": 72.94,
-  "tax": 15.32,
-  "total": 88.26,
-  "notes": ""
+  ]
 }

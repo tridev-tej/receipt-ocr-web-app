@@ -1,22 +1,28 @@
 {
-  "supplier": "Green Garden Produce",
-  "date": "2024-01-28",
+  "supplier": "Brennan Sons Coffee Roasters",
+  "date": "2024-01-15",
   "currency": "EUR",
   "language": "en",
   "line_items": [
     {
-      "description": "Fresh Blueberries (250g)",
-      "quantity": 8.0,
-      "unit": "250g",
-      "unit_price": 3.66,
-      "total": 29.28,
+      "description": "Arabica Blend Roasted",
+      "quantity": 5.0,
+      "unit": "kg",
+      "unit_price": 0.021,
+      "total": 105.0,
+      "is_tax_or_fee": false,
+      "is_discount": false,
+      "confidence": "high"
+    },
+    {
+      "description": "Coffee Filters 200",
+      "quantity": 1.0,
+      "unit": "pack",
+      "unit_price": 4.5,
+      "total": 4.5,
       "is_tax_or_fee": false,
       "is_discount": false,
       "confidence": "high"
     }
-  ],
-  "subtotal": 29.28,
-  "tax": 2.64,
-  "total": 31.92,
-  "notes": ""
+  ]
 }

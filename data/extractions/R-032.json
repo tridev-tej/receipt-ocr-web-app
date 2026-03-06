@@ -1,52 +1,28 @@
 {
-  "supplier": "Fresh Fields Dairy",
-  "date": "2024-02-20",
+  "supplier": "Boulangerie Petit Regal",
+  "date": "2014-11-05",
   "currency": "EUR",
-  "language": "en",
+  "language": "fr",
   "line_items": [
     {
-      "description": "Semi-Skimmed Milk (1L)",
-      "quantity": 6.0,
-      "unit": "L",
-      "unit_price": 1.2,
-      "total": 7.2,
+      "description": "Croissants x 30 @ 1.50 = 45.00",
+      "quantity": 30.0,
+      "unit": "each",
+      "unit_price": 1.5,
+      "total": 45.0,
       "is_tax_or_fee": false,
       "is_discount": false,
-      "confidence": "medium"
+      "confidence": "high"
     },
     {
-      "description": "Whole Milk (10L)",
-      "quantity": 1.0,
-      "unit": "10L",
-      "unit_price": 11.97,
-      "total": 11.97,
+      "description": "Cookies (Choc chip) x 12 @ 1.00",
+      "quantity": 12.0,
+      "unit": "each",
+      "unit_price": 1.0,
+      "total": 12.0,
       "is_tax_or_fee": false,
       "is_discount": false,
-      "confidence": "medium"
-    },
-    {
-      "description": "Whole Milk (1L)",
-      "quantity": 7.0,
-      "unit": "L",
-      "unit_price": 1.38,
-      "total": 9.66,
-      "is_tax_or_fee": false,
-      "is_discount": false,
-      "confidence": "medium"
-    },
-    {
-      "description": "Oat Milk Barista (6-pack)",
-      "quantity": 1.0,
-      "unit": "6pk",
-      "unit_price": 13.9,
-      "total": 13.9,
-      "is_tax_or_fee": false,
-      "is_discount": false,
-      "confidence": "medium"
+      "confidence": "low"
     }
-  ],
-  "subtotal": 42.73,
-  "tax": 8.97,
-  "total": 51.7,
-  "notes": ""
+  ]
 }

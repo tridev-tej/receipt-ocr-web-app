@@ -1,52 +1,48 @@
 {
-  "supplier": "Fresh Fields Dairy",
-  "date": "2024-02-14",
+  "supplier": "Packright Supplies",
+  "date": "2024-11-15",
   "currency": "EUR",
   "language": "en",
   "line_items": [
     {
-      "description": "Whole Milk (1L)",
-      "quantity": 4.0,
-      "unit": "L",
-      "unit_price": 1.22,
-      "total": -4.88,
+      "description": "160z Paper Cups",
+      "quantity": 200.0,
+      "unit": "each",
+      "unit_price": 0.16,
+      "total": 32.0,
       "is_tax_or_fee": false,
       "is_discount": false,
       "confidence": "high"
     },
     {
-      "description": "Semi-Skimmed Milk (1L)",
-      "quantity": 8.0,
-      "unit": "L",
-      "unit_price": 1.09,
-      "total": -8.72,
+      "description": "Cup Lids",
+      "quantity": 400.0,
+      "unit": "each",
+      "unit_price": 0.04,
+      "total": 16.0,
       "is_tax_or_fee": false,
       "is_discount": false,
       "confidence": "high"
     },
     {
-      "description": "Oat Milk Barista (1L)",
-      "quantity": 1.0,
-      "unit": "L",
-      "unit_price": 2.58,
-      "total": -2.58,
+      "description": "Cleaning Spray",
+      "quantity": 3.0,
+      "unit": "each",
+      "unit_price": 4.2,
+      "total": 12.6,
       "is_tax_or_fee": false,
       "is_discount": false,
       "confidence": "high"
     },
     {
-      "description": "Whole Milk (10L)",
+      "description": "Bleach 1L",
       "quantity": 2.0,
-      "unit": "10L",
-      "unit_price": 11.54,
-      "total": -23.08,
+      "unit": "L",
+      "unit_price": 0.0035,
+      "total": 7.0,
       "is_tax_or_fee": false,
       "is_discount": false,
       "confidence": "high"
     }
-  ],
-  "subtotal": 39.26,
-  "tax": 8.24,
-  "total": -47.5,
-  "notes": ""
+  ]
 }

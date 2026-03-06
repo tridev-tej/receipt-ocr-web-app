@@ -1,22 +1,38 @@
 {
-  "supplier": "PackRight Supplies",
-  "date": "2024-01-26",
+  "supplier": "Mediterranean Dry Goods Co",
+  "date": "2024-10-25",
   "currency": "EUR",
   "language": "en",
   "line_items": [
     {
-      "description": "Paper Bags Large (pack/250)",
+      "description": "Flour 2kg",
+      "quantity": 2.0,
+      "unit": "kg",
+      "unit_price": 0.0009,
+      "total": 3.6,
+      "is_tax_or_fee": false,
+      "is_discount": false,
+      "confidence": "low"
+    },
+    {
+      "description": "Honey 500g",
       "quantity": 1.0,
-      "unit": "pk/250",
-      "unit_price": 20.47,
-      "total": 20.47,
+      "unit": "g",
+      "unit_price": 0.0144,
+      "total": 7.2,
       "is_tax_or_fee": false,
       "is_discount": false,
       "confidence": "high"
+    },
+    {
+      "description": "Cinnamon 100g",
+      "quantity": 3.0,
+      "unit": "g",
+      "unit_price": 0.033999999999999996,
+      "total": 10.2,
+      "is_tax_or_fee": false,
+      "is_discount": false,
+      "confidence": "low"
     }
-  ],
-  "subtotal": 20.47,
-  "tax": 4.3,
-  "total": 24.77,
-  "notes": ""
+  ]
 }

@@ -727,7 +727,7 @@ function ExistingSolutionBenchmarks() {
         <h3 className="mb-3 font-semibold text-choco">Why build custom vs. use Veryfi/Mindee?</h3>
         <div className="space-y-2 text-sm text-muted-foreground">
           <p><strong className="text-choco">Commercial APIs stop at extraction.</strong> They return line items but don't map "Latte Milk 1kg" to your menu's "whole_milk" ingredient, calculate per-unit COGS, or flag 140% price variance across suppliers.</p>
-          <p><strong className="text-choco">Our pipeline goes extraction -> normalization -> mapping -> costing -> reporting.</strong> The last 4 stages are where cafe owners actually get value - and no commercial OCR API provides them.</p>
+          <p><strong className="text-choco">Our pipeline goes extraction → normalization → mapping → costing → reporting.</strong> The last 4 stages are where cafe owners actually get value - and no commercial OCR API provides them.</p>
           <p><strong className="text-choco">Cost-aware model selection:</strong> Claude Vision for primary extraction ($0.03/receipt), Gemini Flash as fallback ($0.003/receipt). 10x cost reduction on fallback path without sacrificing structured output quality.</p>
         </div>
       </motion.div>

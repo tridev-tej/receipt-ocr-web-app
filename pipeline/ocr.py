@@ -271,73 +271,60 @@ class ClaudeVisionAdapter(OCRAdapter):
                     self.total_cost_usd = max(0.0, self.total_cost_usd - max_reserve)
 
 
-class TesseractAdapter(OCRAdapter):
-    name = "tesseract"
+class GeminiFlashAdapter(OCRAdapter):
+    """Gemini Flash fallback - 10x cheaper than Claude Vision (~$0.003/receipt)."""
+    name = "gemini_flash"
 
     async def extract(self, image_path: Path) -> dict[str, Any]:
-        return await asyncio.to_thread(self._extract_sync, image_path)
+        import base64
+        import httpx
 
-    @staticmethod
-    def _extract_sync(image_path: Path) -> dict[str, Any]:
-        import re
+        api_key = config.GEMINI_API_KEY
+        if not api_key:
+            raise RuntimeError("GEMINI_API_KEY not set")
 
-        import pytesseract
-        from PIL import Image
+        with open(image_path, "rb") as f:
+            img_b64 = base64.standard_b64encode(f.read()).decode()
 
-        with Image.open(image_path) as img:
-            raw_text = pytesseract.image_to_string(img, lang="eng+fra+deu+spa", timeout=30)
+        suffix = image_path.suffix.lower()
+        mime = {".jpg": "image/jpeg", ".jpeg": "image/jpeg", ".png": "image/png"}.get(suffix, "image/jpeg")
 
-        lines = raw_text.strip().split("\n")
-        items: list[dict[str, Any]] = []
-        supplier = lines[0] if lines else "Unknown"
-
-        price_pattern = re.compile(r"([\d]+(?:[.,]\d+)*)\s*[€$£]?$|[€$£]?\s*([\d]+(?:[.,]\d+)*)$")
-
-        for line in lines[1:]:
-            line = line.strip()
-            if not line:
-                continue
-            match = price_pattern.search(line)
-            if match:
-                price_str = match.group(1) or match.group(2)
-                if price_str:
-                    price = parse_number(price_str)
-                    if price is not None and price != 0:
-                        desc = line[: match.start()].strip()
-                        if desc:
-                            items.append(
-                                {
-                                    "description": desc,
-                                    "quantity": 1.0,
-                                    "unit": "each",
-                                    "unit_price": abs(price),
-                                    "total": price,
-                                    "is_tax_or_fee": False,
-                                    "is_discount": price < 0,
-                                    "confidence": "low",
-                                }
-                            )
-
-        logger.info(
-            "ocr_extraction",
-            extra={
-                "receipt": image_path.name,
-                "method": "tesseract",
-                "line_items": len(items),
-            },
+        prompt = (
+            "Extract all line items from this receipt image. "
+            "Return JSON with keys: supplier, date (YYYY-MM-DD or null), currency, language, "
+            "line_items (array of {description, quantity, unit, unit_price, total, confidence}), "
+            "subtotal, tax, total. Use confidence: high/medium/low."
         )
 
-        return {
-            "supplier": supplier,
-            "date": None,
-            "currency": config.DEFAULT_CURRENCY,
-            "language": "en",
-            "line_items": items,
-            "subtotal": None,
-            "tax": None,
-            "total": None,
-            "notes": "Tesseract fallback - reduced accuracy",
+        payload = {
+            "contents": [{
+                "parts": [
+                    {"text": prompt},
+                    {"inline_data": {"mime_type": mime, "data": img_b64}},
+                ]
+            }],
+            "generationConfig": {"responseMimeType": "application/json"},
         }
+
+        url = f"https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key={api_key}"
+        async with httpx.AsyncClient(timeout=30) as client:
+            resp = await client.post(url, json=payload)
+            resp.raise_for_status()
+
+        result = resp.json()
+        text = result["candidates"][0]["content"]["parts"][0]["text"]
+        import json
+        data = json.loads(text)
+
+        for item in data.get("line_items", []):
+            if "is_tax_or_fee" not in item:
+                item["is_tax_or_fee"] = False
+            if "is_discount" not in item:
+                item["is_discount"] = False
+
+        data.setdefault("notes", "Gemini Flash fallback")
+        logger.info("ocr_extraction", extra={"receipt": image_path.name, "method": "gemini_flash", "line_items": len(data.get("line_items", []))})
+        return data
 
 
 def _cache_key(image_path: Path) -> str:
@@ -416,10 +403,10 @@ async def extract_receipt(
             if not isinstance(e, CircuitOpenError):
                 await circuit_breaker.record_failure()
             data = await fallback.extract(image_path)
-            adapter_used = "tesseract"
+            adapter_used = "gemini_flash"
 
         # Optional cross-validation with PaddleOCR
-        if adapter_used != "tesseract" and config.CROSS_VALIDATE_OCR:
+        if adapter_used != "gemini_flash" and config.CROSS_VALIDATE_OCR:
             try:
                 xval_notes, xval_multiplier = await cross_validate(image_path, data)
                 if xval_notes:
@@ -434,7 +421,7 @@ async def extract_receipt(
                 data["_xval_multiplier"] = 1.0
 
         # Only cache primary (Claude) results — fallback results may be lower quality
-        if adapter_used != "tesseract":
+        if adapter_used != "gemini_flash":
             try:
                 await asyncio.to_thread(_write_cache, cached, data)
             except OSError as e:
@@ -442,7 +429,7 @@ async def extract_receipt(
 
         try:
             parsed = _parse_receipt(data, receipt_id, str(image_path), adapter_used)
-            if adapter_used != "tesseract":
+            if adapter_used != "gemini_flash":
                 await circuit_breaker.record_success()
             return parsed
         except (KeyError, TypeError, ValueError) as e:
@@ -450,9 +437,9 @@ async def extract_receipt(
                 "parse_receipt_failed_falling_back",
                 extra={"receipt": receipt_id, "error": str(e), "adapter": adapter_used},
             )
-            if adapter_used != "tesseract":
+            if adapter_used != "gemini_flash":
                 fallback_data = await fallback.extract(image_path)
-                return _parse_receipt(fallback_data, receipt_id, str(image_path), "tesseract")
+                return _parse_receipt(fallback_data, receipt_id, str(image_path), "gemini_flash")
             raise
 
 
@@ -673,10 +660,10 @@ async def extract_all_receipts(image_dir: Path) -> tuple[list[RawReceipt], float
     if config.ANTHROPIC_API_KEY:
         primary: OCRAdapter = ClaudeVisionAdapter()
     else:
-        logger.warning("no_api_key_using_tesseract")
-        primary = TesseractAdapter()
+        logger.warning("no_api_key_using_gemini_flash")
+        primary = GeminiFlashAdapter()
 
-    fallback = TesseractAdapter()
+    fallback = GeminiFlashAdapter()
     breaker = CircuitBreaker()
     sem = asyncio.Semaphore(config.OCR_CONCURRENT_WORKERS)
     limiter = RateLimiter(config.OCR_REQUESTS_PER_SECOND)

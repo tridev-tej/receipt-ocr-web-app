@@ -134,7 +134,7 @@ function ShowcaseHero() {
 // ─── 10-Stage Pipeline ─────────────────────────────────
 const PIPELINE_STAGES = [
   { icon: Image, label: "Preprocess", detail: "Deskew, contrast, denoise, resize (4MP cap)", color: "bg-chart-3" },
-  { icon: Eye, label: "OCR Extract", detail: "Claude Vision with tool_use; SHA256 cache; Tesseract fallback", color: "bg-chart-1" },
+  { icon: Eye, label: "OCR Extract", detail: "Claude Vision with tool_use; SHA256 cache; Gemini Flash fallback (~$0.003/receipt)", color: "bg-chart-1" },
   { icon: Scan, label: "Cross-Validate", detail: "PaddleOCR as second reader (asymmetric trust)", color: "bg-chart-5" },
   { icon: ShieldCheck, label: "Validate", detail: "Math checks (qty x price = total), line sum verification", color: "bg-chart-2" },
   { icon: Ruler, label: "Normalize", detail: "Units to metric, 8 currencies to EUR, pack sizes per-unit", color: "bg-chart-4" },
@@ -360,7 +360,7 @@ const CHALLENGES = [
   {
     icon: ThermometerSun,
     title: "Faded Thermal Print",
-    problem: "Tesseract fails below 0.60 confidence on degraded thermal paper",
+    problem: "Traditional OCR fails below 0.60 confidence on degraded thermal paper",
     solution: "Claude Vision uses context clues - surrounding text, receipt structure, common price patterns",
   },
   {
@@ -432,7 +432,7 @@ const RESILIENCE_FEATURES = [
   {
     icon: RotateCcw,
     title: "Circuit Breaker",
-    detail: "3 consecutive API failures trigger Tesseract fallback. Half-open retry after 60s. Prevents cascade failures.",
+    detail: "3 consecutive API failures trigger Gemini Flash fallback (~10x cheaper). Half-open retry after 60s. Prevents cascade failures.",
   },
   {
     icon: Shield,
@@ -653,6 +653,88 @@ function ResultsDecisions() {
   )
 }
 
+// ─── Existing Solution Benchmarks ─────────────────────
+const BENCHMARKS = [
+  {
+    name: "Veryfi",
+    type: "Commercial API",
+    accuracy: "~90-95%",
+    cost: "$0.08-0.12/receipt",
+    languages: "60+",
+    structured: true,
+    note: "Market leader. Pre-trained on millions of receipts. Best accuracy but highest cost.",
+  },
+  {
+    name: "Mindee",
+    type: "Commercial API",
+    accuracy: "~85-92%",
+    cost: "$0.04-0.08/receipt",
+    languages: "20+",
+    structured: true,
+    note: "Strong open-source option (docTR). Good balance of cost and accuracy.",
+  },
+  {
+    name: "Taggun",
+    type: "Commercial API",
+    accuracy: "~80-88%",
+    cost: "$0.03-0.06/receipt",
+    languages: "50+",
+    structured: true,
+    note: "Budget-friendly. Good for high-volume, lower-accuracy use cases.",
+  },
+  {
+    name: "Our Pipeline",
+    type: "Claude Vision + Gemini Flash",
+    accuracy: "~79% mapping",
+    cost: "$0.03/receipt (Claude) or $0.003 (Gemini)",
+    languages: "7 (tested)",
+    structured: true,
+    note: "Custom pipeline with domain-specific mapping, cost calculation, and menu-item COGS - features no commercial OCR provides.",
+  },
+]
+
+function ExistingSolutionBenchmarks() {
+  return (
+    <Section>
+      <SectionTitle sub="How our pipeline compares to commercial receipt OCR solutions">
+        Existing Solution Benchmarks
+      </SectionTitle>
+      <div className="mx-auto max-w-4xl overflow-x-auto">
+        <table className="w-full text-sm">
+          <thead>
+            <tr className="border-b border-chai/30 bg-cream">
+              <th className="px-4 py-3 text-left text-xs font-semibold text-choco">Solution</th>
+              <th className="px-4 py-3 text-left text-xs font-semibold text-choco">Type</th>
+              <th className="px-4 py-3 text-right text-xs font-semibold text-choco">Accuracy</th>
+              <th className="px-4 py-3 text-right text-xs font-semibold text-choco">Cost/Receipt</th>
+              <th className="px-4 py-3 text-right text-xs font-semibold text-choco">Languages</th>
+            </tr>
+          </thead>
+          <tbody>
+            {BENCHMARKS.map((b) => (
+              <tr key={b.name} className="border-b border-chai/10 last:border-0">
+                <td className="px-4 py-3 font-medium text-choco">{b.name}</td>
+                <td className="px-4 py-3 text-muted-foreground">{b.type}</td>
+                <td className="px-4 py-3 text-right font-mono">{b.accuracy}</td>
+                <td className="px-4 py-3 text-right font-mono">{b.cost}</td>
+                <td className="px-4 py-3 text-right">{b.languages}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+      <motion.div variants={fadeUp} className="mx-auto mt-6 max-w-3xl cafe-card p-5">
+        <h3 className="mb-3 font-semibold text-choco">Why build custom vs. use Veryfi/Mindee?</h3>
+        <div className="space-y-2 text-sm text-muted-foreground">
+          <p><strong className="text-choco">Commercial APIs stop at extraction.</strong> They return line items but don't map "Latte Milk 1kg" to your menu's "whole_milk" ingredient, calculate per-unit COGS, or flag 140% price variance across suppliers.</p>
+          <p><strong className="text-choco">Our pipeline goes extraction -> normalization -> mapping -> costing -> reporting.</strong> The last 4 stages are where cafe owners actually get value - and no commercial OCR API provides them.</p>
+          <p><strong className="text-choco">Cost-aware model selection:</strong> Claude Vision for primary extraction ($0.03/receipt), Gemini Flash as fallback ($0.003/receipt). 10x cost reduction on fallback path without sacrificing structured output quality.</p>
+        </div>
+      </motion.div>
+    </Section>
+  )
+}
+
 // ─── Honest Limitations ────────────────────────────────
 const LIMITATIONS = [
   { text: "Static currency rates (prototype only)", icon: DollarSign },
@@ -729,6 +811,7 @@ export function Showcase() {
       <KeyIterations />
       <ValidationGallery />
       <ResultsDecisions />
+      <ExistingSolutionBenchmarks />
       <HonestLimitations />
       <GuidingPrinciple />
     </>

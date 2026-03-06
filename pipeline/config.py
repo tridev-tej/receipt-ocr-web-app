@@ -52,6 +52,7 @@ def ensure_dirs() -> None:
         d.mkdir(parents=True, exist_ok=True)
 
 ANTHROPIC_API_KEY = os.getenv("ANTHROPIC_API_KEY") or None
+GEMINI_API_KEY = os.getenv("GEMINI_API_KEY") or None
 
 # OCR
 OCR_MODEL = "claude-sonnet-4-20250514"

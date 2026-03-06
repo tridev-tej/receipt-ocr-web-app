@@ -613,6 +613,14 @@ const DECISIONS = [
     badge: "bg-chart-4/10 text-chart-4",
     detail: "Real cost EUR 1.77/each vs expected EUR 1.07. Only a few data points - may be supplier-specific.",
   },
+  {
+    item: "60 Unmapped Items",
+    margin: "graceful",
+    status: "stable",
+    action: "Handled correctly",
+    badge: "bg-chart-2/10 text-chart-2",
+    detail: "Totals, subtotals, EUR amounts classified as unknown. Non-menu ingredients (butter, flour, vanilla) identified but not forced into wrong mappings.",
+  },
 ]
 
 function ResultsDecisions() {

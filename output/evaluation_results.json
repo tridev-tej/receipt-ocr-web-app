@@ -133,15 +133,15 @@
     "within_range": 10,
     "out_of_range": 12,
     "total_checked": 22,
-    "mean_absolute_deviation": 0.077582,
-    "mape": 0.8133,
+    "mean_absolute_deviation": 0.036337,
+    "mape": 0.1827,
     "details": [
       {
         "ingredient": "avocado",
-        "expected": 1.35,
+        "expected": 1.5,
         "actual": 1.675,
-        "deviation": 0.325,
-        "tolerance": 0.2,
+        "deviation": 0.175,
+        "tolerance": 0.15,
         "status": "out_of_range"
       },
       {
@@ -152,58 +152,58 @@
       },
       {
         "ingredient": "cocoa_powder",
-        "expected": 0.014,
+        "expected": 0.0133,
         "actual": 0.0133,
-        "deviation": 0.0007,
-        "tolerance": 0.003,
+        "deviation": 0.0,
+        "tolerance": 0.001,
         "status": "ok"
       },
       {
         "ingredient": "coffee_beans",
-        "expected": 0.0197,
+        "expected": 0.02,
         "actual": 0.021357,
-        "deviation": 0.001657,
-        "tolerance": 0.003,
+        "deviation": 0.001357,
+        "tolerance": 0.002,
         "status": "ok"
       },
       {
         "ingredient": "cream",
-        "expected": 0.00542,
+        "expected": 0.006,
         "actual": 0.0082,
-        "deviation": 0.00278,
+        "deviation": 0.0022,
         "tolerance": 0.001,
         "status": "out_of_range"
       },
       {
         "ingredient": "croissant",
-        "expected": 1.117,
+        "expected": 1.2,
         "actual": 1.281687,
-        "deviation": 0.164687,
-        "tolerance": 0.2,
-        "status": "ok"
+        "deviation": 0.081687,
+        "tolerance": 0.07,
+        "status": "out_of_range"
       },
       {
         "ingredient": "cup_12oz",
-        "expected": 0.065,
+        "expected": 0.1,
         "actual": 0.14,
-        "deviation": 0.075,
-        "tolerance": 0.015,
+        "deviation": 0.04,
+        "tolerance": 0.02,
         "status": "out_of_range"
       },
       {
         "ingredient": "cup_16oz",
-        "expected": 0.081,
+        "expected": 0.12,
         "actual": 0.1624,
-        "deviation": 0.0814,
-        "tolerance": 0.015,
+        "deviation": 0.0424,
+        "tolerance": 0.02,
         "status": "out_of_range"
       },
       {
         "ingredient": "cup_8oz",
-        "expected": 0.054,
+        "expected": 0.09,
         "actual": 0.12,
-        "deviation": 0.066,
-        "tolerance": 0.012,
+        "deviation": 0.03,
+        "tolerance": 0.02,
         "status": "out_of_range"
       },
       {
@@ -214,26 +214,26 @@
       },
       {
         "ingredient": "honey",
-        "expected": 0.0113,
+        "expected": 0.01,
         "actual": 0.009733,
-        "deviation": 0.001567,
+        "deviation": 0.000267,
         "tolerance": 0.003,
         "status": "ok"
       },
       {
         "ingredient": "lemon",
-        "expected": 0.302,
+        "expected": 0.3,
         "actual": 0.332143,
-        "deviation": 0.030143,
-        "tolerance": 0.05,
+        "deviation": 0.032143,
+        "tolerance": 0.04,
         "status": "ok"
       },
       {
         "ingredient": "lid",
-        "expected": 0.038,
+        "expected": 0.04,
         "actual": 0.04,
-        "deviation": 0.002,
-        "tolerance": 0.008,
+        "deviation": 0.0,
+        "tolerance": 0.005,
         "status": "ok"
       },
       {
@@ -244,50 +244,50 @@
       },
       {
         "ingredient": "muffin",
-        "expected": 1.074,
+        "expected": 1.5,
         "actual": 1.773669,
-        "deviation": 0.699669,
-        "tolerance": 0.2,
+        "deviation": 0.273669,
+        "tolerance": 0.15,
         "status": "out_of_range"
       },
       {
         "ingredient": "napkin",
-        "expected": 0.0135,
+        "expected": 0.015,
         "actual": 0.0155,
-        "deviation": 0.002,
-        "tolerance": 0.003,
+        "deviation": 0.0005,
+        "tolerance": 0.002,
         "status": "ok"
       },
       {
         "ingredient": "oat_milk",
-        "expected": 0.00235,
+        "expected": 0.003,
         "actual": 0.003376,
-        "deviation": 0.001026,
+        "deviation": 0.000376,
         "tolerance": 0.0005,
-        "status": "out_of_range"
+        "status": "ok"
       },
       {
         "ingredient": "paper_bag",
-        "expected": 0.083,
+        "expected": 0.085,
         "actual": 0.0925,
-        "deviation": 0.0095,
-        "tolerance": 0.015,
+        "deviation": 0.0075,
+        "tolerance": 0.01,
         "status": "ok"
       },
       {
         "ingredient": "salt",
-        "expected": 0.000623,
+        "expected": 0.003,
         "actual": 0.006,
-        "deviation": 0.005377,
-        "tolerance": 0.0002,
+        "deviation": 0.003,
+        "tolerance": 0.001,
         "status": "out_of_range"
       },
       {
         "ingredient": "straw",
-        "expected": 0.0249,
+        "expected": 0.02,
         "actual": 0.02,
-        "deviation": 0.0049,
-        "tolerance": 0.005,
+        "deviation": 0.0,
+        "tolerance": 0.003,
         "status": "ok"
       },
       {
@@ -295,14 +295,14 @@
         "expected": 0.00125,
         "actual": 0.001249,
         "deviation": 1e-06,
-        "tolerance": 0.0003,
+        "tolerance": 0.0002,
         "status": "ok"
       },
       {
         "ingredient": "whole_milk",
-        "expected": 0.00115,
+        "expected": 0.0015,
         "actual": 0.001802,
-        "deviation": 0.000652,
+        "deviation": 0.000302,
         "tolerance": 0.0003,
         "status": "out_of_range"
       }

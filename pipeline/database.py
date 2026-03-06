@@ -23,7 +23,10 @@ CREATE TABLE IF NOT EXISTS pipeline_runs (
     receipts_processed INTEGER DEFAULT 0,
     receipts_failed INTEGER DEFAULT 0,
     total_line_items INTEGER DEFAULT 0,
-    total_api_cost_usd REAL DEFAULT 0.0
+    total_api_cost_usd REAL DEFAULT 0.0,
+    avg_ocr_confidence REAL DEFAULT 0.0,
+    mapping_rate REAL DEFAULT 0.0,
+    duration_seconds REAL DEFAULT 0.0
 );
 
 CREATE TABLE IF NOT EXISTS suppliers (
@@ -165,14 +168,17 @@ class Database:
         self.conn.execute(
             """INSERT INTO pipeline_runs
                (run_id, started_at, completed_at, receipts_processed, receipts_failed,
-                total_line_items, total_api_cost_usd)
-               VALUES (?, ?, ?, ?, ?, ?, ?)
+                total_line_items, total_api_cost_usd, avg_ocr_confidence, mapping_rate, duration_seconds)
+               VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
                ON CONFLICT(run_id) DO UPDATE SET
                    completed_at = excluded.completed_at,
                    receipts_processed = excluded.receipts_processed,
                    receipts_failed = excluded.receipts_failed,
                    total_line_items = excluded.total_line_items,
-                   total_api_cost_usd = excluded.total_api_cost_usd""",
+                   total_api_cost_usd = excluded.total_api_cost_usd,
+                   avg_ocr_confidence = excluded.avg_ocr_confidence,
+                   mapping_rate = excluded.mapping_rate,
+                   duration_seconds = excluded.duration_seconds""",
             (
                 run.run_id,
                 now,
@@ -181,6 +187,9 @@ class Database:
                 run.receipts_failed,
                 run.total_line_items,
                 run.total_api_cost_usd,
+                run.avg_ocr_confidence,
+                run.mapping_rate,
+                run.duration_seconds,
             ),
         )
 

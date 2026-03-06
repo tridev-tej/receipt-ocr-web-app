@@ -30,6 +30,7 @@ def _update_status(run_id: str, stage: str, current: int = 0, total: int = 0, er
 
 async def _run_pipeline(run_id: str, receipt_dir: Path, total: int):
     import sys
+    import time
     pipeline_dir = str(ROOT / "pipeline")
     if pipeline_dir not in sys.path:
         sys.path.insert(0, pipeline_dir)
@@ -44,6 +45,8 @@ async def _run_pipeline(run_id: str, receipt_dir: Path, total: int):
         from database import Database
         from report import write_reports
         from models import PipelineMetrics
+
+        t0 = time.monotonic()
 
         # Stage 1: OCR
         _update_status(run_id, "ocr", 0, total)
@@ -81,6 +84,13 @@ async def _run_pipeline(run_id: str, receipt_dir: Path, total: int):
         ingredient_costs = calculate_ingredient_costs(items, menu)
         menu_costs = calculate_menu_costs(ingredient_costs, menu)
 
+        # Compute real metrics
+        duration = time.monotonic() - t0
+        mapped_count = sum(1 for i in items if i.mapped_ingredient and i.category != "exclude")
+        mappable_count = sum(1 for i in items if i.category != "exclude")
+        mapping_rate = mapped_count / mappable_count if mappable_count > 0 else 0.0
+        avg_ocr = sum(r.ocr_confidence for r in receipts) / len(receipts) if receipts else 0.0
+
         # Stage 7: Database
         _update_status(run_id, "database", total, total)
         run_db = RUNS_DIR / run_id / "cogs.db"
@@ -89,6 +99,10 @@ async def _run_pipeline(run_id: str, receipt_dir: Path, total: int):
             receipts_processed=len(receipts),
             receipts_failed=total - len(receipts),
             total_line_items=len(items),
+            total_api_cost_usd=api_cost,
+            avg_ocr_confidence=round(avg_ocr, 3),
+            mapping_rate=round(mapping_rate, 3),
+            duration_seconds=round(duration, 2),
         )
         with Database(str(run_db)) as db:
             db.create_tables()

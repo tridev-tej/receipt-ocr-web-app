@@ -27,7 +27,7 @@ function ReceiptDropzone() {
     onDrop,
     accept: { "image/jpeg": [".jpg", ".jpeg"], "image/png": [".png"] },
     multiple: true,
-    maxFiles: 20,
+    maxFiles: 40,
   })
 
   return (
@@ -46,7 +46,7 @@ function ReceiptDropzone() {
         <p className="text-sm font-medium text-choco">
           {isDragActive ? "Drop receipt images here" : "Drag & drop receipt images or click to browse"}
         </p>
-        <p className="mt-1 text-xs text-muted-foreground">JPEG, PNG - max 20 files</p>
+        <p className="mt-1 text-xs text-muted-foreground">JPEG, PNG - max 40 files</p>
       </div>
 
       {files.length > 0 && (

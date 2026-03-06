@@ -98,8 +98,16 @@ export function EvaluationTab() {
                 <div key={d.ingredient} className="flex items-center justify-between border-b border-chai/10 py-1 last:border-0">
                   <span className="text-choco">{d.ingredient}</span>
                   <span className="flex items-center gap-1">
-                    <span className="font-mono text-muted-foreground">dev: {d.deviation.toFixed(6)}</span>
-                    <CheckCircle2 className="h-3 w-3 text-chart-2" />
+                    {d.status === "missing" ? (
+                      <span className="font-mono text-muted-foreground">missing</span>
+                    ) : (
+                      <span className="font-mono text-muted-foreground">dev: {d.deviation?.toFixed(6)}</span>
+                    )}
+                    {d.status === "ok" ? (
+                      <CheckCircle2 className="h-3 w-3 text-chart-2" />
+                    ) : (
+                      <XCircle className="h-3 w-3 text-chart-1" />
+                    )}
                   </span>
                 </div>
               ))}

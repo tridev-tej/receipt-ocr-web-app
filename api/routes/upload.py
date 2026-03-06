@@ -87,7 +87,7 @@ async def _run_pipeline(run_id: str, receipt_dir: Path, total: int):
         # Compute real metrics
         duration = time.monotonic() - t0
         mapped_count = sum(1 for i in items if i.mapped_ingredient and i.category != "exclude")
-        mappable_count = sum(1 for i in items if i.category != "exclude")
+        mappable_count = sum(1 for i in items if i.category in ("ingredient", "packaging"))
         mapping_rate = mapped_count / mappable_count if mappable_count > 0 else 0.0
         avg_ocr = sum(r.ocr_confidence for r in receipts) / len(receipts) if receipts else 0.0
 

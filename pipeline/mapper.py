@@ -18,28 +18,45 @@ logger = logging.getLogger(__name__)
 
 # Canonical ingredients from menu.json
 INGREDIENT_NAMES: dict[str, list[str]] = {
-    "coffee_beans": ["coffee beans", "arabica", "robusta", "espresso beans", "coffee blend", "ground coffee"],
-    "cocoa_powder": ["cocoa powder", "cacao powder", "chocolate powder", "cocoa"],
-    "whole_milk": ["whole milk", "full cream milk", "full fat milk", "fresh milk"],
-    "oat_milk": ["oat milk", "oat drink", "oat beverage", "oat barista"],
-    "sugar": ["sugar", "white sugar", "cane sugar", "granulated sugar"],
-    "honey": ["honey", "raw honey", "wildflower honey", "acacia honey"],
-    "lemon": ["lemon", "lemons", "fresh lemon", "citrus lemon"],
-    "fresh_mint": ["fresh mint", "mint", "mint leaves", "spearmint"],
-    "mixed_berries": ["mixed berries", "berry mix", "frozen berries", "berries blend", "wild berries"],
-    "avocado": ["avocado", "avocados", "hass avocado", "fresh avocado"],
-    "bread_loaf": ["bread", "sourdough", "bread loaf", "sourdough loaf", "artisan bread"],
-    "salt": ["salt", "sea salt", "table salt", "fine salt"],
-    "croissant": ["croissant", "croissants", "butter croissant", "plain croissant"],
-    "muffin": ["muffin", "muffins", "blueberry muffin", "blueberry muffins"],
-    "cup_8oz": ["8oz cup", "8 oz cup", "small cup", "8oz paper cup"],
-    "cup_12oz": ["12oz cup", "12 oz cup", "medium cup", "12oz paper cup"],
-    "cup_16oz": ["16oz cup", "16 oz cup", "large cup", "16oz paper cup"],
-    "lid": ["lid", "lids", "cup lid", "cup lids", "dome lid"],
+    "coffee_beans": ["coffee beans", "arabica", "robusta", "espresso beans", "coffee blend", "ground coffee",
+                      "kaffeebohnen", "bio kaffeebohnen", "espresso roast", "espresso mischung",
+                      "single origin", "house blend", "decaf coffee", "granos de cafe", "cafe en grano"],
+    "cocoa_powder": ["cocoa powder", "cacao powder", "chocolate powder", "cocoa",
+                      "kakaopulver", "cacao en polvo", "poudre de cacao"],
+    "whole_milk": ["whole milk", "full cream milk", "full fat milk", "fresh milk",
+                    "semi-skimmed milk", "vollmilch", "frischmilch", "leche entera", "lait entier"],
+    "oat_milk": ["oat milk", "oat drink", "oat beverage", "oat barista",
+                  "hafermilch", "haferdrink", "leche de avena", "lait d'avoine"],
+    "sugar": ["sugar", "white sugar", "cane sugar", "granulated sugar",
+              "raw cane sugar", "demerara sugar", "zucker", "vanillezucker",
+              "azucar blanco", "azucar", "sucre"],
+    "honey": ["honey", "raw honey", "wildflower honey", "acacia honey",
+              "organic honey", "honig", "miel", "miel de flores"],
+    "lemon": ["lemon", "lemons", "fresh lemon", "citrus lemon",
+              "organic lemons", "zitronen", "limones", "citrons"],
+    "fresh_mint": ["fresh mint", "mint", "mint leaves", "spearmint",
+                    "frische minze", "menta", "menthe"],
+    "mixed_berries": ["mixed berries", "berry mix", "frozen berries", "berries blend", "wild berries",
+                       "fresh blueberries", "blueberries", "waldbeeren", "frutas del bosque", "fruits rouges"],
+    "avocado": ["avocado", "avocados", "hass avocado", "fresh avocado", "aguacate"],
+    "bread_loaf": ["bread", "sourdough", "bread loaf", "sourdough loaf", "artisan bread",
+                    "whole wheat loaf", "baguette", "baguette tradition", "brot", "sauerteigbrot", "pan"],
+    "salt": ["salt", "sea salt", "table salt", "fine salt", "salz", "meersalz", "sal"],
+    "croissant": ["croissant", "croissants", "butter croissant", "plain croissant",
+                   "almond croissant", "pain au chocolat", "cruasanes", "buttercroissant",
+                   "croissants au beurre"],
+    "muffin": ["muffin", "muffins", "blueberry muffin", "blueberry muffins",
+                "chocolate muffin", "chocolate muffins", "muffins myrtille"],
+    "cup_8oz": ["8oz cup", "8 oz cup", "small cup", "8oz paper cup", "paper cups 8oz"],
+    "cup_12oz": ["12oz cup", "12 oz cup", "medium cup", "12oz paper cup", "paper cups 12oz"],
+    "cup_16oz": ["16oz cup", "16 oz cup", "large cup", "16oz paper cup", "paper cups 16oz"],
+    "lid": ["lid", "lids", "cup lid", "cup lids", "dome lid", "cup lids universal"],
     "straw": ["straw", "straws", "paper straw", "paper straws"],
-    "napkin": ["napkin", "napkins", "paper napkin", "serviette"],
-    "paper_bag": ["paper bag", "paper bags", "takeaway bag", "brown bag"],
-    "cream": ["cream", "heavy cream", "whipping cream", "double cream", "single cream"],
+    "napkin": ["napkin", "napkins", "paper napkin", "serviette", "servietten"],
+    "paper_bag": ["paper bag", "paper bags", "takeaway bag", "brown bag",
+                   "paper bags small", "paper bags large", "papiertueten"],
+    "cream": ["cream", "heavy cream", "whipping cream", "double cream", "single cream",
+              "sahne", "schlagsahne", "creme", "nata"],
 }
 
 
@@ -336,11 +353,24 @@ def _map_tiers_1_2(
 
         desc_lower = item.raw_description.lower().strip()
 
-        # Tier 1: Override file
+        # Tier 1a: Exact override match
         if desc_lower in overrides:
             item.mapped_ingredient = overrides[desc_lower]
             item.mapping_method = "override"
             item.mapping_confidence = 1.0
+            continue
+
+        # Tier 1b: Fuzzy override match (catches OCR variants)
+        best_ov_id, best_ov_score = None, 0
+        for ov_desc, ov_ingredient in overrides.items():
+            score = fuzz.token_sort_ratio(desc_lower, ov_desc)
+            if score > best_ov_score:
+                best_ov_score = score
+                best_ov_id = ov_ingredient
+        if best_ov_id and best_ov_score >= 88:
+            item.mapped_ingredient = best_ov_id
+            item.mapping_method = "override_fuzzy"
+            item.mapping_confidence = best_ov_score / 100.0
             continue
 
         # Tier 2: Fuzzy matching (auto-accept >= 85)
